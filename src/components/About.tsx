@@ -13,6 +13,7 @@ import {
   Handshake,
   TrendingUp
 } from 'lucide-react';
+import CounterAnimation from './CounterAnimation';
 
 const values = [
   {
@@ -56,7 +57,7 @@ export default function About() {
   return (
     <section id="about" className="relative overflow-hidden">
       {/* Mission & Vision Section - Dark */}
-      <div className="bg-gradient-to-b from-[#150F33] via-[#1E1545] to-[#2A1F5C] section-padding relative">
+      <div className="bg-linear-to-b from-primary-dark via-primary-medium to-primary-light section-padding relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
         
         <div className="container-custom relative z-10">
@@ -67,9 +68,9 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C496C4]/10 border border-[#C496C4]/30 mb-6">
-              <Heart className="w-4 h-4 text-[#C496C4]" />
-              <span className="text-[#C496C4] text-sm font-medium">Who We Are</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6">
+              <Heart className="w-4 h-4 text-accent" />
+              <span className="text-accent text-sm font-medium">Who We Are</span>
             </div>
             
             <h2 className="heading-lg text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
@@ -93,10 +94,10 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="group relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#C496C4]/20 to-transparent rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
-              <div className="relative glass rounded-3xl p-8 md:p-10 h-full border border-[#C496C4]/10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#C496C4] to-[#D4B0D4] flex items-center justify-center mb-6">
-                  <Target className="w-8 h-8 text-[#150F33]" />
+              <div className="absolute inset-0 bg-linear-to-r from-accent/20 to-transparent rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
+              <div className="relative glass rounded-3xl p-8 md:p-10 h-full border border-accent/10">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-accent to-accent-light flex items-center justify-center mb-6">
+                  <Target className="w-8 h-8 text-primary-dark" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>Our Mission</h3>
                 <p className="text-white/70 leading-relaxed">
@@ -116,9 +117,9 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="group relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#A855F7]/20 to-transparent rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
-              <div className="relative glass rounded-3xl p-8 md:p-10 h-full border border-[#A855F7]/10">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#A855F7] to-[#C496C4] flex items-center justify-center mb-6">
+              <div className="absolute inset-0 bg-linear-to-r from-ai-glow/20 to-transparent rounded-3xl blur-xl group-hover:blur-2xl transition-all" />
+              <div className="relative glass rounded-3xl p-8 md:p-10 h-full border border-ai-glow/10">
+                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-ai-glow to-accent flex items-center justify-center mb-6">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>Our Vision</h3>
@@ -146,10 +147,14 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                className="text-center p-6 rounded-2xl glass border border-[#C496C4]/10"
+                className="text-center p-6 rounded-2xl glass border border-accent/10"
               >
-                <stat.icon className="w-8 h-8 text-[#C496C4] mx-auto mb-3" />
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-1" style={{ fontFamily: 'var(--font-display)' }}>{stat.value}</div>
+                <stat.icon className="w-8 h-8 text-accent mx-auto mb-3" />
+                <CounterAnimation 
+                  value={stat.value} 
+                  className="text-3xl md:text-4xl font-bold text-gradient mb-1 block" 
+                  style={{ fontFamily: 'var(--font-display)' }}
+                />
                 <div className="text-white/60 text-sm">{stat.label}</div>
               </motion.div>
             ))}
@@ -167,16 +172,16 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C496C4]/10 border border-[#C496C4]/30 mb-6">
-              <Award className="w-4 h-4 text-[#C496C4]" />
-              <span className="text-[#C496C4] text-sm font-medium">Our Values</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6">
+              <Award className="w-4 h-4 text-accent" />
+              <span className="text-accent text-sm font-medium">Our Values</span>
             </div>
             
-            <h2 className="heading-lg text-[#150F33] mb-4" style={{ fontFamily: 'var(--font-display)' }}>
+            <h2 className="heading-lg text-primary-dark mb-4" style={{ fontFamily: 'var(--font-display)' }}>
               The Principles That{' '}
               <span className="text-gradient">Guide Us</span>
             </h2>
-            <p className="body-lg text-[#150F33]/60 max-w-2xl mx-auto">
+            <p className="body-lg text-primary-dark/60 max-w-2xl mx-auto">
               Our core values shape every decision we make and every solution we deliver.
             </p>
           </motion.div>
@@ -190,13 +195,13 @@ export default function About() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
-                className="group p-8 rounded-2xl bg-[#F8F6FC] hover:bg-white hover:shadow-xl border border-transparent hover:border-[#C496C4]/20 transition-all duration-300"
+                className="group p-8 rounded-2xl bg-soft-gray hover:bg-white hover:shadow-xl border border-transparent hover:border-accent/20 transition-all duration-300"
               >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#150F33] to-[#2A1F5C] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                  <value.icon className="w-7 h-7 text-[#C496C4]" />
+                <div className="w-14 h-14 rounded-xl bg-linear-to-br from-primary-dark to-primary-light flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                  <value.icon className="w-7 h-7 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold text-[#150F33] mb-3" style={{ fontFamily: 'var(--font-display)' }}>{value.title}</h3>
-                <p className="text-[#150F33]/60">{value.description}</p>
+                <h3 className="text-xl font-bold text-primary-dark mb-3" style={{ fontFamily: 'var(--font-display)' }}>{value.title}</h3>
+                <p className="text-primary-dark/60">{value.description}</p>
               </motion.div>
             ))}
           </div>

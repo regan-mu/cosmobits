@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Zap
 } from 'lucide-react';
+import CounterAnimation from './CounterAnimation';
 
 const aiServices = [
   {
@@ -69,17 +70,17 @@ export default function AISection() {
   return (
     <section id="ai" className="relative overflow-hidden">
       {/* AI Hero Banner */}
-      <div className="bg-gradient-to-b from-[#150F33] via-[#1E1545] to-[#2A1F5C] section-padding relative">
+      <div className="bg-linear-to-b from-primary-dark via-primary-medium to-primary-light section-padding relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
         
         {/* Animated Background Elements */}
         <motion.div
-          className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#A855F7]/10 blur-3xl"
+          className="absolute top-20 left-10 w-64 h-64 rounded-full bg-ai-glow/10 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 5, repeat: Infinity }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-[#C496C4]/10 blur-3xl"
+          className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
           animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 6, repeat: Infinity }}
         />
@@ -97,16 +98,16 @@ export default function AISection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#A855F7]/20 to-[#C496C4]/20 border border-[#A855F7]/40 mb-8"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-ai-glow/20 to-accent/20 border border-ai-glow/40 mb-8"
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
               >
-                <Brain className="w-5 h-5 text-[#A855F7]" />
+                <Brain className="w-5 h-5 text-ai-glow" />
               </motion.div>
-              <span className="text-[#D4B0D4] font-medium">Artificial Intelligence Solutions</span>
-              <Sparkles className="w-4 h-4 text-[#F0ABFC]" />
+              <span className="text-accent-light font-medium">Artificial Intelligence Solutions</span>
+              <Sparkles className="w-4 h-4 text-highlight" />
             </motion.div>
             
             <h2 className="heading-lg text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
@@ -114,7 +115,7 @@ export default function AISection() {
               <span className="relative">
                 <span className="text-gradient-ai">AI</span>
                 <motion.div
-                  className="absolute -inset-2 rounded-lg bg-[#A855F7]/20 blur-xl -z-10"
+                  className="absolute -inset-2 rounded-lg bg-ai-glow/20 blur-xl -z-10"
                   animate={{ opacity: [0.3, 0.6, 0.3] }}
                   transition={{ duration: 2, repeat: Infinity }}
                 />
@@ -140,15 +141,14 @@ export default function AISection() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                className="text-center p-6 rounded-2xl glass border border-[#A855F7]/20"
+                className="text-center p-6 rounded-2xl glass border border-ai-glow/20"
                 whileHover={{ scale: 1.05, borderColor: 'rgba(168,85,247,0.5)' }}
               >
-                <motion.div 
-                  className="text-3xl md:text-4xl font-bold text-gradient-ai mb-1"
+                <CounterAnimation 
+                  value={stat.value}
+                  className="text-3xl md:text-4xl font-bold text-gradient-ai mb-1 block"
                   style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  {stat.value}
-                </motion.div>
+                />
                 <div className="text-white/60 text-sm">{stat.label}</div>
               </motion.div>
             ))}
@@ -163,15 +163,15 @@ export default function AISection() {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative bg-[#150F33]/50 backdrop-blur-sm rounded-2xl p-8 border border-[#C496C4]/10 hover:border-[#A855F7]/40 transition-all duration-300"
+                className="group relative bg-primary-dark/50 backdrop-blur-sm rounded-2xl p-8 border border-accent/10 hover:border-ai-glow/40 transition-all duration-300"
               >
                 {/* Hover Glow */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#A855F7]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-ai-glow/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="relative z-10">
                   {/* Icon */}
                   <motion.div
-                    className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#A855F7] to-[#C496C4] flex items-center justify-center mb-6"
+                    className="w-14 h-14 rounded-xl bg-linear-to-br from-ai-glow to-accent flex items-center justify-center mb-6"
                     whileHover={{ rotate: 5, scale: 1.1 }}
                     style={{ boxShadow: '0 0 30px rgba(168,85,247,0.3)' }}
                   >
@@ -187,7 +187,7 @@ export default function AISection() {
                   <div className="space-y-2">
                     {service.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-white/50">
-                        <CheckCircle2 className="w-4 h-4 text-[#A855F7]" />
+                        <CheckCircle2 className="w-4 h-4 text-ai-glow" />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -209,7 +209,7 @@ export default function AISection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#A855F7] to-[#C496C4] text-white font-semibold inline-flex items-center justify-center gap-2 group"
+                className="px-8 py-4 rounded-full bg-linear-to-r from-ai-glow to-accent text-white font-semibold inline-flex items-center justify-center gap-2 group"
                 style={{ boxShadow: '0 0 40px rgba(168,85,247,0.4)' }}
               >
                 <Zap className="w-5 h-5" />

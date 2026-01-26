@@ -123,6 +123,10 @@
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -299,6 +303,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 9999px;
   transition: all 0.3s ease;
   box-shadow: 0 4px 20px rgba(196, 150, 196, 0.3);
+  cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -315,6 +320,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 9999px;
   border: 2px solid var(--accent-primary);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .btn-secondary:hover {

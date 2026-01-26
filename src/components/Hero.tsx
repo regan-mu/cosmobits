@@ -3,10 +3,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronDown, Sparkles, Brain, Zap, Bot } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import CounterAnimation from './CounterAnimation';
 
 const FloatingParticle = ({ delay, duration, size, left, top }: { delay: number; duration: number; size: number; left: string; top: string }) => (
   <motion.div
-    className="absolute rounded-full bg-[#C496C4]/20"
+    className="absolute rounded-full bg-accent/20"
     style={{ width: size, height: size, left, top }}
     animate={{
       y: [-20, 20, -20],
@@ -24,7 +25,7 @@ const FloatingParticle = ({ delay, duration, size, left, top }: { delay: number;
 
 const AIOrb = ({ delay }: { delay: number }) => (
   <motion.div
-    className="absolute w-2 h-2 rounded-full bg-[#A855F7]"
+    className="absolute w-2 h-2 rounded-full bg-ai-glow"
     animate={{
       scale: [1, 1.5, 1],
       opacity: [0.3, 0.8, 0.3],
@@ -37,6 +38,25 @@ const AIOrb = ({ delay }: { delay: number }) => (
     }}
   />
 );
+
+// Pre-computed particle configurations to avoid hydration mismatch
+const particleConfigs = [
+  { duration: 8.4, size: 9.2, left: '15%', top: '22%' },
+  { duration: 7.1, size: 6.8, left: '78%', top: '8%' },
+  { duration: 9.3, size: 11.2, left: '42%', top: '65%' },
+  { duration: 6.5, size: 5.4, left: '91%', top: '34%' },
+  { duration: 8.8, size: 8.1, left: '23%', top: '88%' },
+  { duration: 7.6, size: 10.5, left: '67%', top: '45%' },
+  { duration: 9.1, size: 4.9, left: '5%', top: '72%' },
+  { duration: 6.9, size: 7.3, left: '85%', top: '91%' },
+  { duration: 8.2, size: 9.8, left: '33%', top: '12%' },
+  { duration: 7.4, size: 6.1, left: '56%', top: '78%' },
+  { duration: 9.7, size: 11.9, left: '12%', top: '55%' },
+  { duration: 6.2, size: 5.7, left: '72%', top: '28%' },
+  { duration: 8.6, size: 8.9, left: '48%', top: '95%' },
+  { duration: 7.8, size: 10.2, left: '95%', top: '62%' },
+  { duration: 9.4, size: 7.6, left: '28%', top: '38%' },
+];
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -61,13 +81,13 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#150F33] via-[#1E1545] to-[#2A1F5C]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-b from-primary-dark via-primary-medium to-primary-light">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 bg-grid-pattern opacity-50" />
       
       {/* Gradient Orbs */}
       <motion.div
-        className="absolute w-[600px] h-[600px] rounded-full"
+        className="absolute w-150 h-150 rounded-full"
         style={{
           background: 'radial-gradient(circle, rgba(196,150,196,0.15) 0%, transparent 70%)',
           top: '10%',
@@ -77,7 +97,7 @@ export default function Hero() {
         }}
       />
       <motion.div
-        className="absolute w-[500px] h-[500px] rounded-full"
+        className="absolute w-125 h-125 rounded-full"
         style={{
           background: 'radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%)',
           bottom: '5%',
@@ -111,15 +131,15 @@ export default function Hero() {
         ))}
       </svg>
 
-      {/* Floating Particles */}
-      {[...Array(15)].map((_, i) => (
+      {/* Floating Particles - using deterministic values to avoid hydration mismatch */}
+      {particleConfigs.map((config, i) => (
         <FloatingParticle
           key={i}
           delay={i * 0.5}
-          duration={6 + Math.random() * 4}
-          size={4 + Math.random() * 8}
-          left={`${Math.random() * 100}%`}
-          top={`${Math.random() * 100}%`}
+          duration={config.duration}
+          size={config.size}
+          left={config.left}
+          top={config.top}
         />
       ))}
 
@@ -137,15 +157,15 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#A855F7]/20 border border-[#A855F7]/40 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-ai-glow/20 border border-ai-glow/40 mb-6"
             >
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
               >
-                <Brain className="w-4 h-4 text-[#A855F7]" />
+                <Brain className="w-4 h-4 text-ai-glow" />
               </motion.div>
-              <span className="text-[#D4B0D4] text-sm font-medium">AI-Powered Digital Transformation</span>
+              <span className="text-accent-light text-sm font-medium">AI-Powered Digital Transformation</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -155,7 +175,7 @@ export default function Hero() {
               <span className="relative inline-block">
                 is AI
                 <motion.div
-                  className="absolute -inset-2 rounded-lg bg-[#A855F7]/20 blur-xl"
+                  className="absolute -inset-2 rounded-lg bg-ai-glow/20 blur-xl"
                   animate={{
                     opacity: [0.3, 0.6, 0.3],
                   }}
@@ -216,7 +236,10 @@ export default function Hero() {
                 { value: '24/7', label: 'AI Support' },
               ].map((stat, index) => (
                 <div key={index} className="text-center lg:text-left">
-                  <div className="text-2xl lg:text-3xl font-bold text-gradient">{stat.value}</div>
+                  <CounterAnimation 
+                    value={stat.value}
+                    className="text-2xl lg:text-3xl font-bold text-gradient block"
+                  />
                   <div className="text-white/50 text-sm">{stat.label}</div>
                 </div>
               ))}
@@ -231,17 +254,17 @@ export default function Hero() {
             className="relative flex items-center justify-center"
           >
             {/* Main Circle */}
-            <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
+            <div className="relative w-75 h-75 md:w-100 md:h-100 lg:w-125 lg:h-125">
               {/* Outer Ring - AI Neural */}
               <motion.div
-                className="absolute inset-0 rounded-full border-2 border-[#A855F7]/30"
+                className="absolute inset-0 rounded-full border-2 border-ai-glow/30"
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
               >
                 {[...Array(8)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-3 h-3 rounded-full bg-[#A855F7]"
+                    className="absolute w-3 h-3 rounded-full bg-ai-glow"
                     style={{
                       top: '50%',
                       left: '50%',
@@ -253,14 +276,14 @@ export default function Hero() {
               
               {/* Middle Ring */}
               <motion.div
-                className="absolute inset-12 rounded-full border border-[#C496C4]/40"
+                className="absolute inset-12 rounded-full border border-accent/40"
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
               >
                 {[...Array(6)].map((_, i) => (
                   <div
                     key={i}
-                    className="absolute w-2 h-2 rounded-full bg-[#C496C4]"
+                    className="absolute w-2 h-2 rounded-full bg-accent"
                     style={{
                       top: '50%',
                       left: '50%',
@@ -272,7 +295,7 @@ export default function Hero() {
               
               {/* Inner Glow Circle */}
               <motion.div
-                className="absolute inset-20 rounded-full bg-gradient-to-br from-[#A855F7]/20 to-[#C496C4]/10"
+                className="absolute inset-20 rounded-full bg-linear-to-br from-ai-glow/20 to-accent/10"
                 animate={{
                   boxShadow: [
                     '0 0 60px rgba(168,85,247,0.3)',
@@ -293,7 +316,7 @@ export default function Hero() {
               >
                 <div className="relative">
                   <motion.div
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-gradient-to-br from-[#C496C4] to-[#A855F7] flex items-center justify-center shadow-2xl"
+                    className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-linear-to-br from-accent to-ai-glow flex items-center justify-center shadow-2xl"
                     animate={{
                       boxShadow: [
                         '0 0 40px rgba(168,85,247,0.4)',
@@ -303,23 +326,23 @@ export default function Hero() {
                     }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    <Bot className="w-16 h-16 md:w-20 md:h-20 text-[#150F33]" />
+                    <Bot className="w-16 h-16 md:w-20 md:h-20 text-primary-dark" />
                   </motion.div>
                   
                   {/* Floating AI Orbs */}
                   <motion.div
-                    className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#A855F7] flex items-center justify-center"
+                    className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-ai-glow flex items-center justify-center"
                     animate={{ y: [-5, 5, -5] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
                     <Zap className="w-4 h-4 text-white" />
                   </motion.div>
                   <motion.div
-                    className="absolute -bottom-2 -left-6 w-6 h-6 rounded-full bg-[#C496C4] flex items-center justify-center"
+                    className="absolute -bottom-2 -left-6 w-6 h-6 rounded-full bg-accent flex items-center justify-center"
                     animate={{ y: [5, -5, 5] }}
                     transition={{ duration: 2.5, repeat: Infinity }}
                   >
-                    <Sparkles className="w-3 h-3 text-[#150F33]" />
+                    <Sparkles className="w-3 h-3 text-primary-dark" />
                   </motion.div>
                 </div>
               </motion.div>
@@ -336,7 +359,7 @@ export default function Hero() {
         >
           <motion.button
             onClick={scrollToAI}
-            className="flex flex-col items-center gap-2 text-white/50 hover:text-[#C496C4] transition-colors"
+            className="flex flex-col items-center gap-2 text-white/50 hover:text-accent transition-colors"
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >

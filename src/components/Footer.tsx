@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { 
-  Bot,
   Mail, 
   Phone, 
   MapPin, 
@@ -14,26 +13,20 @@ import {
   Heart
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const footerLinks = {
   services: [
     { name: 'AI Consultation', href: '#ai' },
-    { name: 'Custom AI Solutions', href: '#ai' },
     { name: 'Software Development', href: '#services' },
     { name: 'Cloud Infrastructure', href: '#services' },
     { name: 'IT Equipment Supply', href: '#services' },
   ],
   company: [
     { name: 'About Us', href: '#about' },
-    { name: 'Our Team', href: '#about' },
-    { name: 'Careers', href: '#' },
-    { name: 'News & Blog', href: '#' },
     { name: 'Contact', href: '#contact' },
   ],
   resources: [
-    { name: 'Case Studies', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Support Center', href: '#' },
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms of Service', href: '#' },
   ],
@@ -47,14 +40,15 @@ const socialLinks = [
 ];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  // Using a static year to avoid hydration mismatch between server and client
+  const currentYear = 2026;
 
   return (
-    <footer className="relative bg-[#150F33] overflow-hidden">
+    <footer className="relative bg-primary-dark overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#C496C4]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#A855F7]/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-ai-glow/5 rounded-full blur-3xl" />
 
       <div className="relative z-10">
         {/* Main Footer Content */}
@@ -62,16 +56,13 @@ export default function Footer() {
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Brand Column */}
             <div className="lg:col-span-2">
-              <Link href="/" className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#C496C4] to-[#A855F7] flex items-center justify-center">
-                  <Bot className="w-6 h-6 text-white" />
-                </div>
-                <span 
-                  className="text-2xl font-bold text-white"
-                  style={{ fontFamily: 'var(--font-display)' }}
-                >
-                  CosmoBits
-                </span>
+              <Link href="/" className="block w-80 h-32 relative mb-6 p-0">
+                <Image
+                  src="/cosmobits-logo.png"
+                  alt="CosmoBits Logo"
+                  fill
+                  className="object-fit p-0 border border-gray-900 rounded"
+                />
               </Link>
               
               <p className="text-white/60 mb-6 max-w-md leading-relaxed">
@@ -83,20 +74,20 @@ export default function Footer() {
               <div className="space-y-3">
                 <a 
                   href="mailto:hello@cosmobits.tech" 
-                  className="flex items-center gap-3 text-white/60 hover:text-[#C496C4] transition-colors"
+                  className="flex items-center gap-3 text-white/60 hover:text-accent transition-colors"
                 >
                   <Mail className="w-5 h-5" />
                   <span>hello@cosmobits.tech</span>
                 </a>
                 <a 
-                  href="tel:+254700000000" 
-                  className="flex items-center gap-3 text-white/60 hover:text-[#C496C4] transition-colors"
+                  href="tel:+254700000000"
+                  className="flex items-center gap-3 text-white/60 hover:text-accent transition-colors"
                 >
                   <Phone className="w-5 h-5" />
                   <span>+254 700 000 000</span>
                 </a>
                 <div className="flex items-center gap-3 text-white/60">
-                  <MapPin className="w-5 h-5 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 shrink-0" />
                   <span>Nairobi, Kenya</span>
                 </div>
               </div>
@@ -111,7 +102,7 @@ export default function Footer() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-[#C496C4] hover:border-[#C496C4]/30 transition-all"
+                    className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-accent hover:border-accent/30 transition-all"
                     aria-label={social.name}
                   >
                     <social.icon className="w-5 h-5" />
@@ -130,7 +121,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a 
                       href={link.href}
-                      className="text-white/60 hover:text-[#C496C4] transition-colors flex items-center gap-1 group"
+                      className="text-white/60 hover:text-accent transition-colors flex items-center gap-1 group"
                     >
                       <span>{link.name}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -149,7 +140,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a 
                       href={link.href}
-                      className="text-white/60 hover:text-[#C496C4] transition-colors flex items-center gap-1 group"
+                      className="text-white/60 hover:text-accent transition-colors flex items-center gap-1 group"
                     >
                       <span>{link.name}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -168,7 +159,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a 
                       href={link.href}
-                      className="text-white/60 hover:text-[#C496C4] transition-colors flex items-center gap-1 group"
+                      className="text-white/60 hover:text-accent transition-colors flex items-center gap-1 group"
                     >
                       <span>{link.name}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -195,13 +186,13 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#C496C4]/50 w-full md:w-72"
+                className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-accent/50 w-full md:w-72"
               />
               <motion.button
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#C496C4] to-[#A855F7] text-white font-semibold hover:shadow-lg hover:shadow-[#C496C4]/20 transition-shadow whitespace-nowrap"
+                className="px-6 py-3 rounded-xl bg-linear-to-r from-accent to-ai-glow text-white font-semibold hover:shadow-lg hover:shadow-accent/20 transition-shadow whitespace-nowrap"
               >
                 Subscribe
               </motion.button>
@@ -217,7 +208,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-1">
               <span>Crafted with</span>
-              <Heart className="w-4 h-4 text-[#C496C4] fill-[#C496C4]" />
+              <Heart className="w-4 h-4 text-accent fill-accent" />
               <span>in Nairobi</span>
             </div>
           </div>

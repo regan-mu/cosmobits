@@ -31,7 +31,6 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 const services = [
   'AI Consultation & Implementation',
-  'Custom AI Solutions',
   'Software Development',
   'Cloud Infrastructure',
   'IT Equipment Supply',
@@ -42,7 +41,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Visit Us',
-    details: ['123 Innovation Drive', 'Tech Park, Nairobi', 'Kenya'],
+    details: ['APA Arcade Level 1', 'Hurlingham, Nairobi', 'Kenya'],
   },
   {
     icon: Phone,
@@ -96,13 +95,13 @@ export default function Contact() {
     >
       {/* Background - Split Design */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#150F33] via-[#1E1545] to-[#2A1F5C]" />
+        <div className="absolute inset-0 bg-linear-to-br from-primary-dark via-primary-medium to-primary-light" />
         <div className="absolute inset-0 bg-grid-pattern opacity-20" />
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-[#C496C4]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-20 w-64 h-64 bg-[#A855F7]/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-64 h-64 bg-ai-glow/10 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -111,9 +110,9 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C496C4]/10 border border-[#C496C4]/30 mb-6">
-            <MessageSquare className="w-4 h-4 text-[#C496C4]" />
-            <span className="text-[#C496C4] text-sm font-medium">Get In Touch</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 mb-6">
+            <MessageSquare className="w-4 h-4 text-accent" />
+            <span className="text-accent text-sm font-medium">Get In Touch</span>
           </div>
           
           <h2 className="heading-lg text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
@@ -134,7 +133,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="glass rounded-3xl p-8 border border-[#C496C4]/10">
+            <div className="glass rounded-3xl p-8 border border-accent/10">
               <h3 className="text-xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
                 Contact Information
               </h3>
@@ -148,8 +147,8 @@ export default function Contact() {
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     className="flex gap-4"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#C496C4]/20 to-[#A855F7]/20 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-5 h-5 text-[#C496C4]" />
+                    <div className="w-12 h-12 rounded-xl bg-linear-to-br from-accent/20 to-ai-glow/20 flex items-center justify-center shrink-0">
+                      <info.icon className="w-5 h-5 text-accent" />
                     </div>
                     <div>
                       <h4 className="text-white font-medium mb-1">{info.title}</h4>
@@ -167,7 +166,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.4, delay: 0.7 }}
-              className="glass rounded-3xl p-8 border border-[#C496C4]/10"
+              className="glass rounded-3xl p-8 border border-accent/10"
             >
               <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
                 Quick Connect
@@ -175,14 +174,14 @@ export default function Contact() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="mailto:hello@cosmobits.tech"
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#C496C4]/10 border border-[#C496C4]/30 text-[#C496C4] hover:bg-[#C496C4]/20 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-colors text-sm"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Email Us</span>
                 </a>
                 <a
                   href="tel:+254700000000"
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#C496C4]/10 border border-[#C496C4]/30 text-[#C496C4] hover:bg-[#C496C4]/20 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-colors text-sm"
                 >
                   <Phone className="w-4 h-4" />
                   <span>Call Now</span>
@@ -191,7 +190,7 @@ export default function Contact() {
                   href="https://www.cosmobits.tech"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#C496C4]/10 border border-[#C496C4]/30 text-[#C496C4] hover:bg-[#C496C4]/20 transition-colors text-sm"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 transition-colors text-sm"
                 >
                   <Globe className="w-4 h-4" />
                   <span>Website</span>
@@ -209,14 +208,14 @@ export default function Contact() {
           >
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/20">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#150F33] to-[#2A1F5C] flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-[#C496C4]" />
+                <div className="w-12 h-12 rounded-xl bg-linear-to-br from-primary-dark to-primary-light flex items-center justify-center">
+                  <Building2 className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#150F33]" style={{ fontFamily: 'var(--font-display)' }}>
+                  <h3 className="text-xl font-bold text-primary-dark" style={{ fontFamily: 'var(--font-display)' }}>
                     Send Us a Message
                   </h3>
-                  <p className="text-[#150F33]/60 text-sm">We&apos;ll respond within 24 hours</p>
+                  <p className="text-primary-dark/60 text-sm">We&apos;ll respond within 24 hours</p>
                 </div>
               </div>
 
@@ -229,10 +228,10 @@ export default function Contact() {
                   <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-green-500" />
                   </div>
-                  <h4 className="text-xl font-bold text-[#150F33] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+                  <h4 className="text-xl font-bold text-primary-dark mb-2" style={{ fontFamily: 'var(--font-display)' }}>
                     Message Sent Successfully!
                   </h4>
-                  <p className="text-[#150F33]/60">
+                  <p className="text-primary-dark/60">
                     Thank you for reaching out. We&apos;ll get back to you soon.
                   </p>
                 </motion.div>
@@ -241,7 +240,7 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
-                      <label className="block text-sm font-medium text-[#150F33] mb-2">
+                      <label className="block text-sm font-medium text-primary-dark mb-2">
                         Full Name *
                       </label>
                       <input
@@ -250,8 +249,8 @@ export default function Contact() {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.name 
                             ? 'border-red-400 focus:ring-red-400' 
-                            : 'border-gray-200 focus:ring-[#C496C4]'
-                        } focus:outline-none focus:ring-2 transition-all bg-[#F8F6FC]`}
+                            : 'border-gray-200 focus:ring-accent'
+                        } focus:outline-none focus:ring-2 transition-all bg-soft-gray`}
                         placeholder="John Doe"
                       />
                       {errors.name && (
@@ -261,7 +260,7 @@ export default function Contact() {
 
                     {/* Email */}
                     <div>
-                      <label className="block text-sm font-medium text-[#150F33] mb-2">
+                      <label className="block text-sm font-medium text-primary-dark mb-2">
                         Email Address *
                       </label>
                       <input
@@ -270,8 +269,8 @@ export default function Contact() {
                         className={`w-full px-4 py-3 rounded-xl border ${
                           errors.email 
                             ? 'border-red-400 focus:ring-red-400' 
-                            : 'border-gray-200 focus:ring-[#C496C4]'
-                        } focus:outline-none focus:ring-2 transition-all bg-[#F8F6FC]`}
+                            : 'border-gray-200 focus:ring-accent'
+                        } focus:outline-none focus:ring-2 transition-all bg-soft-gray`}
                         placeholder="john@example.com"
                       />
                       {errors.email && (
@@ -283,26 +282,26 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Company */}
                     <div>
-                      <label className="block text-sm font-medium text-[#150F33] mb-2">
+                      <label className="block text-sm font-medium text-primary-dark mb-2">
                         Company Name
                       </label>
                       <input
                         type="text"
                         {...register('company')}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C496C4] transition-all bg-[#F8F6FC]"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent transition-all bg-soft-gray"
                         placeholder="Your Company"
                       />
                     </div>
 
                     {/* Phone */}
                     <div>
-                      <label className="block text-sm font-medium text-[#150F33] mb-2">
+                      <label className="block text-sm font-medium text-primary-dark mb-2">
                         Phone Number
                       </label>
                       <input
                         type="tel"
                         {...register('phone')}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#C496C4] transition-all bg-[#F8F6FC]"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent transition-all bg-soft-gray"
                         placeholder="+254 700 000 000"
                       />
                     </div>
@@ -310,7 +309,7 @@ export default function Contact() {
 
                   {/* Service */}
                   <div>
-                    <label className="block text-sm font-medium text-[#150F33] mb-2">
+                    <label className="block text-sm font-medium text-primary-dark mb-2">
                       Service Interested In *
                     </label>
                     <select
@@ -318,8 +317,8 @@ export default function Contact() {
                       className={`w-full px-4 py-3 rounded-xl border ${
                         errors.service 
                           ? 'border-red-400 focus:ring-red-400' 
-                          : 'border-gray-200 focus:ring-[#C496C4]'
-                      } focus:outline-none focus:ring-2 transition-all bg-[#F8F6FC]`}
+                          : 'border-gray-200 focus:ring-accent'
+                      } focus:outline-none focus:ring-2 transition-all bg-soft-gray`}
                     >
                       <option value="">Select a service</option>
                       {services.map((service) => (
@@ -335,7 +334,7 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium text-[#150F33] mb-2">
+                    <label className="block text-sm font-medium text-primary-dark mb-2">
                       Message *
                     </label>
                     <textarea
@@ -344,8 +343,8 @@ export default function Contact() {
                       className={`w-full px-4 py-3 rounded-xl border ${
                         errors.message 
                           ? 'border-red-400 focus:ring-red-400' 
-                          : 'border-gray-200 focus:ring-[#C496C4]'
-                      } focus:outline-none focus:ring-2 transition-all bg-[#F8F6FC] resize-none`}
+                          : 'border-gray-200 focus:ring-accent'
+                      } focus:outline-none focus:ring-2 transition-all bg-soft-gray resize-none`}
                       placeholder="Tell us about your project or inquiry..."
                     />
                     {errors.message && (
@@ -359,7 +358,7 @@ export default function Contact() {
                     disabled={isSubmitting}
                     whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                     whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-[#150F33] to-[#2A1F5C] text-white font-semibold flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#150F33]/20 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full py-4 rounded-xl bg-linear-to-r from-primary-dark to-primary-light text-white font-semibold flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-primary-dark/20 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>

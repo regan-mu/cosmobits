@@ -17,10 +17,10 @@ export default function Home() {
       <main>
         <Hero />
         <Partners />
-        <AISection />
-        <Services />
         <About />
         <WhyUs />
+        <AISection />
+        <Services />
         <Testimonials />
         <CTA />
         <Contact />

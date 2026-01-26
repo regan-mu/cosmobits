@@ -14,7 +14,7 @@ export default function CTA() {
       className="relative py-20 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#C496C4] via-[#A855F7] to-[#C496C4] animate-gradient-x" />
+      <div className="absolute inset-0 bg-linear-to-r from-accent via-ai-glow to-accent animate-gradient-x" />
       
       {/* Overlay Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
@@ -35,7 +35,7 @@ export default function CTA() {
             opacity: [0.3, 0.5, 0.3],
           }}
           transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-          className="absolute bottom-10 right-[10%] w-64 h-64 bg-[#150F33]/20 rounded-full blur-3xl"
+          className="absolute bottom-10 right-[10%] w-64 h-64 bg-primary-dark/20 rounded-full blur-3xl"
         />
       </div>
       
@@ -67,7 +67,7 @@ export default function CTA() {
           >
             Let&apos;s Build the Future of
             <br />
-            <span className="text-[#150F33]">Your Business Together</span>
+            <span className="text-primary-dark">Your Business Together</span>
           </motion.h2>
 
           {/* Subheading */}
@@ -92,7 +92,7 @@ export default function CTA() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#150F33] text-white rounded-full font-semibold shadow-xl shadow-[#150F33]/30 hover:shadow-2xl transition-all group"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-dark text-white rounded-full font-semibold shadow-xl shadow-primary-dark/30 hover:shadow-2xl transition-all group"
             >
               <span>Start Your AI Journey</span>
               <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
