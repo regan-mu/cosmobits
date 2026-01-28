@@ -22,7 +22,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { ScrollArea } from '@/components/ui/scroll-area';
 import { Separator } from '@/components/ui/separator';
 import {
   Mail,
@@ -197,8 +196,8 @@ export default function LeadDrawer({
           </SheetTitle>
         </SheetHeader>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col">
-          <TabsList className="grid grid-cols-4 mx-6 mt-4">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col min-h-0">
+          <TabsList className="grid grid-cols-4 mx-6 mt-4 flex-shrink-0">
             <TabsTrigger value="details" className="text-xs sm:text-sm">
               <FileText className="w-4 h-4 sm:mr-1" />
               <span className="hidden sm:inline">Details</span>
@@ -217,7 +216,7 @@ export default function LeadDrawer({
             </TabsTrigger>
           </TabsList>
 
-          <ScrollArea className="flex-1 px-6 py-4">
+          <div className="flex-1 overflow-auto px-6 py-4">
             {/* Details Tab */}
             <TabsContent value="details" className="mt-0 space-y-6">
               {/* Current Status */}
@@ -290,7 +289,7 @@ export default function LeadDrawer({
             {/* Timeline Tab */}
             <TabsContent value="timeline" className="mt-0">
               <div className="space-y-1">
-                {lead.statusHistory.map((entry, index) => {
+                {[...lead.statusHistory].reverse().map((entry, index, arr) => {
                   const isExpanded = expandedCards.has(entry.id);
                   const hasLongComment = isTextLong(entry.comment);
                   const hasEmailBody = !!entry.emailBody;
@@ -299,7 +298,7 @@ export default function LeadDrawer({
                   return (
                     <div key={entry.id} className="relative pl-6 pb-6">
                       {/* Line */}
-                      {index < lead.statusHistory.length - 1 && (
+                      {index < arr.length - 1 && (
                         <div className="absolute left-2.5 top-4 bottom-0 w-0.5 bg-gray-200" />
                       )}
                       
@@ -540,7 +539,7 @@ export default function LeadDrawer({
                 </p>
               </div>
             </TabsContent>
-          </ScrollArea>
+          </div>
         </Tabs>
       </SheetContent>
     </Sheet>
