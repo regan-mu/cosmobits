@@ -76,7 +76,7 @@ export default function Header() {
                   src="/cosmobits-logo.png"
                   alt="CosmoBits Logo"
                   fill
-                  className="object-fit p-0 border"
+                  className="object-fit p-0"
                   priority
                 />
               </motion.div>

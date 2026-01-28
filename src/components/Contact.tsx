@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { toast } from 'sonner';
 import { 
   Send, 
   MapPin, 
@@ -51,7 +52,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: ['hello@cosmobits.tech', 'support@cosmobits.tech'],
+    details: ['hello@cosmobits.tech'],
   },
   {
     icon: Clock,
@@ -77,14 +78,46 @@ export default function Contact() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log('Form submitted:', data);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    reset();
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+
+      setIsSubmitted(true);
+      reset();
+      
+      // Show appropriate toast based on email status
+      if (result.emailSent) {
+        toast.success('Message sent successfully!', {
+          description: 'We\'ll get back to you within 24 hours.',
+        });
+      } else {
+        toast.success('Information saved!', {
+          description: 'We received your details and will contact you soon.',
+        });
+      }
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to submit', {
+        description: error instanceof Error ? error.message : 'Please try again or contact us directly.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
