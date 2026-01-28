@@ -10,6 +10,7 @@ import {
   LogOut,
   Menu,
   X,
+  Shield,
 } from 'lucide-react';
 import { useState } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -34,6 +35,7 @@ interface AdminLayoutClientProps {
 const navItems = [
   { href: '/admin', icon: LayoutDashboard, label: 'Dashboard' },
   { href: '/admin/leads', icon: Users, label: 'Leads' },
+  { href: '/admin/team', icon: Shield, label: 'Team' },
 ];
 
 export default function AdminLayoutClient({ children, user }: AdminLayoutClientProps) {

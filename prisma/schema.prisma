@@ -71,6 +71,17 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+// Pre-approved admin emails
+model AllowedAdmin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?  // Optional display name
+  addedBy   String?  // Who added this admin
+  createdAt DateTime @default(now())
+  
+  @@index([email])
+}
+
 // ==================== LEAD MANAGEMENT ====================
 
 // Lead status enum for lifecycle tracking

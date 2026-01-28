@@ -7,6 +7,14 @@ import { UserRole } from '@/generated/prisma/enums';
 // Super admin email from env - always has access
 const superAdminEmail = process.env.CONTACT_EMAIL;
 
+// Helper to check if email is in allowed admins list
+async function isAllowedAdmin(email: string): Promise<boolean> {
+  const allowed = await prisma.allowedAdmin.findUnique({
+    where: { email },
+  });
+  return !!allowed;
+}
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma) as any,
   providers: [
@@ -21,21 +29,26 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   callbacks: {
     async signIn({ user }) {
+      if (!user.email) return false;
+      
       // Super admin always has access
       if (user.email === superAdminEmail) {
         return true;
       }
       
-      // Check if user has ADMIN role in database
-      if (user.email) {
-        const dbUser = await prisma.user.findUnique({
-          where: { email: user.email },
-          select: { role: true },
-        });
-        
-        if (dbUser?.role === UserRole.ADMIN) {
-          return true;
-        }
+      // Check if user already has ADMIN role in database
+      const dbUser = await prisma.user.findUnique({
+        where: { email: user.email },
+        select: { role: true },
+      });
+      
+      if (dbUser?.role === UserRole.ADMIN) {
+        return true;
+      }
+      
+      // Check if email is in AllowedAdmin list
+      if (await isAllowedAdmin(user.email)) {
+        return true;
       }
       
       // Deny access to non-admins
@@ -59,8 +72,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   events: {
     async createUser({ user }) {
-      // Auto-promote super admin to ADMIN role when they first sign up
-      if (user.email === superAdminEmail) {
+      if (!user.email) return;
+      
+      // Auto-promote to ADMIN role if super admin OR in AllowedAdmin list
+      const shouldBeAdmin = 
+        user.email === superAdminEmail || 
+        await isAllowedAdmin(user.email);
+      
+      if (shouldBeAdmin) {
         await prisma.user.update({
           where: { id: user.id },
           data: { role: UserRole.ADMIN },
