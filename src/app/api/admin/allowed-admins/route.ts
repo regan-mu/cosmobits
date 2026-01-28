@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import prisma from '@/lib/prisma';
+import { UserRole } from '@/generated/prisma/enums';
 
 // GET /api/admin/allowed-admins - List all allowed admins
 export async function GET() {
@@ -25,12 +26,25 @@ export async function GET() {
   }
 }
 
-// POST /api/admin/allowed-admins - Add a new allowed admin
+// POST /api/admin/allowed-admins - Add a new allowed admin (SUPER_ADMIN only)
 export async function POST(request: NextRequest) {
   const session = await auth();
   
   if (!session?.user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
+  // Check if user is SUPER_ADMIN
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { role: true },
+  });
+
+  if (user?.role !== UserRole.SUPER_ADMIN) {
+    return NextResponse.json(
+      { error: 'Only super admins can add team members' },
+      { status: 403 }
+    );
   }
 
   const body = await request.json();

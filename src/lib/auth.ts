@@ -4,7 +4,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter';
 import prisma from '@/lib/prisma';
 import { UserRole } from '@/generated/prisma/enums';
 
-// Super admin email from env - always has access
+// Super admin email from env - always has access and can manage team
 const superAdminEmail = process.env.CONTACT_EMAIL;
 
 // Helper to check if email is in allowed admins list
@@ -36,13 +36,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         return true;
       }
       
-      // Check if user already has ADMIN role in database
+      // Check if user already has ADMIN or SUPER_ADMIN role in database
       const dbUser = await prisma.user.findUnique({
         where: { email: user.email },
         select: { role: true },
       });
       
-      if (dbUser?.role === UserRole.ADMIN) {
+      if (dbUser?.role === UserRole.ADMIN || dbUser?.role === UserRole.SUPER_ADMIN) {
         return true;
       }
       
@@ -74,12 +74,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async createUser({ user }) {
       if (!user.email) return;
       
-      // Auto-promote to ADMIN role if super admin OR in AllowedAdmin list
-      const shouldBeAdmin = 
-        user.email === superAdminEmail || 
-        await isAllowedAdmin(user.email);
+      // Super admin gets SUPER_ADMIN role
+      if (user.email === superAdminEmail) {
+        await prisma.user.update({
+          where: { id: user.id },
+          data: { role: UserRole.SUPER_ADMIN },
+        });
+        return;
+      }
       
-      if (shouldBeAdmin) {
+      // Allowed admins get ADMIN role
+      if (await isAllowedAdmin(user.email)) {
         await prisma.user.update({
           where: { id: user.id },
           data: { role: UserRole.ADMIN },
