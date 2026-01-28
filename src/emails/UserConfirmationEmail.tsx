@@ -33,8 +33,8 @@ export default function UserConfirmationEmail({
           <Section style={header}>
             <Img
               src={`${baseUrl}/cosmobits-portrait.png`}
-              width="120"
-              height="120"
+              width="150"
+              height="100"
               alt="CosmoBits Technologies"
               style={logoImage}
             />
