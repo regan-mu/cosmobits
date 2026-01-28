@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import FloatingContact from "@/components/FloatingContact";
 import { Toaster } from "sonner";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "CosmoBits Technologies | AI-Powered Digital Transformation",
@@ -34,17 +35,19 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className="antialiased">
-        {children}
-        <FloatingContact />
-        <Toaster 
-          position="top-center" 
-          richColors 
-          toastOptions={{
-            style: {
-              fontFamily: 'inherit',
-            },
-          }}
-        />
+        <Providers>
+          {children}
+          <FloatingContact />
+          <Toaster 
+            position="top-center" 
+            richColors 
+            toastOptions={{
+              style: {
+                fontFamily: 'inherit',
+              },
+            }}
+          />
+        </Providers>
       </body>
     </html>
   );
