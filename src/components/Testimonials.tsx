@@ -132,6 +132,7 @@ export default function Testimonials() {
             <div className="absolute right-8 bottom-8 flex gap-2">
               <motion.button
                 onClick={prevTestimonial}
+                aria-label="Previous testimonial"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
@@ -140,6 +141,7 @@ export default function Testimonials() {
               </motion.button>
               <motion.button
                 onClick={nextTestimonial}
+                aria-label="Next testimonial"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
@@ -151,11 +153,14 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-2 mb-12">
-          {testimonials.map((_, index) => (
+        <div className="flex justify-center gap-2 mb-12" role="tablist" aria-label="Testimonial navigation">
+          {testimonials.map((testimonial, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
+              aria-label={`View testimonial from ${testimonial.name}`}
+              aria-selected={index === currentIndex}
+              role="tab"
               className={`w-3 h-3 rounded-full transition-all ${
                 index === currentIndex
                   ? 'w-8 bg-gradient-to-r from-[#C496C4] to-[#A855F7]'
