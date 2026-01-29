@@ -8,7 +8,8 @@ import {
   Monitor,
   ArrowRight,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  Package
 } from 'lucide-react';
 
 const services = [
@@ -16,17 +17,33 @@ const services = [
     icon: Code2,
     title: 'Software Development',
     shortDesc: 'Custom solutions built for your unique needs',
-    description: 'From web applications to mobile apps and enterprise systems, we build scalable, secure, and user-friendly software that drives business success.',
+    description: 'From web applications to mobile apps and enterprise systems, we build scalable, secure, and user-friendly software that drives business success. We also help small companies streamline their engineering and development processes for maximum efficiency.',
     features: [
       'Web Application Development',
       'Mobile App Development',
       'API Design & Integration',
       'Enterprise Software Solutions',
-      'E-commerce Platforms',
-      'Legacy System Modernization',
+      'Engineering Process Optimization',
+      'DevOps & CI/CD Setup',
     ],
     color: '#C496C4',
     gradient: 'from-[#C496C4] to-[#D4B0D4]',
+  },
+  {
+    icon: Package,
+    title: 'Software Outsourcing',
+    shortDesc: 'Enterprise software from trusted global partners',
+    description: 'Access world-class enterprise software solutions that require specialized expertise. We partner with leading vendors to deliver operating systems, security solutions, and enterprise applications tailored to your business needs.',
+    features: [
+      'Operating System Licensing',
+      'Anti-Malware & Security Suites',
+      'Enterprise Software Licensing',
+      'Vendor Management & Negotiation',
+      'Software Asset Management',
+      'Volume Licensing Programs',
+    ],
+    color: '#8B5CF6',
+    gradient: 'from-[#8B5CF6] to-[#A855F7]',
   },
   {
     icon: Cloud,

@@ -33,6 +33,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 const services = [
   'AI Consultation & Implementation',
   'Software Development',
+  'Software Outsourcing',
   'Cloud Infrastructure',
   'IT Equipment Supply',
   'General Inquiry',
