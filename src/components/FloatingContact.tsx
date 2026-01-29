@@ -116,6 +116,7 @@ export default function FloatingContact() {
       {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
+        aria-label="Open contact form"
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-linear-to-br from-accent to-ai-glow text-white shadow-lg shadow-accent/30 flex items-center justify-center hover:scale-110 transition-transform"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -165,6 +166,7 @@ export default function FloatingContact() {
                 </div>
                 <button
                   onClick={handleClose}
+                  aria-label="Close contact form"
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
                   <X className="w-5 h-5 text-white" />
@@ -194,10 +196,11 @@ export default function FloatingContact() {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-sm font-medium text-primary-dark mb-1.5">
+                    <label htmlFor="floating-name" className="block text-sm font-medium text-primary-dark mb-1.5">
                       Full Name *
                     </label>
                     <input
+                      id="floating-name"
                       type="text"
                       {...register('name')}
                       className={`w-full px-4 py-2.5 rounded-xl border ${
@@ -214,10 +217,11 @@ export default function FloatingContact() {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-sm font-medium text-primary-dark mb-1.5">
+                    <label htmlFor="floating-email" className="block text-sm font-medium text-primary-dark mb-1.5">
                       Email Address *
                     </label>
                     <input
+                      id="floating-email"
                       type="email"
                       {...register('email')}
                       className={`w-full px-4 py-2.5 rounded-xl border ${
@@ -235,10 +239,11 @@ export default function FloatingContact() {
                   <div className="grid grid-cols-2 gap-4">
                     {/* Company */}
                     <div>
-                      <label className="block text-sm font-medium text-primary-dark mb-1.5">
+                      <label htmlFor="floating-company" className="block text-sm font-medium text-primary-dark mb-1.5">
                         Company
                       </label>
                       <input
+                        id="floating-company"
                         type="text"
                         {...register('company')}
                         className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent transition-all bg-soft-gray text-sm"
@@ -248,10 +253,11 @@ export default function FloatingContact() {
 
                     {/* Phone */}
                     <div>
-                      <label className="block text-sm font-medium text-primary-dark mb-1.5">
+                      <label htmlFor="floating-phone" className="block text-sm font-medium text-primary-dark mb-1.5">
                         Phone
                       </label>
                       <input
+                        id="floating-phone"
                         type="tel"
                         {...register('phone')}
                         className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent transition-all bg-soft-gray text-sm"
@@ -262,11 +268,13 @@ export default function FloatingContact() {
 
                   {/* Service */}
                   <div>
-                    <label className="block text-sm font-medium text-primary-dark mb-1.5">
+                    <label htmlFor="floating-service" className="block text-sm font-medium text-primary-dark mb-1.5">
                       Service Interested In *
                     </label>
                     <select
+                      id="floating-service"
                       {...register('service')}
+                      aria-label="Select a service"
                       className={`w-full px-4 py-2.5 rounded-xl border ${
                         errors.service
                           ? 'border-red-400 focus:ring-red-400'
@@ -287,10 +295,11 @@ export default function FloatingContact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium text-primary-dark mb-1.5">
+                    <label htmlFor="floating-message" className="block text-sm font-medium text-primary-dark mb-1.5">
                       Message *
                     </label>
                     <textarea
+                      id="floating-message"
                       {...register('message')}
                       rows={3}
                       className={`w-full px-4 py-2.5 rounded-xl border ${

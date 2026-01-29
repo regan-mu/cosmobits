@@ -76,6 +76,7 @@ export default function Header() {
                   src="/cosmobits-logo.png"
                   alt="CosmoBits Logo"
                   fill
+                  sizes="208px"
                   className="object-fit p-0"
                   priority
                 />
@@ -121,6 +122,8 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
               className="lg:hidden p-2 text-white hover:text-accent transition-colors"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

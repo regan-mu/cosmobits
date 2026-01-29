@@ -273,10 +273,11 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
-                      <label className="block text-sm font-medium text-primary-dark mb-2">
+                      <label htmlFor="contact-name" className="block text-sm font-medium text-primary-dark mb-2">
                         Full Name *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         {...register('name')}
                         className={`w-full px-4 py-3 rounded-xl border ${
@@ -293,10 +294,11 @@ export default function Contact() {
 
                     {/* Email */}
                     <div>
-                      <label className="block text-sm font-medium text-primary-dark mb-2">
+                      <label htmlFor="contact-email" className="block text-sm font-medium text-primary-dark mb-2">
                         Email Address *
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         {...register('email')}
                         className={`w-full px-4 py-3 rounded-xl border ${
@@ -315,10 +317,11 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Company */}
                     <div>
-                      <label className="block text-sm font-medium text-primary-dark mb-2">
+                      <label htmlFor="contact-company" className="block text-sm font-medium text-primary-dark mb-2">
                         Company Name
                       </label>
                       <input
+                        id="contact-company"
                         type="text"
                         {...register('company')}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent transition-all bg-soft-gray"
@@ -328,10 +331,11 @@ export default function Contact() {
 
                     {/* Phone */}
                     <div>
-                      <label className="block text-sm font-medium text-primary-dark mb-2">
+                      <label htmlFor="contact-phone" className="block text-sm font-medium text-primary-dark mb-2">
                         Phone Number
                       </label>
                       <input
+                        id="contact-phone"
                         type="tel"
                         {...register('phone')}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-accent transition-all bg-soft-gray"
@@ -342,11 +346,13 @@ export default function Contact() {
 
                   {/* Service */}
                   <div>
-                    <label className="block text-sm font-medium text-primary-dark mb-2">
+                    <label htmlFor="contact-service" className="block text-sm font-medium text-primary-dark mb-2">
                       Service Interested In *
                     </label>
                     <select
+                      id="contact-service"
                       {...register('service')}
+                      aria-label="Select a service"
                       className={`w-full px-4 py-3 rounded-xl border ${
                         errors.service 
                           ? 'border-red-400 focus:ring-red-400' 
@@ -367,10 +373,11 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-sm font-medium text-primary-dark mb-2">
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-primary-dark mb-2">
                       Message *
                     </label>
                     <textarea
+                      id="contact-message"
                       {...register('message')}
                       rows={4}
                       className={`w-full px-4 py-3 rounded-xl border ${
