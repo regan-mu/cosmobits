@@ -1,12 +1,13 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { toast } from 'sonner';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import {
   MessageCircle,
   X,
@@ -41,6 +42,7 @@ export default function FloatingContact() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   // Hide on admin pages
   if (pathname?.startsWith('/admin')) {
@@ -57,15 +59,25 @@ export default function FloatingContact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
+    if (!executeRecaptcha) {
+      toast.error('reCAPTCHA not ready', {
+        description: 'Please wait a moment and try again.',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await executeRecaptcha('contact_form');
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       });
 
       const result = await response.json();

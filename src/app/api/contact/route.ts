@@ -9,10 +9,43 @@ import { LeadStatus } from '@/generated/prisma/enums';
 // This runs server-side only - RESEND_API_KEY is never exposed to the client
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Verify reCAPTCHA token with Google
+async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number }> {
+  const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      secret: process.env.RECAPTCHA_SECRET_KEY!,
+      response: token,
+    }),
+  });
+
+  const data = await response.json();
+  return { success: data.success && data.score >= 0.5, score: data.score };
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, phone, service, message } = body;
+    const { name, email, company, phone, service, message, recaptchaToken } = body;
+
+    // Validate reCAPTCHA token
+    if (!recaptchaToken) {
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification required' },
+        { status: 400 }
+      );
+    }
+
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaResult.success) {
+      return NextResponse.json(
+        { error: 'reCAPTCHA verification failed. Please try again.' },
+        { status: 400 }
+      );
+    }
 
     // Validate required fields
     if (!name || !email || !service || !message) {

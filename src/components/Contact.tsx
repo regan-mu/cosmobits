@@ -1,11 +1,12 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { toast } from 'sonner';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { 
   Send, 
   MapPin, 
@@ -67,6 +68,7 @@ export default function Contact() {
   const isInView = useInView(sectionRef, { once: true, margin: '-100px' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const {
     register,
@@ -77,16 +79,26 @@ export default function Contact() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = useCallback(async (data: ContactFormData) => {
+    if (!executeRecaptcha) {
+      toast.error('reCAPTCHA not ready', {
+        description: 'Please wait a moment and try again.',
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await executeRecaptcha('contact_form');
+
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       });
 
       const result = await response.json();
@@ -119,7 +131,7 @@ export default function Contact() {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [executeRecaptcha, reset]);
 
   return (
     <section 
