@@ -41,7 +41,7 @@ function LoginContent() {
           {/* Logo */}
           <div className="flex justify-center mb-8">
             <Image
-              src="/cosmobits-logo.png"
+              src="/cosmobits-technologies-logo.png"
               alt="CosmoBits"
               width={180}
               height={60}

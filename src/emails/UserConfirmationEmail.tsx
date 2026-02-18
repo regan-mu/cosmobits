@@ -32,7 +32,7 @@ export default function UserConfirmationEmail({
           {/* Header */}
           <Section style={header}>
             <Img
-              src={`${baseUrl}/cosmobits-portrait.png`}
+              src={`${baseUrl}/cosmobits-technologies-logo.png`}
               width="150"
               height="100"
               alt="CosmoBits Technologies"

@@ -73,7 +73,7 @@ export default function Header() {
                 className="w-52 h-20 relative"
               >
                 <Image
-                  src="/cosmobits-logo.png"
+                  src="/cosmobits-technologies-logo.png"
                   alt="CosmoBits Logo"
                   fill
                   sizes="208px"

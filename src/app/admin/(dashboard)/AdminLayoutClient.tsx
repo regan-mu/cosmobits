@@ -68,7 +68,7 @@ export default function AdminLayoutClient({ children, user }: AdminLayoutClientP
           {/* Logo */}
           <div className="flex items-center justify-between p-6 border-b border-white/10">
             <Image
-              src="/cosmobits-logo.png"
+              src="/cosmobits-technologies-logo.png"
               alt="CosmoBits"
               width={140}
               height={45}

@@ -58,7 +58,7 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <Link href="/" className="block w-80 h-32 relative mb-6 p-0">
                 <Image
-                  src="/cosmobits-logo.png"
+                  src="/cosmobits-technologies-logo.png"
                   alt="CosmoBits Logo"
                   fill
                   className="object-fit p-0 border border-gray-900 rounded"
