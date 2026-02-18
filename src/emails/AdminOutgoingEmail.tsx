@@ -34,8 +34,8 @@ export default function AdminOutgoingEmail({
           <Section style={header}>
             <Img
               src={`${baseUrl}/cosmobits-technologies-logo.png`}
-              width="150"
-              height="100"
+              width="200"
+              height="60"
               alt="CosmoBits Technologies"
               style={logoImage}
             />
