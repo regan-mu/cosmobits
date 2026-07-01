@@ -2,7 +2,7 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { ArrowRight, Sparkles, Rocket } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function CTA() {
   const sectionRef = useRef(null);
@@ -14,29 +14,15 @@ export default function CTA() {
       className="relative py-20 overflow-hidden"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-linear-to-r from-accent via-ai-glow to-accent animate-gradient-x" />
+      <div className="absolute inset-0 bg-linear-to-r from-accent via-ai-glow to-accent" />
       
       {/* Overlay Pattern */}
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
       
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute top-10 left-[10%] w-64 h-64 bg-white/10 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-          className="absolute bottom-10 right-[10%] w-64 h-64 bg-primary-dark/20 rounded-full blur-3xl"
-        />
+        <div className="absolute top-10 left-[10%] w-64 h-64 bg-white/10 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-10 right-[10%] w-64 h-64 bg-primary-dark/20 rounded-full blur-3xl opacity-30" />
       </div>
       
       <div className="container-custom relative z-10">
@@ -46,17 +32,6 @@ export default function CTA() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-4xl mx-auto"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 mb-8"
-          >
-            <Sparkles className="w-4 h-4 text-white" />
-            <span className="text-white text-sm font-medium">Ready to Transform Your Business?</span>
-          </motion.div>
-
           {/* Heading */}
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -65,9 +40,8 @@ export default function CTA() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            Let&apos;s Build the Future of
-            <br />
-            <span className="text-primary-dark">Your Business Together</span>
+            Let&apos;s Talk About{' '}
+            <span className="text-primary-dark">Your Next Project</span>
           </motion.h2>
 
           {/* Subheading */}
@@ -94,8 +68,8 @@ export default function CTA() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary-dark text-white rounded-full font-semibold shadow-xl shadow-primary-dark/30 hover:shadow-2xl transition-all group"
             >
-              <span>Start Your AI Journey</span>
-              <Rocket className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span>Schedule a Call</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             
             <motion.a
@@ -117,15 +91,15 @@ export default function CTA() {
             className="mt-12 flex flex-wrap justify-center gap-8 text-white/80"
           >
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-white" />
               <span>Free Consultation</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-white" />
               <span>24/7 Support</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-white" />
               <span>Custom Solutions</span>
             </div>
           </motion.div>

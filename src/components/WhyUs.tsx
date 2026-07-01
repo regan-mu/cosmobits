@@ -95,7 +95,7 @@ export default function WhyUs() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ y: -5 }}
               className={`group relative rounded-3xl p-8 transition-all duration-300 ${
                 reason.highlight === 'ai'
                   ? 'bg-gradient-to-br from-[#150F33] to-[#2A1F5C] text-white shadow-2xl shadow-[#150F33]/20'
@@ -104,7 +104,7 @@ export default function WhyUs() {
             >
               {/* AI Highlight Glow */}
               {reason.highlight === 'ai' && (
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C496C4]/10 to-[#A855F7]/10 rounded-3xl animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#C496C4]/10 to-[#A855F7]/10 rounded-3xl" />
               )}
               
               <div className="relative z-10">

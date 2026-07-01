@@ -176,7 +176,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h4 className="text-white font-semibold text-lg mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-                Stay Updated with AI Trends
+                Stay in the Loop
               </h4>
               <p className="text-white/60">
                 Get the latest insights on AI and technology delivered to your inbox.

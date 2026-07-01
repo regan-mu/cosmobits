@@ -109,7 +109,7 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }: {
       <div className="relative p-8">
         {/* Icon */}
         <motion.div
-          whileHover={{ scale: 1.1, rotate: 5 }}
+          whileHover={{ scale: 1.05 }}
           className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg`}
           style={{ boxShadow: `0 10px 40px ${service.color}30` }}
         >
@@ -157,11 +157,6 @@ const ServiceCard = ({ service, index, isExpanded, onToggle }: {
         </motion.button>
       </div>
 
-      {/* Decorative Elements */}
-      <div 
-        className="absolute -bottom-20 -right-20 w-40 h-40 rounded-full opacity-10"
-        style={{ background: `radial-gradient(circle, ${service.color}, transparent)` }}
-      />
     </motion.div>
   );
 };

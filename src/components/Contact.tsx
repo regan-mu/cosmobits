@@ -162,8 +162,7 @@ export default function Contact() {
           </div>
           
           <h2 className="heading-lg text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-            Let&apos;s Build Something{' '}
-            <span className="text-gradient">Amazing Together</span>
+            Get in Touch
           </h2>
           <p className="body-lg text-white/70 max-w-2xl mx-auto">
             Ready to transform your business with AI and cutting-edge technology? 

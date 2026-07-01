@@ -4,7 +4,6 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { 
   Brain, 
-  Sparkles, 
   Bot, 
   LineChart, 
   MessageSquareText, 
@@ -73,16 +72,14 @@ export default function AISection() {
       <div className="bg-linear-to-b from-primary-dark via-primary-medium to-primary-light section-padding relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-30" />
         
-        {/* Animated Background Elements */}
-        <motion.div
+        {/* Static Background Elements */}
+        <div
           className="absolute top-20 left-10 w-64 h-64 rounded-full bg-ai-glow/10 blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity }}
+          style={{ opacity: 0.1 }}
         />
-        <motion.div
+        <div
           className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-accent/10 blur-3xl"
-          animate={{ scale: [1.2, 1, 1.2], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 6, repeat: Infinity }}
+          style={{ opacity: 0.1 }}
         />
 
         <div className="container-custom relative z-10">
@@ -100,31 +97,16 @@ export default function AISection() {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-linear-to-r from-ai-glow/20 to-accent/20 border border-ai-glow/40 mb-8"
             >
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-              >
-                <Brain className="w-5 h-5 text-ai-glow" />
-              </motion.div>
+              <Brain className="w-5 h-5 text-ai-glow" />
               <span className="text-accent-light font-medium">Artificial Intelligence Solutions</span>
-              <Sparkles className="w-4 h-4 text-highlight" />
             </motion.div>
             
             <h2 className="heading-lg text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-              Supercharge Your Business with{' '}
-              <span className="relative">
-                <span className="text-gradient-ai">AI</span>
-                <motion.div
-                  className="absolute -inset-2 rounded-lg bg-ai-glow/20 blur-xl -z-10"
-                  animate={{ opacity: [0.3, 0.6, 0.3] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-              </span>
+              <span className="text-gradient-ai">AI</span> Solutions Built for Your Workflow
             </h2>
             <p className="body-lg text-white/70 max-w-3xl mx-auto">
-              Don&apos;t get left behind in the AI revolution. Our expert team helps you implement 
-              intelligent solutions that automate processes, unlock insights, and create competitive 
-              advantages that were impossible just years ago.
+              Our team implements intelligent solutions that automate processes, unlock insights, 
+              and create competitive advantages tailored to your business.
             </p>
           </motion.div>
 
@@ -170,13 +152,12 @@ export default function AISection() {
                 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <motion.div
+                  <div
                     className="w-14 h-14 rounded-xl bg-linear-to-br from-ai-glow to-accent flex items-center justify-center mb-6"
-                    whileHover={{ rotate: 5, scale: 1.1 }}
                     style={{ boxShadow: '0 0 30px rgba(168,85,247,0.3)' }}
                   >
                     <service.icon className="w-7 h-7 text-white" />
-                  </motion.div>
+                  </div>
 
                   <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'var(--font-display)' }}>
                     {service.title}
@@ -210,10 +191,10 @@ export default function AISection() {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="px-8 py-4 rounded-full bg-linear-to-r from-ai-glow to-accent text-white font-semibold inline-flex items-center justify-center gap-2 group"
-                style={{ boxShadow: '0 0 40px rgba(168,85,247,0.4)' }}
+                style={{ boxShadow: '0 0 20px rgba(168,85,247,0.4)' }}
               >
                 <Zap className="w-5 h-5" />
-                Start Your AI Journey
+                Book a Free Consultation
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </div>

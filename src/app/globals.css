@@ -278,10 +278,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 30px rgba(196, 150, 196, 0.4);
 }
 
-.glow-ai {
-  box-shadow: 0 0 50px rgba(168, 85, 247, 0.5);
-}
-
 .glow-text {
   text-shadow: 0 0 40px rgba(196, 150, 196, 0.5);
 }
@@ -305,48 +301,6 @@ h1, h2, h3, h4, h5, h6 {
     linear-gradient(rgba(196, 150, 196, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(196, 150, 196, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
-}
-
-/* Floating Animation */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* Pulse Glow Animation */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(196, 150, 196, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(196, 150, 196, 0.6);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-/* AI Pulse Animation */
-@keyframes ai-pulse {
-  0%, 100% {
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 60px rgba(168, 85, 247, 0.8);
-  }
-}
-
-.animate-ai-pulse {
-  animation: ai-pulse 2s ease-in-out infinite;
 }
 
 /* Gradient Border */
@@ -433,8 +387,8 @@ input:focus, textarea:focus, select:focus {
 .container-custom {
   max-width: 1400px;
   margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -446,8 +400,8 @@ input:focus, textarea:focus, select:focus {
 
 /* Responsive Typography */
 .heading-xl {
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.1;
+  font-size: clamp(2.25rem, 5.75vw, 4.75rem);
+  line-height: 1.2;
 }
 
 .heading-lg {
