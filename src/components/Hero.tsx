@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, ChevronDown, Brain, Bot } from 'lucide-react';
+import { ArrowRight, ChevronDown, Bot } from 'lucide-react';
 import CounterAnimation from './CounterAnimation';
 
 export default function Hero() {
@@ -61,8 +61,8 @@ export default function Hero() {
             </motion.div>
 
             {/* Main Headline */}
-            <h1 className="heading-xl text-white mb-6" style={{ fontFamily: 'var(--font-display)' }}>
-              Intelligent Solutions.
+            <h1 className="heading-xl text-white mb-6 font-bold uppercase" style={{ fontFamily: 'var(--font-display)' }}>
+              Intelligent Solutions,
               <br />
               <span className="text-gradient-ai">Lasting Impact.</span>
             </h1>
