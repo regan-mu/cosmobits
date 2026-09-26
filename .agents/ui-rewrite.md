@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 26 Sep 2026 (owner):** a tall variant of the services graphic fills the height of the service cards on desktop (7.7).
 **Revision, 26 Sep 2026 (owner):** section headers are centred with their intro, as on the previous site (5.4, 7.2).
 
 ---
@@ -951,6 +952,7 @@ A white bit echoes the logo.
 - Inline it as `components/ServicesStack.tsx`.
 - Keep its `<title>` so screen readers get the summary. It's informative, not decorative.
 - Place it per Block 3.
+- **Two variants (owner request, 26 Sep 2026):** from 1024px up, a tall variant (`public/services-stack-tall.svg`, 620×1040, exported as `ServicesStackTall`) fills the full height of the four service cards beside it. It has the same parts with taller layers and a little more detail (extra interface lines, three rows of instances, five rack rows). Below 1024px the original short graphic sits above the cards.
 - No halo sits behind it, and no animation.
 
 **Glassmorphism:** the brand guidelines list glassmorphism as a brand style. The AI layer in this graphic is **the only glass element on the site**. It uses the same rule as the halos: one deliberate use, not a style applied to every card.

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="1040" viewBox="0 0 620 1040" role="img" aria-labelledby="cbStackTallTitle" class="cb-services-stack">
+  <title id="cbStackTallTitle">Four layers handled by one team: hardware and licences, cloud infrastructure, software, and AI</title>
+  <!-- CosmoBits "What we do" graphic, tall variant for desktop (sits beside the four service cards).
+       Same parts as services-stack.svg with taller layers. The AI layer is the site's one glassmorphism element (spec 7.7). -->
+  <g stroke="#C496C4" stroke-opacity="0.35" stroke-width="1.5">
+    <line x1="596" y1="167.5" x2="596" y2="932.5"/>
+    <line x1="570" y1="167.5" x2="596" y2="167.5"/>
+    <line x1="570" y1="422.5" x2="596" y2="422.5"/>
+    <line x1="570" y1="677.5" x2="596" y2="677.5"/>
+    <line x1="570" y1="932.5" x2="596" y2="932.5"/>
+  </g>
+  <g fill="#C496C4">
+    <circle cx="596" cy="167.5" r="5"/>
+    <circle cx="596" cy="422.5" r="5"/>
+    <circle cx="596" cy="677.5" r="5"/>
+    <circle cx="596" cy="932.5" r="5"/>
+  </g>
+  <rect x="522" y="14" width="48" height="48" fill="#FFFFFF"/>
+
+  <!-- AI: glass layer -->
+  <rect x="190" y="70" width="380" height="195" rx="10" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.3"/>
+  <g stroke="#C496C4" stroke-opacity="0.55" stroke-width="1.5">
+    <line x1="240" y1="167.5" x2="310" y2="115.5"/>
+    <line x1="240" y1="167.5" x2="310" y2="219.5"/>
+    <line x1="310" y1="115.5" x2="385" y2="167.5"/>
+    <line x1="310" y1="219.5" x2="385" y2="167.5"/>
+    <line x1="385" y1="167.5" x2="462" y2="117.5"/>
+    <line x1="385" y1="167.5" x2="462" y2="217.5"/>
+    <line x1="462" y1="117.5" x2="532" y2="167.5"/>
+    <line x1="462" y1="217.5" x2="532" y2="167.5"/>
+    <line x1="240" y1="167.5" x2="310" y2="167.5"/>
+    <line x1="310" y1="167.5" x2="385" y2="167.5"/>
+    <line x1="385" y1="167.5" x2="462" y2="167.5"/>
+    <line x1="462" y1="167.5" x2="532" y2="167.5"/>
+  </g>
+  <g fill="#C496C4">
+    <circle cx="240" cy="167.5" r="5"/>
+    <circle cx="310" cy="115.5" r="5"/>
+    <circle cx="310" cy="219.5" r="5"/>
+    <circle cx="462" cy="117.5" r="5"/>
+    <circle cx="462" cy="217.5" r="5"/>
+    <circle cx="532" cy="167.5" r="5"/>
+    <circle cx="310" cy="167.5" r="5"/>
+    <circle cx="462" cy="167.5" r="5"/>
+  </g>
+  <circle cx="385" cy="167.5" r="7" fill="#FFFFFF"/>
+
+  <!-- Software -->
+  <rect x="190" y="325" width="380" height="195" rx="10" fill="#A879B1"/>
+  <rect x="210" y="345" width="70" height="155" rx="4" fill="#150F33" fill-opacity="0.22"/>
+  <rect x="300" y="351" width="170" height="10" rx="5" fill="#150F33" fill-opacity="0.45"/>
+  <rect x="300" y="371" width="210" height="10" rx="5" fill="#150F33" fill-opacity="0.28"/>
+  <rect x="300" y="391" width="130" height="10" rx="5" fill="#150F33" fill-opacity="0.28"/>
+  <rect x="300" y="421" width="250" height="44" rx="4" fill="#150F33" fill-opacity="0.16"/>
+  <rect x="314" y="433" width="150" height="8" rx="4" fill="#150F33" fill-opacity="0.3"/>
+  <rect x="314" y="449" width="100" height="8" rx="4" fill="#150F33" fill-opacity="0.22"/>
+  <rect x="470" y="476" width="70" height="24" rx="4" fill="#FFFFFF" fill-opacity="0.85"/>
+
+  <!-- Cloud infrastructure -->
+  <rect x="190.75" y="580.75" width="378.5" height="193.5" rx="10" fill="none" stroke="#C496C4" stroke-width="1.5"/>
+  <rect x="214" y="605.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="270" y="605.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="326.75" y="606.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="382" y="605.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="438.75" y="606.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="494.75" y="606.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="214" y="659.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="270.75" y="660.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="326" y="659.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="382" y="659.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="438" y="659.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="494.75" y="660.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="214.75" y="714.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="270" y="713.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="326.75" y="714.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="382.75" y="714.25" width="34.5" height="34.5" rx="3" fill="none" stroke="#C496C4" stroke-opacity="0.6" stroke-width="1.5"/>
+  <rect x="438" y="713.5" width="36" height="36" rx="3" fill="#C496C4"/>
+  <rect x="494" y="713.5" width="36" height="36" rx="3" fill="#C496C4"/>
+
+  <!-- Hardware & licences (logo's cut corner) -->
+  <path d="M200,835 H560 Q570,835 570,845 V1030 H242 L198,988 Q190,980 190,968 V845 Q190,835 200,835 Z" fill="#453A7D"/>
+  <g fill="#150F33" fill-opacity="0.5">
+    <rect x="250" y="861" width="240" height="12" rx="3"/>
+    <rect x="250" y="891" width="240" height="12" rx="3"/>
+    <rect x="250" y="921" width="240" height="12" rx="3"/>
+    <rect x="250" y="951" width="240" height="12" rx="3"/>
+    <rect x="250" y="981" width="240" height="12" rx="3"/>
+  </g>
+  <circle cx="530" cy="867" r="4" fill="#FFFFFF"/>
+  <circle cx="530" cy="897" r="4" fill="#C496C4"/>
+  <circle cx="530" cy="927" r="4" fill="#C496C4"/>
+  <circle cx="530" cy="957" r="4" fill="#C496C4"/>
+  <circle cx="530" cy="987" r="4" fill="#C496C4"/>
+
+  <g font-family="'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif" font-size="15" font-weight="500" fill="#FFFFFF" fill-opacity="0.74" text-anchor="end">
+    <text x="172" y="172.5">AI</text>
+    <text x="172" y="427.5">Software</text>
+    <text x="172" y="682.5">Cloud infrastructure</text>
+    <text x="172" y="937.5">Hardware &amp; licences</text>
+  </g>
+</svg>

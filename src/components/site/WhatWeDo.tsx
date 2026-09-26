@@ -2,7 +2,7 @@ import { CheckCircle2, Cloud, Code2, KeyRound, Server, type LucideIcon } from 'l
 import { SERVICES } from '@/content/site';
 import { BOOKING } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
-import ServicesStack from './ServicesStack';
+import ServicesStack, { ServicesStackTall } from './ServicesStack';
 
 // One line-icon set, one stroke weight, neutral colour (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
@@ -28,8 +28,10 @@ export default function WhatWeDo() {
         </header>
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-6">
-          <div className="lg:col-span-5">
-            <ServicesStack className="mx-auto block h-auto w-full max-w-[480px] lg:sticky lg:top-24 lg:max-w-none" />
+          {/* Short graphic above the cards below 1024px; tall one beside them, filling their height, above */}
+          <div className="lg:relative lg:col-span-5">
+            <ServicesStack className="mx-auto block h-auto w-full max-w-[480px] lg:hidden" />
+            <ServicesStackTall className="absolute inset-0 hidden h-full w-full lg:block" />
           </div>
 
           <ul className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
