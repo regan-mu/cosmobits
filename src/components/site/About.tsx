@@ -33,8 +33,8 @@ export default function About() {
           </h2>
         </header>
 
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="cb-prose space-y-5 text-lg lg:self-center">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
+          <div className="cb-prose space-y-5 text-lg lg:col-span-5 lg:self-center">
             <p>
               CosmoBits Technologies is a technology company based at {CONTACT.address.line1.split(',')[0]} in{' '}
               {CONTACT.address.area}, {CONTACT.address.city}. We design, build and run the systems organisations
@@ -53,9 +53,10 @@ export default function About() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:p-8">
+          <div className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:col-span-7 lg:p-8">
             <h3 className="cb-h3">The Principles That Guide Us</h3>
-            <ul className="mt-6 space-y-5">
+            {/* Two columns wherever the card is wide enough; one while it shares a narrow row (1024–1279px) */}
+            <ul className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {PRINCIPLES.map((p) => {
                 const Icon = ICONS[p.id];
                 return (
