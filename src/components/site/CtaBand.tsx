@@ -12,7 +12,7 @@ export default function CtaBand() {
 
       <div className="cb-container flex flex-col items-center text-center">
         <h2 id="cta-heading" className="cb-h2">
-          Tell us what you&apos;re working on.
+          Tell Us What You&apos;re Working On.
         </h2>
         <p className="cb-lead mt-3 max-w-none">We&apos;ll reply {CONTACT.replyTime}.</p>
         <BookingLink className="cb-btn cb-btn--lg mt-8" />

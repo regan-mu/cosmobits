@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 26 Sep 2026 (owner):** section titles use title case (5.4), and Block 5 is renamed "How We Run Our Projects" with numbered step cards on a colour band and a highlighted card (7.3, 6.1, 6.5).
 **Revision, 26 Sep 2026 (owner):** AI capabilities return to the previous site's card grid, restyled (Block 4, 7.2).
 **Revision, 26 Sep 2026 (owner):** a tall variant of the services graphic fills the height of the service cards on desktop (7.7).
 **Revision, 26 Sep 2026 (owner):** section headers are centred with their intro, as on the previous site (5.4, 7.2).
@@ -239,7 +240,7 @@ Visitors in 2026 recognise generated sites quickly. The signals are mostly patte
 |---|---|---|---|---|
 | S1 | Eyebrow label above every H2 | "Who We Are", "Our Values", "Why Choose Us", "Artificial Intelligence Solutions", "Our Services", "Client Success Stories", "Get In Touch" [VERIFIED] | A tracked label over every heading is the most common template habit. Here some labels just repeat the heading ("Get In Touch" above "Get in Touch"). | Remove all section eyebrows. The H2 does the job alone. |
 | S2 | Icon badge beside each section header | Every section [owner-reported; INVENTORY to locate] | Adds decoration without meaning, and makes each section open the same way. | Remove all section-header icons (owner request). See 7.2. |
-| S3 | Mission + Vision + five Values + six "Why Choose Us" cards | About → Values → Why Choose Us [VERIFIED] | Four blocks all say "we're innovative, excellent and client-focused". Stacking them is filler. | Keep a short About paragraph on the homepage. Move Mission/Vision to `/about` (tender and procurement documents often ask for them). Cut Values to one line or drop it. Replace Why Choose Us with "How a project runs" (7.3). |
+| S3 | Mission + Vision + five Values + six "Why Choose Us" cards | About → Values → Why Choose Us [VERIFIED] | Four blocks all say "we're innovative, excellent and client-focused". Stacking them is filler. | Keep a short About paragraph on the homepage. Move Mission/Vision to `/about` (tender and procurement documents often ask for them). Cut Values to one line or drop it. Replace Why Choose Us with "How We Run Our Projects" (7.3). |
 | S4 | Grids of identical icon cards | Values (5), Why Choose Us (6), AI solutions (6), Services (4) [VERIFIED counts; INVENTORY for styling] | Twenty-one cards with the same shape, radius and shadow is the stock SaaS kit, and a 5-card grid always leaves an orphan. | Vary the form by content: services as four substantial blocks, AI capabilities as a compact two-column list, process as a numbered sequence (it genuinely is one), About as prose with a photo. |
 | S5 | Big-number stat rows | Hero, About, AI section [VERIFIED] | "Big number + small label" is the default hero filler, and here the numbers are 0 (3.1). | One stats band, real numbers only (3.1). |
 | S6 | Scroll-triggered fade/slide-up on every section | [INVENTORY] | Uniform entrance animation on every block is a generated-site signature and delays content. | Remove section entrance animations. Allow a single hero load sequence at most, disabled under reduced motion. Keep motion that responds to user action (menu open, accordion, form feedback). |
@@ -254,7 +255,7 @@ Visitors in 2026 recognise generated sites quickly. The signals are mostly patte
 | C1 | Stock superlatives | "cutting-edge" (×5+), "leading technology solutions provider", "premier", "world-class", "highest standards", "exceptional results" | Delete. Replace with something checkable: a tool, a sector, a location or a process step. |
 | C2 | Empty promises | "on time, every time", "superhuman accuracy", "Your success is our success", "exceeds expectations" | Delete. If there's a real commitment, state it precisely ("We reply to every enquiry within one working day"), and only if true. |
 | C3 | Abstract nouns doing all the work | "digital transformation", "sustainable growth", "digital potential", "bridges the digital divide", "enduring value" | Name what actually happens: "move your servers to AWS", "a WhatsApp bot that answers order questions", "a forecast of next month's stock needs". |
-| C4 | Title Case headings | "Driving Digital Transformation Across Africa", "The Principles That Guide Us" | Sentence case throughout. It reads as more current and less like a template. |
+| C4 | Title Case headings | "Driving Digital Transformation Across Africa", "The Principles That Guide Us" | *Superseded by owner preference (26 Sep 2026):* section titles use title case (5.4); card titles, buttons and navigation use sentence case. |
 | C5 | Headline pattern "Adjective Noun, Adjective Noun." | Hero H1 | This is the locked tagline and stays verbatim. It moves from H1 to a brand line, and a concrete H1 takes the headline role (7.3, block 1). |
 | C6 | Seven CTA labels for one action | Get Started · Get in Touch · Start Your Project · Book a Free Consultation · Schedule a Consultation · Schedule a Call · Send Message | One primary label everywhere (8.3). |
 | C7 | Placeholder-sounding testimonials | See 3.3 | Removed. |
@@ -362,7 +363,7 @@ Use a 1.25 ratio (major third) on a 17px body. Sizes are in rem at 16px root.
 | `brandline` | 1rem–1.125rem | 600 | 1.3 | 0.01em | The tagline where shown as a brand line |
 
 Rules:
-- Sentence case for all headings, buttons and navigation. The tagline keeps its own capitalisation because it's locked.
+- Section titles (H2) and page titles use title case: capitalise the words that matter and keep short connecting words lower case unless they come first or last ("What We Do", "AI in Practice", "How We Run Our Projects"). Owner preference, 26 Sep 2026. Card titles, buttons, navigation and body headings stay in sentence case. The tagline keeps its own capitalisation because it's locked.
 - Paragraph measure is capped at `max-width: 65ch`, and hero and section intros at `40ch`.
 - Section headers (H2 plus the optional intro) are centred, with the intro capped at 42rem (owner preference, 26 Sep 2026, carried over from the previous site). A section's closing CTA line is centred to match. Body text, lists, cards and the hero stay left-aligned.
 - Use no more than three weights: 400, 600 and 700.
@@ -416,8 +417,8 @@ A professional site shows the brand colour in a few deliberate places on a mostl
 | `#363150` on `#150F33` | 1.5:1 | Decorative dividers only; never the only boundary of a control |
 
 **Usage budget:**
-- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, and step numbers in "How a project runs".
-- `--color-brand-deep` and `--color-brand-mauve` appear only inside the two graphics (7.6, 7.7) and the halos (6.3).
+- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, and the step number circles in "How We Run Our Projects".
+- `--color-brand-deep` and `--color-brand-mauve` appear only inside the two graphics (7.6, 7.7) and the halos (6.3), plus `--color-brand-deep` as the fill of the highlighted step card in Block 5 (owner preference).
 - Headings, body text, icons, borders and card backgrounds stay neutral.
 
 **Remove:**
@@ -596,7 +597,7 @@ The logo is built from squares with one rounded corner, so circles are used as a
   - buttons (6px radius);
   - cards (10–12px);
   - icon backgrounds;
-  - step numbers;
+  - step numbers, except the numbered circles in Block 5 (owner preference, 26 Sep 2026);
   - badges;
   - avatar placeholders for people who don't have a real photo (show no avatar instead).
 - **No other decorative circles, rings, orbits, dots or blobs.**
@@ -649,7 +650,7 @@ Icons that remain elsewhere must carry meaning:
 ### 7.3 Proposed homepage
 
 The page keeps the same overall flow the owner knows: hero, then proof, what we do, AI, about, and contact. Duplication is removed, and three sections are added:
-- "How a project runs",
+- "How We Run Our Projects",
 - "How we handle your data" (security),
 - "Selected work".
 
@@ -716,7 +717,7 @@ An approved mockup of this block exists on the design canvas ("Concept B: built 
 
 #### Block 3: What we do
 
-- **H2:** "What we do"
+- **H2:** "What We Do"
 - **Intro (draft):** "We can cover a project end to end: the devices and licences, the cloud infrastructure it runs on, the software your team uses, and the AI on top."
 - **Layout:**
   - Desktop (≥1024px): the services-stack graphic (7.7) takes 5 columns on the left, and the four service blocks take 7 columns on the right as a 2×2 grid.
@@ -748,7 +749,7 @@ AI gets its own block (4), so it isn't one of the four here.
 
 #### Block 4: AI in practice
 
-- **H2:** "AI in practice"
+- **H2:** "AI in Practice"
 - **Lead:** "Most of our AI work starts with a problem a team already has: too many repetitive customer questions, documents typed up by hand, stock that runs out without warning."
 - **Capabilities:** a card grid (three columns on desktop, two on tablet, one on mobile), as on the previous site (owner preference, 26 Sep 2026), restyled in the new language: flat 12px-radius cards with a 1px `--color-border` on `--color-surface`, one neutral line icon, the name (h4), one line, and three checked points using the same check icon as the service blocks. No gradient icon tiles, glows, hover lifts or tags.
   - **Chatbots and assistants:** answer customer questions on your website or WhatsApp, in English and Swahili `{{OWNER: confirm languages}}`, handing over to staff when needed.
@@ -761,13 +762,15 @@ AI gets its own block (4), so it isn't one of the four here.
 - **Link:** "How we handle your data" → Block 6. Buyers' first question about AI is where their data goes.
 - **Remove:** the four ROI/percentage counters and the tag rows.
 
-#### Block 5: How a project runs
+#### Block 5: How We Run Our Projects
 
 This replaces "Why Choose Us" and "Our Values". It's a genuine sequence, so numbering is appropriate. Each step names what the client actually receives, because procurement readers and evaluators look for deliverables, not adjectives.
 
-- **H2:** "How a project runs"
-- **Layout:** four columns on desktop, a vertical list on mobile.
-- **Each step:** number (in `--color-brand`), title, one or two sentences, and a small muted "Typically …" line.
+- **H2:** "How We Run Our Projects" (owner, 26 Sep 2026; was "How a project runs")
+- **Layout (owner-supplied reference pattern, 26 Sep 2026):** step cards, four across on wide screens (from 1280px), two across on tablets, one column on mobile. A `--color-surface` band runs behind the section header and the top of the first row of cards; the rest of the section is `--color-bg`.
+- **Each step card:** a 48px circle in `--color-brand` with the step number in `--color-brand-ink`, the title (h4), one or two sentences in muted text, and a small "Typically …" line when durations are confirmed. 12px radius, 1px `--color-border`, `--color-bg` fill.
+- **Highlighted card:** one card is filled with `--color-brand-deep` and its text switches to white. The first card is highlighted by default; on pointer devices the highlight moves to the card under the pointer.
+- Don't add steps to match a longer reference: only steps that describe how CosmoBits actually works.
 
 | Step | Title | Description (draft; owner confirms every promise) | Typical duration |
 |---|---|---|---|
@@ -782,7 +785,7 @@ This replaces "Why Choose Us" and "Our Values". It's a genuine sequence, so numb
 
 This block is adapted from the competitor review (Appendix A). It answers the question every AI buyer has, in plain text.
 
-- **H2:** "How we handle your data"
+- **H2:** "How We Handle Your Data"
 - **Lead (draft):** "AI and software projects mean giving a vendor access to your data. Here's what we do with it."
 - **Four items** in a two-column list, bold title plus one or two sentences each, with no icons and no badge images. **Every item must be confirmed by the owner before launch**; drop any item that isn't standard practice.
   - **Kenya's Data Protection Act, 2019:** we process client personal data under a written data processing agreement, signed before work starts. `{{OWNER: confirm DPAs are standard}}`
@@ -801,7 +804,7 @@ This block is adapted from the competitor review (Appendix A). It answers the qu
 
 The first case study is in progress. The agent builds the template and data model now; the section and `/work` stay hidden until at least one case study is published. One strong case study is enough to switch the section on.
 
-- **H2:** "Selected work"
+- **H2:** "Selected Work"
 - **Card format** (borrowed structure; see Appendix A):
   - **Tags:** sector and country (e.g. "Logistics · Kenya").
   - **Client:** name and logo with written permission. If the client prefers, use an anonymised description instead ("a Nairobi logistics company").
@@ -823,7 +826,7 @@ The first case study is in progress. The agent builds the template and data mode
 
 #### Block 9: Final CTA band
 
-- **Heading:** "Tell us what you're working on."
+- **Heading:** "Tell Us What You're Working On."
 - **Line:** "We reply to every enquiry within one working day." `{{OWNER: confirm; current site says 24 hours}}`
 - **Button:** "Book a consultation". Behind the band go Halo #2 and the mirrored CTA arc (6.5); there's no mesh here.
 - **Procurement line (small, muted, below the button):** "Buying through a tender or procurement process? Download our company profile (PDF)."
@@ -1034,11 +1037,11 @@ Retire these labels: Get Started, Get in Touch (as a button), Start Your Project
 |---|---|---|
 | About heading | Driving Digital Transformation Across Africa | About CosmoBits |
 | About intro | CosmoBits Technologies is a leading technology solutions provider dedicated to empowering businesses with innovative AI and digital tools that drive sustainable growth. | See Block 8 draft. |
-| AI heading | AI Solutions Built for Your Workflow | AI in practice |
-| Services heading | Technology Solutions | What we do |
+| AI heading | AI Solutions Built for Your Workflow | AI in Practice |
+| Services heading | Technology Solutions | What We Do |
 | Services intro | Beyond AI, we provide comprehensive technology services that power your digital infrastructure and drive business growth. | Remove; the four blocks explain themselves. |
 | Services CTA | Not sure which service is right for you? Schedule a Consultation | "Not sure where to start? Book a consultation and we'll point you the right way." |
-| Final CTA | Let's Talk About Your Next Project / Join the growing number of businesses leveraging AI… | Tell us what you're working on. |
+| Final CTA | Let's Talk About Your Next Project / Join the growing number of businesses leveraging AI… | Tell Us What You're Working On. |
 | Contact intro | Ready to transform your business with AI and cutting-edge technology? Get in touch with our team of experts today. | Remove; the heading "Contact" and the form are enough. |
 | Footer blurb | Empowering businesses across Africa with innovative AI solutions and cutting-edge technology. Your trusted partner for digital transformation. | Use the brandline (tagline) only. |
 | Mission (move to /about) | To deliver comprehensive technology solutions … bridges the digital divide while maintaining the highest standards of innovation and service excellence. | "To give African businesses the AI, software and infrastructure they need to compete, built properly and supported after launch." `{{OWNER: approve or edit}}` |
@@ -1060,7 +1063,7 @@ No SEO tool (Ahrefs, Semrush, Search Console) was connected for this audit, so s
 | Home | Title "CosmoBits Technologies \| AI-Powered Digital Transformation" (58 chars) has no service or location terms | High | `AI, Software & Cloud Solutions in Nairobi, Kenya \| CosmoBits` (60 chars). |
 | Home | Meta description is 217 chars (gets truncated around 155) and leans on "cutting-edge" | Medium | "AI, custom software, cloud and IT equipment for businesses in Kenya and across Africa. Nairobi team, free first consultation. Talk to CosmoBits." (144 chars) |
 | Home | H1 is the keyword-free tagline | Medium | Concrete H1 (Block 1). |
-| Home | Title Case headings and duplicate eyebrow/H2 "Get In Touch / Get in Touch" | Low | Sentence case; remove eyebrows. |
+| Home | Title Case headings and duplicate eyebrow/H2 "Get In Touch / Get in Touch" | Low | Title case for section titles only (5.4); remove eyebrows. |
 | Home | `meta keywords` present (ignored by Google, and reveals targeting to competitors) | Low | Remove. |
 | Home | `og:locale` = `en_US` | Low | `en_KE`. |
 | Home | Footer logo requested through `_next/image` at `w=3840` | Medium | Set explicit `width`/`height` and `sizes` so a ~160–200px logo is served at a matching size. Use SVG if available. |

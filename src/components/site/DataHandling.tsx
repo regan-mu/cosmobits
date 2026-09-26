@@ -10,7 +10,7 @@ export default function DataHandling() {
       <div className="cb-container">
         <header className="cb-section-header">
           <h2 id="data-heading" className="cb-h2">
-            How we handle your data
+            How We Handle Your Data
           </h2>
           <p className="cb-lead">
             AI and software projects mean giving a vendor access to your data. Here&apos;s what we do with it.

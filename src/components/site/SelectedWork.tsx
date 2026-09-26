@@ -14,7 +14,7 @@ export default function SelectedWork() {
       <div className="cb-container">
         <header className="cb-section-header">
           <h2 id="work-heading" className="cb-h2">
-            Selected work
+            Selected Work
           </h2>
         </header>
 

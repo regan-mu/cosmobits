@@ -5,7 +5,7 @@ import { CONTACT } from '@/lib/contact';
 // Draft (spec 9.5): short website terms, pending legal review. Kept out of
 // search results until the reviewed version is published.
 export const metadata: Metadata = {
-  title: 'Terms of service',
+  title: 'Terms of Service',
   description: 'Terms for using the CosmoBits Technologies website.',
   alternates: { canonical: '/terms' },
   robots: { index: false, follow: true },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of service" updated="26 September 2026">
+    <LegalPage title="Terms of Service" updated="26 September 2026">
       <p>
         These terms cover your use of this website. Work we do for clients is covered by the written agreement
         for that project, not by these terms.

@@ -37,7 +37,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 
 - [x] 5 Schibsted Grotesk via `next/font`, one family, other font imports removed
 - [x] 5.3 `lang="en-KE"`, `og:locale` `en_KE`
-- [x] 5.4 Type scale and rules (sentence case, 65ch/40ch measures, weights 400/600/700, no all caps, underlined body links)
+- [x] 5.4 Type scale and rules (title case for section titles per owner, sentence case elsewhere, 65ch/40ch measures, weights 400/600/700, no all caps, underlined body links)
 - [x] 6.1 Colour tokens; off-palette colours removed from the public site *(the admin dashboard keeps the old brand colours as admin-only tokens)*
 - [x] 6.1 No gradient text or gradient buttons
 - [x] 6.3/6.4 `Halo` component; exactly 2 on the homepage
@@ -59,7 +59,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] Block 3 What we do + `ServicesStack` graphic, 4 service blocks
 - [ ] Block 3 "About {service}" links *(behind `SHOW_SERVICE_PAGES` until PR 4)*
 - [x] Block 4 AI in practice, compact 2-col list, one CTA
-- [x] Block 5 How a project runs, 4 numbered steps
+- [x] Block 5 How We Run Our Projects: 4 numbered step cards on a colour band, highlighted card (owner reference pattern)
 - [ ] Block 5 "Typically …" duration lines *(behind `SHOW_STEP_DURATIONS`)*
 - [ ] Block 5 "You own the code we write for you." *(behind `SHOW_CODE_OWNERSHIP`)*
 - [~] Block 6 How we handle your data *(built; behind `SHOW_DATA_HANDLING` until every item is owner-confirmed)*

@@ -588,6 +588,46 @@ select.cb-field {
   from { opacity: 0; transform: translateX(40px); }
 }
 
+/* How we run our projects (7.3 block 5) ------------------------------------- */
+
+/* A surface-colour band behind the header and the top of the first row of cards */
+.cb-steps-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.cb-steps-section::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: calc(clamp(4rem, 3rem + 4vw, 7.5rem) + 13rem);
+  background: var(--color-cb-surface);
+}
+
+.cb-step {
+  border-color: var(--color-cb-border);
+  background: var(--color-cb-bg);
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.cb-step__text {
+  color: var(--color-cb-muted);
+  transition: color 200ms ease;
+}
+
+/* Highlighted card: the first one by default, then the one under the pointer */
+.cb-steps:not(:hover) .cb-step:first-child,
+.cb-step:hover {
+  border-color: var(--color-cb-brand-deep);
+  background: var(--color-cb-brand-deep);
+}
+
+.cb-steps:not(:hover) .cb-step:first-child .cb-step__text,
+.cb-step:hover .cb-step__text {
+  color: var(--color-cb-text);
+}
+
 /* Final CTA band (7.3 block 9) ------------------------------------------- */
 
 .cb-cta-band {

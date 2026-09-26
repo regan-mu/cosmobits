@@ -19,7 +19,7 @@ export default function WhatWeDo() {
       <div className="cb-container">
         <header className="cb-section-header">
           <h2 id="services-heading" className="cb-h2">
-            What we do
+            What We Do
           </h2>
           <p className="cb-lead">
             We can cover a project end to end: the devices and licences, the cloud infrastructure it runs on, the software

@@ -23,7 +23,7 @@ export default function AIPractice() {
       <div className="cb-container">
         <header className="cb-section-header">
           <h2 id="ai-heading" className="cb-h2">
-            AI in practice
+            AI in Practice
           </h2>
           <p className="cb-lead">
             Most of our AI work starts with a problem a team already has: too many repetitive customer

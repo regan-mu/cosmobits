@@ -5,7 +5,7 @@ import { CONTACT } from '@/lib/contact';
 // Draft (spec 9.5): plain-language structure, pending legal review. Kept out of
 // search results until the reviewed version is published.
 export const metadata: Metadata = {
-  title: 'Privacy policy',
+  title: 'Privacy Policy',
   description: 'How CosmoBits Technologies collects and uses personal data sent through this website.',
   alternates: { canonical: '/privacy' },
   robots: { index: false, follow: true },
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy policy" updated="26 September 2026">
+    <LegalPage title="Privacy Policy" updated="26 September 2026">
       <p>
         This policy explains what personal data CosmoBits Technologies collects through this website, why, and
         what you can ask us to do with it. Kenya&apos;s Data Protection Act, 2019 applies to the personal data we
