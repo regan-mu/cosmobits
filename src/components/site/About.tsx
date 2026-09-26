@@ -12,16 +12,90 @@ const ICONS: Record<string, LucideIcon> = {
   collaboration: Users,
 };
 
-// Border that shows along the middle of each side and fades out toward the
-// corners (owner preference). One mask per axis, added together, so only the
-// corners fade on both.
-const EDGE_FADE = 'transparent 8%, #000 50%, transparent 92%';
-const FADE_MASK: React.CSSProperties = {
-  maskImage: `linear-gradient(to right, ${EDGE_FADE}), linear-gradient(to bottom, ${EDGE_FADE})`,
-  maskComposite: 'add',
-  WebkitMaskImage: `linear-gradient(to right, ${EDGE_FADE}), linear-gradient(to bottom, ${EDGE_FADE})`,
-  WebkitMaskComposite: 'source-over',
-};
+/*
+ * Principle dividers (owner sketch): no box per item. A vertical line runs
+ * between the two columns and horizontal lines between the rows, crossing like
+ * a plus sign and fading out at their outer ends. With an odd count the last
+ * item spans both columns. In one-column layouts (below 640px, and 1024–1279px
+ * where the card is narrow) there are only horizontal lines, faded at both ends.
+ */
+const GAP_X = 48; // px, matches gap-x-12
+const GAP_Y = 40; // px, matches gap-y-10
+
+const fade = (direction: string, stops: string): React.CSSProperties => ({
+  maskImage: `linear-gradient(${direction}, ${stops})`,
+  WebkitMaskImage: `linear-gradient(${direction}, ${stops})`,
+});
+
+// Which layout each set of lines belongs to
+const TWO_COL = 'hidden sm:block lg:hidden xl:block';
+const ONE_COL = 'sm:hidden lg:block xl:hidden';
+
+function PrincipleDividers({ index, count }: { index: number; count: number }) {
+  const col = index % 2;
+  const row = Math.floor(index / 2);
+  const rows = Math.ceil(count / 2);
+  const spansBoth = count % 2 === 1 && index === count - 1;
+  // Last row that still has two items; the vertical line stops there
+  const lastPairRow = count % 2 === 1 ? rows - 2 : rows - 1;
+  const line = 'pointer-events-none absolute bg-cb-border-strong';
+
+  // Two columns: horizontal line under every row but the last, meeting its
+  // neighbour in the column gap; fades toward the card's outer edge only.
+  const hLine =
+    !spansBoth && row < rows - 1 ? (
+      <span
+        aria-hidden="true"
+        className={`${line} ${TWO_COL} h-px`}
+        style={{
+          bottom: -GAP_Y / 2,
+          left: col === 0 ? 0 : -GAP_X / 2,
+          right: col === 0 ? -GAP_X / 2 : 0,
+          ...fade(col === 0 ? 'to right' : 'to left', 'transparent, #000 65%'),
+        }}
+      />
+    ) : null;
+
+  // Two columns: vertical line right of the left-hand items, continuous down
+  // the rows; fades at its top and bottom ends.
+  const vLine =
+    col === 0 && !spansBoth && row <= lastPairRow ? (
+      <span
+        aria-hidden="true"
+        className={`${line} ${TWO_COL} w-px`}
+        style={{
+          right: -GAP_X / 2,
+          top: row === 0 ? 0 : -GAP_Y / 2,
+          bottom: row === lastPairRow ? 0 : -GAP_Y / 2,
+          ...(row === 0 && row === lastPairRow
+            ? fade('to bottom', 'transparent, #000 40%, #000 60%, transparent')
+            : row === 0
+              ? fade('to bottom', 'transparent, #000 65%')
+              : row === lastPairRow
+                ? fade('to top', 'transparent, #000 65%')
+                : {}),
+        }}
+      />
+    ) : null;
+
+  // One column: a line under every item but the last, faded at both ends
+  const stackLine =
+    index < count - 1 ? (
+      <span
+        aria-hidden="true"
+        className={`${line} ${ONE_COL} inset-x-0 h-px`}
+        style={{ bottom: -GAP_Y / 2, ...fade('to right', 'transparent, #000 30%, #000 70%, transparent') }}
+      />
+    ) : null;
+
+  return (
+    <>
+      {hLine}
+      {vLine}
+      {stackLine}
+    </>
+  );
+}
 
 /**
  * Block 8 (spec 7.3): who we are on the left, the principles that guide us on
@@ -67,12 +141,16 @@ export default function About() {
           <div className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:col-span-7 lg:p-8">
             <h3 className="cb-h3">The Principles That Guide Us</h3>
             {/* Two columns wherever the card is wide enough; one while it shares a narrow row (1024–1279px) */}
-            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-              {PRINCIPLES.map((p) => {
+            <ul className="mt-8 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {PRINCIPLES.map((p, i) => {
                 const Icon = ICONS[p.id];
+                const spansBoth = PRINCIPLES.length % 2 === 1 && i === PRINCIPLES.length - 1;
                 return (
-                  <li key={p.id} className="relative flex flex-col gap-3 rounded-xl p-5">
-                    <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-[inherit] border border-cb-border-strong" style={FADE_MASK} />
+                  <li
+                    key={p.id}
+                    className={`relative flex flex-col gap-3 ${spansBoth ? 'sm:col-span-2 lg:col-span-1 xl:col-span-2' : ''}`}
+                  >
+                    <PrincipleDividers index={i} count={PRINCIPLES.length} />
                     <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="shrink-0 text-cb-muted" />
                     <div>
                       <h4 className="font-semibold">{p.title}</h4>

@@ -65,3 +65,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - About: principles now sit in two columns inside their card (one column at 1024–1279px, where it's narrow), and the card is wider (7 of 12 columns) so the two columns have room.
 - About: principle icons sit above each title instead of beside it, with more space between rows (owner request).
 - About: each principle is its own card with a fading border: brightest at the middle of each side, fading out before the corners so no line runs end to end (owner request). Done with a CSS mask in the component rather than a global class.
+- About: principles lose their individual fading borders; instead, following the owner's sketch, a vertical and horizontal divider cross between them like a plus sign and fade out at their outer ends. The fifth principle spans both columns; single-column layouts get horizontal fading dividers only.
