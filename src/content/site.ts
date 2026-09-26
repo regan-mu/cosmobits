@@ -72,21 +72,45 @@ export const SERVICES: Service[] = [
 
 export const AI_SERVICE = { id: 'ai', name: 'AI', href: '/services/ai' };
 
-/** Block 4 */
+/** Block 4. `id` picks the card's icon in AIPractice. */
 export const AI_CAPABILITIES = [
   {
+    id: 'chatbots',
     name: 'Chatbots and assistants',
     // Add the languages once confirmed, e.g. "…on your website or WhatsApp, in English and Swahili, …"
     text: 'Answer customer questions on your website or WhatsApp, handing over to staff when needed.',
+    points: ['Website and WhatsApp chat', 'Answers drawn from your own documents', 'Hand-over to your team'],
   },
-  { name: 'Forecasting', text: 'Predict sales, demand or risk from the data you already keep.' },
   {
+    id: 'forecasting',
+    name: 'Forecasting',
+    text: 'Predict sales, demand or risk from the data you already keep.',
+    points: ['Sales and demand forecasts', 'Stock and reorder planning', 'Risk scoring'],
+  },
+  {
+    id: 'documents',
     name: 'Document processing',
     text: 'Read invoices, forms and contracts, and pull the fields into your systems.',
+    points: ['Invoices, receipts and forms', 'Contract review', 'Extracted fields sent to your systems'],
   },
-  { name: 'Computer vision', text: 'Spot defects, count stock or check safety gear from camera feeds.' },
-  { name: 'Workflow automation', text: "Take repetitive data entry and routing off your team's plate." },
-  { name: 'Custom models', text: "Trained on your data when an off-the-shelf tool won't do." },
+  {
+    id: 'vision',
+    name: 'Computer vision',
+    text: 'Spot defects, count stock or check safety gear from camera feeds.',
+    points: ['Defect detection', 'Stock counts from camera feeds', 'Safety-gear checks'],
+  },
+  {
+    id: 'automation',
+    name: 'Workflow automation',
+    text: "Take repetitive data entry and routing off your team's plate.",
+    points: ['Data entry between systems', 'Routing and approvals', 'Scheduled reports'],
+  },
+  {
+    id: 'custom',
+    name: 'Custom models',
+    text: "Trained on your data when an off-the-shelf tool won't do.",
+    points: ['Trained on your own data', 'Tested on your real cases before launch', 'Handed over with documentation'],
+  },
 ];
 
 /** Block 5. `duration` shows only when FLAGS.SHOW_STEP_DURATIONS is on. */

@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 26 Sep 2026 (owner):** AI capabilities return to the previous site's card grid, restyled (Block 4, 7.2).
 **Revision, 26 Sep 2026 (owner):** a tall variant of the services graphic fills the height of the service cards on desktop (7.7).
 **Revision, 26 Sep 2026 (owner):** section headers are centred with their intro, as on the previous site (5.4, 7.2).
 
@@ -642,7 +643,8 @@ With the tightened structure below, every section header is just the H2, plus an
 Icons that remain elsewhere must carry meaning:
 - **Keep:** icons in the four service blocks, provided they're consistent line icons from a single set at one stroke weight, drawn in the neutral text colour, not brand-coloured and not inside a tinted rounded square.
 - **Keep:** functional icons (menu, external link, phone and mail in Contact, social logos in the footer).
-- **Remove:** icons on AI capability items, values and process steps. The numbers or text carry those.
+- **Keep:** one neutral line icon per AI capability card (owner preference, 26 Sep 2026), same set and stroke as the service blocks.
+- **Remove:** icons on values and process steps. The numbers or text carry those.
 
 ### 7.3 Proposed homepage
 
@@ -748,7 +750,7 @@ AI gets its own block (4), so it isn't one of the four here.
 
 - **H2:** "AI in practice"
 - **Lead:** "Most of our AI work starts with a problem a team already has: too many repetitive customer questions, documents typed up by hand, stock that runs out without warning."
-- **Capabilities:** a compact two-column list with a bold name and one line each; no icons, cards or tags.
+- **Capabilities:** a card grid (three columns on desktop, two on tablet, one on mobile), as on the previous site (owner preference, 26 Sep 2026), restyled in the new language: flat 12px-radius cards with a 1px `--color-border` on `--color-surface`, one neutral line icon, the name (h4), one line, and three checked points using the same check icon as the service blocks. No gradient icon tiles, glows, hover lifts or tags.
   - **Chatbots and assistants:** answer customer questions on your website or WhatsApp, in English and Swahili `{{OWNER: confirm languages}}`, handing over to staff when needed.
   - **Forecasting:** predict sales, demand or risk from the data you already keep.
   - **Document processing:** read invoices, forms and contracts, and pull the fields into your systems.
