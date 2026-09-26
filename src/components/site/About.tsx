@@ -56,12 +56,12 @@ export default function About() {
           <div className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:col-span-7 lg:p-8">
             <h3 className="cb-h3">The Principles That Guide Us</h3>
             {/* Two columns wherever the card is wide enough; one while it shares a narrow row (1024–1279px) */}
-            <ul className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <ul className="mt-6 grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {PRINCIPLES.map((p) => {
                 const Icon = ICONS[p.id];
                 return (
-                  <li key={p.id} className="flex gap-4">
-                    <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-cb-muted" />
+                  <li key={p.id} className="flex flex-col gap-3">
+                    <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="shrink-0 text-cb-muted" />
                     <div>
                       <h4 className="font-semibold">{p.title}</h4>
                       <p className="mt-1 text-cb-muted">{p.text}</p>

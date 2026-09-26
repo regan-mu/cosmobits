@@ -63,3 +63,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Project step cards show a pointer cursor on hover (owner request).
 - About: two columns, with rewritten prose on the left and "The Principles That Guide Us" on the right (five principles from the previous site's values, rewritten without superlatives). The prose follows the outline of reference text the owner supplied, but in CosmoBits' own words: the reference was Glitex's About copy, and the spec rules out reusing a competitor's wording. Spec Block 8, S3 and 7.2 updated.
 - About: principles now sit in two columns inside their card (one column at 1024–1279px, where it's narrow), and the card is wider (7 of 12 columns) so the two columns have room.
+- About: principle icons sit above each title instead of beside it, with more space between rows (owner request).
