@@ -1,4 +1,4 @@
-import { Cloud, Code2, KeyRound, Server, type LucideIcon } from 'lucide-react';
+import { CheckCircle2, Cloud, Code2, KeyRound, Server, type LucideIcon } from 'lucide-react';
 import { SERVICES } from '@/content/site';
 import { BOOKING } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
@@ -46,8 +46,13 @@ export default function WhatWeDo() {
                   <p className="mt-3 text-cb-muted">{service.summary}</p>
                   <ul className="mt-5 space-y-2 border-t border-cb-border pt-5 text-[0.9375rem]">
                     {service.bullets.map((bullet) => (
-                      <li key={bullet} className="flex gap-3">
-                        <span aria-hidden="true" className="mt-[0.6em] h-px w-3 shrink-0 bg-cb-border-strong" />
+                      <li key={bullet} className="flex gap-2.5">
+                        <CheckCircle2
+                          size={18}
+                          strokeWidth={1.5}
+                          aria-hidden="true"
+                          className="mt-[0.2em] shrink-0 text-cb-muted"
+                        />
                         {bullet}
                       </li>
                     ))}

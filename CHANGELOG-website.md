@@ -54,3 +54,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - "Cloud & hosting" service renamed "Cloud infrastructure": architecture and design, migration, infrastructure as code with monitoring and backups, cost optimisation and right-sizing. Same rename in the enquiry form, footer, services graphic label and "What we do" intro.
 - About and the data-residency line now say "cloud infrastructure" instead of "hosting".
 - Spec updated to match (revision note at the top): Block 1, Block 3 table, an infrastructure wording rule with a "what the cloud offer covers" list, 7.7 labels, `/services/cloud` in 9.4, cloud keywords in 9.6, owner item 7, Appendix A.
+- Service block bullets use the check-circle icon from the previous site instead of dash markers (owner request), in the neutral muted colour per 7.2.
