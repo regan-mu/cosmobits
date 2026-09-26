@@ -64,7 +64,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [ ] Block 5 "You own the code we write for you." *(behind `SHOW_CODE_OWNERSHIP`)*
 - [~] Block 6 How we handle your data *(built; behind `SHOW_DATA_HANDLING` until every item is owner-confirmed)*
 - [x] Block 7 Selected work: template + data model in `src/content/work.ts` *(section hidden until a case study is published)*
-- [x] Block 8 About, short prose
+- [x] Block 8 About: prose beside "The Principles That Guide Us" card (owner preference)
 - [ ] Block 8 stats band *(built; behind `SHOW_STATS`, needs real numbers in `STATS`)*
 - [ ] Block 8 photo *(not built yet: `SHOW_ABOUT_PHOTO` is reserved, add the image layout when a real photo exists)*
 - [x] Block 9 CTA band, Halo #2 + mirrored arc

@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 26 Sep 2026 (owner):** About becomes two columns, prose beside "The Principles That Guide Us" (Block 8, S3, 7.2).
 **Revision, 26 Sep 2026 (owner):** section titles use title case (5.4), and Block 5 is renamed "How We Run Our Projects" with numbered step cards on a colour band and a highlighted card (7.3, 6.1, 6.5).
 **Revision, 26 Sep 2026 (owner):** AI capabilities return to the previous site's card grid, restyled (Block 4, 7.2).
 **Revision, 26 Sep 2026 (owner):** a tall variant of the services graphic fills the height of the service cards on desktop (7.7).
@@ -240,7 +241,7 @@ Visitors in 2026 recognise generated sites quickly. The signals are mostly patte
 |---|---|---|---|---|
 | S1 | Eyebrow label above every H2 | "Who We Are", "Our Values", "Why Choose Us", "Artificial Intelligence Solutions", "Our Services", "Client Success Stories", "Get In Touch" [VERIFIED] | A tracked label over every heading is the most common template habit. Here some labels just repeat the heading ("Get In Touch" above "Get in Touch"). | Remove all section eyebrows. The H2 does the job alone. |
 | S2 | Icon badge beside each section header | Every section [owner-reported; INVENTORY to locate] | Adds decoration without meaning, and makes each section open the same way. | Remove all section-header icons (owner request). See 7.2. |
-| S3 | Mission + Vision + five Values + six "Why Choose Us" cards | About → Values → Why Choose Us [VERIFIED] | Four blocks all say "we're innovative, excellent and client-focused". Stacking them is filler. | Keep a short About paragraph on the homepage. Move Mission/Vision to `/about` (tender and procurement documents often ask for them). Cut Values to one line or drop it. Replace Why Choose Us with "How We Run Our Projects" (7.3). |
+| S3 | Mission + Vision + five Values + six "Why Choose Us" cards | About → Values → Why Choose Us [VERIFIED] | Four blocks all say "we're innovative, excellent and client-focused". Stacking them is filler. | Keep a short About paragraph on the homepage. Move Mission/Vision to `/about` (tender and procurement documents often ask for them). Cut Values to one line or drop it. *(Owner, 26 Sep 2026: Values return as "The Principles That Guide Us" beside the About text, rewritten plainly; see Block 8.)* Replace Why Choose Us with "How We Run Our Projects" (7.3). |
 | S4 | Grids of identical icon cards | Values (5), Why Choose Us (6), AI solutions (6), Services (4) [VERIFIED counts; INVENTORY for styling] | Twenty-one cards with the same shape, radius and shadow is the stock SaaS kit, and a 5-card grid always leaves an orphan. | Vary the form by content: services as four substantial blocks, AI capabilities as a compact two-column list, process as a numbered sequence (it genuinely is one), About as prose with a photo. |
 | S5 | Big-number stat rows | Hero, About, AI section [VERIFIED] | "Big number + small label" is the default hero filler, and here the numbers are 0 (3.1). | One stats band, real numbers only (3.1). |
 | S6 | Scroll-triggered fade/slide-up on every section | [INVENTORY] | Uniform entrance animation on every block is a generated-site signature and delays content. | Remove section entrance animations. Allow a single hero load sequence at most, disabled under reduced motion. Keep motion that responds to user action (menu open, accordion, form feedback). |
@@ -645,7 +646,8 @@ Icons that remain elsewhere must carry meaning:
 - **Keep:** icons in the four service blocks, provided they're consistent line icons from a single set at one stroke weight, drawn in the neutral text colour, not brand-coloured and not inside a tinted rounded square.
 - **Keep:** functional icons (menu, external link, phone and mail in Contact, social logos in the footer).
 - **Keep:** one neutral line icon per AI capability card (owner preference, 26 Sep 2026), same set and stroke as the service blocks.
-- **Remove:** icons on values and process steps. The numbers or text carry those.
+- **Keep:** one neutral line icon per principle in Block 8 (owner preference).
+- **Remove:** icons on process steps. The numbers carry those.
 
 ### 7.3 Proposed homepage
 
@@ -819,7 +821,12 @@ The first case study is in progress. The agent builds the template and data mode
 #### Block 8: About
 
 - **H2:** "About CosmoBits"
-- **Prose (draft):** "CosmoBits is a technology company based at APA Arcade in Hurlingham, Nairobi. Since `{{OWNER: year founded}}` we've worked with `{{OWNER: kinds of clients, e.g. SMEs, NGOs, law firms, fintechs}}` on AI projects, custom software, cloud infrastructure and IT supply. `{{OWNER: one sentence about the founders or team}}`"
+- **Layout (owner preference, 26 Sep 2026):** two columns from 1024px. Left: the About prose, vertically centred. Right: "The Principles That Guide Us" in a bordered card with five principles, each a neutral line icon, a bold title and one plain sentence. Stacked on mobile, prose first.
+- **Prose (draft):** three short paragraphs following the outline of the owner's reference text (who we are, what we build, who for, what we're good at), written in CosmoBits' own words. The reference was a competitor's About copy; never reuse a competitor's wording (Appendix A).
+  1. "CosmoBits Technologies is a technology company based at APA Arcade in Hurlingham, Nairobi. We design, build and run the systems organisations depend on: AI tools, custom software and the cloud infrastructure beneath them, plus the hardware and licences to run it all."
+  2. "Since `{{OWNER: year founded}}`, we've worked with `{{OWNER: kinds of clients, e.g. SMEs, NGOs, law firms, fintechs}}` to cut manual work, make better use of the data they already have, and replace fragile tools with systems that hold up as they grow. `{{OWNER: one sentence about the founders or team}}`" Until supplied, the year is dropped and the clients read "businesses and organisations".
+  3. "What we're best at is turning a messy business requirement into a system that's reliable, secure and straightforward to maintain. One team covers the whole stack, so you deal with the same people from the laptops to the AI."
+- **Principles (the previous site's values, rewritten plainly):** Practical innovation · Built properly · Partnership · Lasting impact · Collaboration. Each description must be something the team actually does; no superlatives.
 - **Photo:** a real team or office photo per the brief in 7.8. Until one exists, lay out without an image; never use stock or AI-generated people.
 - **Stats band:** owner-supplied numbers only (3.1). Glitex shows how this looks done well: four specific numbers, present in the server HTML, shown once.
 - **Link:** "More about us" → `/about`, which holds Mission, Vision and Values (edited per Section 8) for procurement and tender readers.

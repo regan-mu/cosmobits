@@ -157,15 +157,48 @@ export const DATA_COMMITMENTS = [
   },
 ];
 
-/** Block 8 */
+/**
+ * Block 8. Follows the outline of the owner's reference (who we are, what we
+ * build, who for, what we're good at) in CosmoBits' own words; a competitor's
+ * wording must never be copied (spec Appendix A).
+ */
 export const ABOUT = {
-  /** Owner to supply; appended to the prose when set */
+  /** Owner to supply; appended to the first paragraph when set */
   foundedYear: null as number | null,
-  /** e.g. "SMEs, NGOs, law firms and fintechs" */
+  /** e.g. "SMEs, NGOs, law firms and fintechs"; replaces the generic "businesses and organisations" */
   clientTypes: null as string | null,
   /** One sentence about the founders or team */
   teamSentence: null as string | null,
 };
+
+/** Block 8, right column (owner preference: the previous site's principles, rewritten plainly) */
+export const PRINCIPLES = [
+  {
+    id: 'practical',
+    title: 'Practical innovation',
+    text: "We use newer tools like AI where they solve a real problem, and we'll say so when a simpler fix will do.",
+  },
+  {
+    id: 'quality',
+    title: 'Built properly',
+    text: 'Tested, documented and secured before it goes live, not patched afterwards.',
+  },
+  {
+    id: 'partnership',
+    title: 'Partnership',
+    text: 'We work alongside your team through the project and after it goes live.',
+  },
+  {
+    id: 'impact',
+    title: 'Lasting impact',
+    text: 'Systems your team can understand, run and extend for years, not ones only we can keep alive.',
+  },
+  {
+    id: 'collaboration',
+    title: 'Collaboration',
+    text: 'Your people are involved at every stage, from the first call to training at handover.',
+  },
+];
 
 /** Block 8 stats band, shown only with FLAGS.SHOW_STATS. Owner-supplied numbers only. */
 export const STATS: { value: string; label: string }[] = [];
