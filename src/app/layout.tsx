@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import FloatingContact from "@/components/FloatingContact";
 import { Toaster } from "sonner";
 import { Providers } from "./providers";
+
+const sans = Schibsted_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-schibsted",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cosmobits.tech'),
@@ -69,17 +76,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        {/* Google Fonts - Jost (primary) and Audiowide (accent/display) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Audiowide&family=Jost:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="antialiased">
+    <html lang="en-KE" className={sans.variable}>
+      <body className="font-sans antialiased">
         <Providers>
           {children}
           <FloatingContact />
