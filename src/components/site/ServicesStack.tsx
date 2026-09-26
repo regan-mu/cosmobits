@@ -15,7 +15,7 @@ export default function ServicesStack({ className = '' }: { className?: string }
       className={className}
     >
       <title id="cbStackTitle">
-        Four layers handled by one team: hardware and licences, hosting and upkeep, software, and AI
+        Four layers handled by one team: hardware and licences, cloud infrastructure, software, and AI
       </title>
       <g stroke="#C496C4" strokeOpacity="0.35" strokeWidth="1.5">
         <line x1="596" y1="120" x2="596" y2="485" />
@@ -62,7 +62,7 @@ export default function ServicesStack({ className = '' }: { className?: string }
       <rect x="300" y="252" width="130" height="10" rx="5" fill="#150F33" fillOpacity="0.28" />
       <rect x="470" y="248" width="70" height="22" rx="4" fill="#FFFFFF" fillOpacity="0.85" />
 
-      {/* Hosting & upkeep */}
+      {/* Cloud infrastructure */}
       <rect x="190.75" y="310.75" width="378.5" height="98.5" rx="10" fill="none" stroke="#C496C4" strokeWidth="1.5" />
       <rect x="214" y="342" width="36" height="36" rx="3" fill="#C496C4" />
       <rect x="270" y="342" width="36" height="36" rx="3" fill="#C496C4" />
@@ -86,7 +86,7 @@ export default function ServicesStack({ className = '' }: { className?: string }
       <g fontSize="15" fontWeight="500" fill="#FFFFFF" fillOpacity="0.74" textAnchor="end" style={{ fontFamily: 'inherit' }}>
         <text x="172" y="125">AI</text>
         <text x="172" y="245">Software</text>
-        <text x="172" y="365">Hosting &amp; upkeep</text>
+        <text x="172" y="365">Cloud infrastructure</text>
         <text x="172" y="490">Hardware &amp; licences</text>
       </g>
     </svg>

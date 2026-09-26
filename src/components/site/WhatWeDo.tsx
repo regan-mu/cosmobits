@@ -22,7 +22,7 @@ export default function WhatWeDo() {
             What we do
           </h2>
           <p className="cb-lead">
-            We can cover a project end to end: the devices and licences, the hosting it runs on, the software
+            We can cover a project end to end: the devices and licences, the cloud infrastructure it runs on, the software
             your team uses, and the AI on top.
           </p>
         </header>

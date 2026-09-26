@@ -8,7 +8,7 @@ export type Service = {
   /** Anchor id on the homepage, later the service page slug */
   id: string;
   name: string;
-  /** Short name for links, e.g. "About cloud & hosting" */
+  /** Short name for links, e.g. "About cloud infrastructure" */
   shortName: string;
   summary: string;
   bullets: string[];
@@ -33,16 +33,17 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'cloud',
-    name: 'Cloud & hosting',
-    shortName: 'cloud & hosting',
-    // Hosting wording rule (7.3): CosmoBits arranges hosting; it doesn't own servers.
+    name: 'Cloud infrastructure',
+    shortName: 'cloud infrastructure',
+    // Infrastructure wording rule (7.3): CosmoBits designs and manages infrastructure on
+    // cloud providers' platforms; it doesn't own servers or run a data centre.
     summary:
-      'We arrange hosting or a VPS with a provider that meets your data-residency terms, set it up, and maintain it under contract.',
+      'We design your cloud architecture, build it as code, run it day to day, and keep the monthly bill in line with what you actually use.',
     bullets: [
-      'Hosting and VPS procurement',
-      'Cloud migration',
-      'Infrastructure as code',
-      'Maintenance, patching and backups',
+      'Architecture and infrastructure design',
+      'Migration to the cloud or between providers',
+      'Infrastructure as code, monitoring and backups',
+      'Cost optimisation and right-sizing',
     ],
     href: '/services/cloud',
   },
@@ -120,7 +121,7 @@ export const DATA_COMMITMENTS = [
   },
   {
     title: 'Data residency',
-    text: 'Hosting is set up in the region your contract specifies, and we keep it there.',
+    text: 'Infrastructure is set up in the region your contract specifies, and we keep your data there.',
   },
   {
     title: 'Access control',
@@ -161,7 +162,7 @@ export const PARTNERS = {
 export const ENQUIRY_TOPICS = [
   'AI',
   'Software development',
-  'Cloud & hosting',
+  'Cloud infrastructure',
   'IT equipment supply',
   'Software licensing',
   'General enquiry',

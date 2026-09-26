@@ -48,3 +48,9 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Organization + ProfessionalService JSON-LD on the homepage, with only confirmed values: no `sameAs` until real profiles exist, and `areaServed` is Kenya only.
 - `/privacy` and `/terms` drafted in plain language from what the site actually does (form fields, email delivery, reCAPTCHA, no analytics cookies). Marked "under legal review" and `noindex` until reviewed.
 - Fix: restored the old brand colours (`primary-dark`, `accent`, `ai-glow`, …) and `--font-display` as admin-only tokens. The admin dashboard still uses them, and the homepage commit had removed them.
+
+### Cloud infrastructure positioning (owner revision)
+- Hero lead: "…designs and manages the cloud infrastructure it runs on…" replaces "sets up and maintains your hosting".
+- "Cloud & hosting" service renamed "Cloud infrastructure": architecture and design, migration, infrastructure as code with monitoring and backups, cost optimisation and right-sizing. Same rename in the enquiry form, footer, services graphic label and "What we do" intro.
+- About and the data-residency line now say "cloud infrastructure" instead of "hosting".
+- Spec updated to match (revision note at the top): Block 1, Block 3 table, an infrastructure wording rule with a "what the cloud offer covers" list, 7.7 labels, `/services/cloud` in 9.4, cloud keywords in 9.6, owner item 7, Appendix A.

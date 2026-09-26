@@ -10,6 +10,7 @@
 - `assets/services-stack.svg`: "What we do" graphic (7.7).
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
+**Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
 
 ---
 
@@ -649,7 +650,7 @@ The page keeps the same overall flow the owner knows: hero, then proof, what we 
 
 ```
 Nav: [logo]  Services ▾  AI  About  Work*  Contact        [Book a consultation]
-                (AI · Software · Cloud & hosting · IT equipment · Licensing)
+                (AI · Software · Cloud infrastructure · IT equipment · Licensing)
 
 1  HERO            brandline / H1 / lead / CTAs + hero-bits graphic (7.6)       [Halo #1]
 2  PARTNERS        single row, muted logos, one-line label
@@ -684,7 +685,7 @@ An approved mockup of this block exists on the design canvas ("Concept B: built 
   - B: "We build AI tools, software and cloud systems for African businesses, and supply the hardware they run on."
   - C: "Practical AI and dependable IT for growing businesses in Kenya."
   - *Recommendation: A.* It's shortest, names the core offer plus location, puts search terms in the H1, and it's what the approved mockup uses.
-- **Lead:** "Our Nairobi team builds chatbots, forecasting models and custom software, sets up and maintains your hosting, and sources the servers, laptops and licences to run it all." Owner to edit if any part isn't accurate.
+- **Lead:** "Our Nairobi team builds chatbots, forecasting models and custom software, designs and manages the cloud infrastructure it runs on, and sources the servers, laptops and licences your staff use." Owner to edit if any part isn't accurate.
 - **CTAs:**
   - primary button "Book a consultation", linking to the booking page (8.3);
   - secondary text link "See our services" (→ `#services`), underlined in `#C7A0CB`/`--color-brand`.
@@ -711,7 +712,7 @@ An approved mockup of this block exists on the design canvas ("Concept B: built 
 #### Block 3: What we do
 
 - **H2:** "What we do"
-- **Intro (draft):** "We can cover a project end to end: the devices and licences, the hosting it runs on, the software your team uses, and the AI on top."
+- **Intro (draft):** "We can cover a project end to end: the devices and licences, the cloud infrastructure it runs on, the software your team uses, and the AI on top."
 - **Layout:**
   - Desktop (≥1024px): the services-stack graphic (7.7) takes 5 columns on the left, and the four service blocks take 7 columns on the right as a 2×2 grid.
   - Below 1024px: the graphic sits above the blocks at `max-width: 480px`.
@@ -724,11 +725,19 @@ An approved mockup of this block exists on the design canvas ("Concept B: built 
 | Service | One-liner (draft, owner to confirm) | Keep bullets |
 |---|---|---|
 | Software development | Web apps, mobile apps and internal systems, built and maintained by our team. | Web and mobile apps · API integrations · DevOps and CI/CD setup · Engineering process reviews for small teams |
-| Cloud & hosting | We arrange hosting or a VPS with a provider that meets your data-residency terms, set it up, and maintain it under contract. | Hosting and VPS procurement · Cloud migration · Infrastructure as code · Maintenance, patching and backups `{{OWNER: providers and regions you use; any partner status}}` |
+| Cloud infrastructure | We design your cloud architecture, build it as code, run it day to day, and keep the monthly bill in line with what you actually use. | Architecture and infrastructure design · Migration to the cloud or between providers · Infrastructure as code, monitoring and backups · Cost optimisation and right-sizing `{{OWNER: providers you work on (AWS, Azure, GCP, local providers), regions, any partner status or certifications}}` |
 | IT equipment supply | Servers, networking and staff devices from `{{OWNER: brands you actually supply}}`, installed and supported. | Servers and storage · Networking · Laptops and desktops · Installation and maintenance |
 | Software licensing | Operating systems, security suites and enterprise licences, bought right and tracked. | OS and Microsoft licensing · Anti-malware and security suites · Volume licensing · Licence tracking |
 
-**Hosting wording rule:** CosmoBits doesn't own servers or run a data centre. Never write "our data centre", "our servers" or "we host". Write "we arrange hosting", "we set up and maintain", or "hosted with {provider} in {region}".
+**Infrastructure wording rule:** CosmoBits designs and manages infrastructure on cloud providers' platforms; it doesn't own servers or run a data centre. Never write "our data centre", "our servers", "we host" or "our cloud". Write "we design", "we build and manage", "running on {provider} in {region}", or "your cloud account".
+
+**What the cloud offer covers** (for copy on the homepage and `/services/cloud`; describe it in these terms rather than as hosting):
+- **Architecture and design:** network layout (VPCs, subnets, private connectivity), compute choices (VMs, containers, managed Kubernetes, serverless), managed databases and storage, and high availability across zones where the workload needs it.
+- **Migration:** moving on-premise servers or hosting accounts to the cloud, or between providers, with a cut-over plan and rollback.
+- **Infrastructure as code:** Terraform or the provider's own tooling, kept in version control and deployed through CI/CD, so environments can be rebuilt and reviewed.
+- **Operations:** monitoring and alerting, patching, backups with tested restores, access control (IAM, least privilege) and incident response, under a support contract.
+- **Cost optimisation (FinOps):** right-sizing instances, reserved or committed-use capacity, autoscaling, storage lifecycle rules, removing idle resources, and a monthly cost report with tagging by team or project.
+- Name specific tools and providers only once the owner confirms the team uses them.
 
 AI gets its own block (4), so it isn't one of the four here.
 
@@ -760,7 +769,7 @@ This replaces "Why Choose Us" and "Our Values". It's a genuine sequence, so numb
 | 1 | Consultation | A free call to understand the problem. We'll tell you if we're not the right fit. | `{{OWNER: e.g. 30–60 minutes}}` |
 | 2 | Assessment & proposal | We talk to the people involved and review your current systems. You then get a written proposal with scope, recommended architecture, timeline and price `{{OWNER: fixed-price, time-and-materials, or both}}`. Nothing is built until you've approved it. | `{{OWNER: e.g. 1–2 weeks}}` |
 | 3 | Build | Work runs to agreed milestones, with a working demo every `{{OWNER: cadence}}`. Each milestone includes testing and security checks, and documentation is written as we go. | Depends on scope |
-| 4 | Handover & support | We deploy the system, train your staff, and hand over the documentation. Support follows on the agreed terms `{{OWNER: support hours / SLA, and whether it's contract-backed}}`, and we maintain hosting under the data-residency terms in the contract. | Ongoing |
+| 4 | Handover & support | We deploy the system, train your staff, and hand over the documentation. Support follows on the agreed terms `{{OWNER: support hours / SLA, and whether it's contract-backed}}`, and we run the infrastructure under the data-residency terms in the contract. | Ongoing |
 
 - **Optional line under the steps:** "You own the code we write for you." Include it only if true: `{{OWNER: confirm IP/code ownership terms}}`.
 
@@ -772,7 +781,7 @@ This block is adapted from the competitor review (Appendix A). It answers the qu
 - **Lead (draft):** "AI and software projects mean giving a vendor access to your data. Here's what we do with it."
 - **Four items** in a two-column list, bold title plus one or two sentences each, with no icons and no badge images. **Every item must be confirmed by the owner before launch**; drop any item that isn't standard practice.
   - **Kenya's Data Protection Act, 2019:** we process client personal data under a written data processing agreement, signed before work starts. `{{OWNER: confirm DPAs are standard}}`
-  - **Data residency:** hosting is set up in the region your contract specifies, and we keep it there. `{{OWNER: typical regions/providers}}`
+  - **Data residency:** infrastructure is set up in the region your contract specifies, and we keep your data there. `{{OWNER: typical regions/providers}}`
   - **Access control:** our staff get access only to the systems their role needs, and access is removed when a project ends. `{{OWNER: confirm}}`
   - **Your data stays yours:** client data isn't used to train models for anyone else. `{{OWNER: confirm}}`
 - **Optional, only if standard practice:** encryption in transit and at rest, audit logging. `{{OWNER}}`
@@ -802,7 +811,7 @@ The first case study is in progress. The agent builds the template and data mode
 #### Block 8: About
 
 - **H2:** "About CosmoBits"
-- **Prose (draft):** "CosmoBits is a technology company based at APA Arcade in Hurlingham, Nairobi. Since `{{OWNER: year founded}}` we've worked with `{{OWNER: kinds of clients, e.g. SMEs, NGOs, law firms, fintechs}}` on AI projects, custom software, cloud hosting and IT supply. `{{OWNER: one sentence about the founders or team}}`"
+- **Prose (draft):** "CosmoBits is a technology company based at APA Arcade in Hurlingham, Nairobi. Since `{{OWNER: year founded}}` we've worked with `{{OWNER: kinds of clients, e.g. SMEs, NGOs, law firms, fintechs}}` on AI projects, custom software, cloud infrastructure and IT supply. `{{OWNER: one sentence about the founders or team}}`"
 - **Photo:** a real team or office photo per the brief in 7.8. Until one exists, lay out without an image; never use stock or AI-generated people.
 - **Stats band:** owner-supplied numbers only (3.1). Glitex shows how this looks done well: four specific numbers, present in the server HTML, shown once.
 - **Link:** "More about us" → `/about`, which holds Mission, Vision and Values (edited per Section 8) for procurement and tender readers.
@@ -928,7 +937,7 @@ The total runtime is under one second. It must not trigger again on client-side 
 
 **What it is:** four layers stacked from bottom to top, joined by one thread on the right that stands for one team across the stack:
 - **Hardware & licences** (violet, with the logo's cut corner),
-- **Hosting & upkeep** (outlined, with instance squares),
+- **Cloud infrastructure** (outlined, with instance squares),
 - **Software** (mauve, with interface lines),
 - **AI** (a frosted glass panel with a small node network).
 
@@ -944,7 +953,7 @@ A white bit echoes the logo.
 
 **Glassmorphism:** the brand guidelines list glassmorphism as a brand style. The AI layer in this graphic is **the only glass element on the site**. It uses the same rule as the halos: one deliberate use, not a style applied to every card.
 
-**Labels:** if the owner renames "Hosting & upkeep" or "Hardware & licences" to match the final service names, edit the `<text>` nodes. Keep them under 22 characters so they fit left of the layers.
+**Labels:** the third layer is labelled "Cloud infrastructure" (was "Hosting & upkeep"). If the owner renames it or "Hardware & licences" to match the final service names, edit the `<text>` nodes. Keep them under 22 characters so they fit left of the layers.
 
 ### 7.8 Photography brief (for About, service pages and case studies)
 
@@ -1122,7 +1131,7 @@ Add `Service` schema on each service page and `BreadcrumbList` on all inner page
 |---|---|---|---|
 | `/services/ai` | AI consulting and builds | AI solutions for businesses in Kenya | AI Solutions & Consulting in Kenya \| CosmoBits |
 | `/services/software-development` | Custom software | Custom software development in Nairobi | Software Development Company in Nairobi \| CosmoBits |
-| `/services/cloud` | Cloud & hosting (arranged with providers, maintained by CosmoBits) | Cloud hosting, migration and maintenance | Cloud Hosting & Migration in Kenya \| CosmoBits |
+| `/services/cloud` | Cloud infrastructure: design, migration, infrastructure as code, operations and cost optimisation on providers' platforms | Cloud infrastructure design, management and cost optimisation | Cloud Infrastructure & Migration in Kenya \| CosmoBits |
 | `/services/it-equipment` | Hardware supply | IT equipment supply and installation | IT Equipment Suppliers in Nairobi \| CosmoBits |
 | `/services/software-licensing` | Licensing | Software licensing and procurement | Software Licensing in Kenya \| CosmoBits |
 | `/about` | Company, team, mission/vision/values | About CosmoBits | About CosmoBits Technologies, Nairobi |
@@ -1170,7 +1179,9 @@ Aim for 500–900 words of genuinely useful content per service page. Thin 150-w
 | mobile app developers Nairobi | Hard | Medium | Commercial | /services/software-development |
 | M-Pesa integration developer | Moderate | Medium | Commercial | /services/software-development (if offered) |
 | cloud migration Kenya | Easy–moderate | High | Commercial | /services/cloud |
-| managed VPS hosting Kenya | Easy | Medium | Commercial | /services/cloud |
+| cloud infrastructure management Kenya | Easy–moderate | High | Commercial | /services/cloud |
+| cloud cost optimisation Kenya | Easy | Medium | Commercial | /services/cloud (section) |
+| DevOps / Terraform consultants Nairobi | Easy | Medium | Commercial | /services/cloud (only if the team does this work) |
 | AWS / Azure partner Kenya | Moderate | Medium | Commercial | /services/cloud (only if partner status is real) |
 | IT equipment suppliers Nairobi | Moderate | Medium | Transactional | /services/it-equipment |
 | server suppliers Kenya | Easy–moderate | Medium | Transactional | /services/it-equipment |
@@ -1238,7 +1249,7 @@ The agent can't finish these without the team. Each maps to a `{{OWNER: …}}` p
 | 4 | Whether a newsletter list exists | 3.7 |
 | 5 | Hero H1 choice (A / B / C). The mockup uses A. | Block 1 |
 | 6 | Relationship to the four listed partners, and logo permission | Block 2 |
-| 7 | Hosting providers and regions you use; any partner status; hardware brands supplied | Block 3, 9.4 |
+| 7 | Cloud providers and regions you work on; tools (e.g. Terraform, Kubernetes); any partner status or certifications; hardware brands supplied | Block 3, 9.4 |
 | 8 | AI languages supported (English/Swahili?) | Block 4 |
 | 9 | Pricing model, step durations, demo cadence, support terms/SLA, code ownership | Block 5 |
 | 10 | Confirmation of each data-handling commitment (DPAs, residency, access, training use, encryption/logging) | Block 6, `/security` |
@@ -1372,7 +1383,7 @@ Reviewed on 26 September 2026: https://www.glitexsolutions.co.ke/. Glitex is a N
 - Self-awarded compliance badges ("CCPA COMPLIANT", GDPR) shown as images.
 - Buzzword copy ("enterprise-grade", "mission-critical", "future-ready", "seamless ecosystem") and a sentence copy-pasted between two sections.
 
-**Where CosmoBits can win:** Glitex sells custom systems, but its homepage doesn't offer IT equipment, licensing or hosting management. An institution can buy the devices, the licences, the hosting setup and upkeep, and the software from CosmoBits as one vendor. Blocks 3 and 7.7 make that visible. Take their structure, never their wording: two Nairobi firms with similar phrasing makes the second one look like the copy.
+**Where CosmoBits can win:** Glitex sells custom systems, but its homepage doesn't offer IT equipment, licensing or cloud infrastructure management. An institution can buy the devices, the licences, the cloud infrastructure design and operations, and the software from CosmoBits as one vendor. Blocks 3 and 7.7 make that visible. Take their structure, never their wording: two Nairobi firms with similar phrasing makes the second one look like the copy.
 
 ## Appendix B: Notes on the brand guidelines (Oct 2025 mini guidelines)
 

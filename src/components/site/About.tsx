@@ -18,12 +18,12 @@ export default function About() {
           <p>
             CosmoBits Technologies is a technology company based at {CONTACT.address.line1.split(',')[0]} in{' '}
             {CONTACT.address.area}, {CONTACT.address.city}. {since} worked{clients} on AI projects, custom
-            software, cloud hosting and IT supply.
+            software, cloud infrastructure and IT supply.
             {ABOUT.teamSentence && ` ${ABOUT.teamSentence}`}
           </p>
           <p className="text-cb-muted">
             We&apos;re one team across all of it, so the people who source your laptops and licences are the
-            same people who set up your hosting and build the software on top.
+            same people who design your cloud infrastructure and build the software on top.
           </p>
         </div>
 

@@ -145,7 +145,7 @@ Each item says where the value goes once you have it. Filling a value in and fli
 - [ ] 4. Is there a real newsletter list? *(form removed for now)*
 - [x] 5. Hero H1: option A (as in the approved mockup)
 - [ ] 6. Partners: label ("Partners" / "Clients" / "Some of the teams we work with"), logo files and permission → `PARTNERS` in `src/content/site.ts`, then `SHOW_PARTNERS`
-- [ ] 7. Hosting providers and regions; any partner status; hardware brands supplied → service copy in `src/content/site.ts`
+- [ ] 7. Cloud providers and regions you work on; tools (Terraform, Kubernetes, …); any partner status or certifications; hardware brands supplied → service copy in `src/content/site.ts`
 - [ ] 8. AI languages supported (English / Swahili?) → chatbot line in `AI_CAPABILITIES`
 - [ ] 9. Step durations, pricing model, demo cadence, support terms/SLA, code ownership → `PROCESS_STEPS`, then `SHOW_STEP_DURATIONS` / `SHOW_CODE_OWNERSHIP`
 - [ ] 10. Confirm each data-handling commitment (DPAs, residency, access, training use, encryption/logging) → `DATA_COMMITMENTS`, then `SHOW_DATA_HANDLING`

@@ -18,8 +18,8 @@ export default function Hero() {
             AI, software and cloud for businesses in Kenya and across Africa.
           </h1>
           <p className="cb-lead">
-            Our Nairobi team builds chatbots, forecasting models and custom software, sets up and maintains
-            your hosting, and sources the servers, laptops and licences to run it all.
+            Our Nairobi team builds chatbots, forecasting models and custom software, designs and manages the
+            cloud infrastructure it runs on, and sources the servers, laptops and licences your staff use.
           </p>
           <div className="cb-hero__ctas">
             <BookingLink className="cb-btn cb-btn--lg" />
