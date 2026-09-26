@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-content.mjs",
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "eslint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "check:content": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
