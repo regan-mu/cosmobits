@@ -1,0 +1,29 @@
+import Hero from '@/components/site/Hero';
+import Partners from '@/components/site/Partners';
+import WhatWeDo from '@/components/site/WhatWeDo';
+import AIPractice from '@/components/site/AIPractice';
+import ProjectSteps from '@/components/site/ProjectSteps';
+import DataHandling from '@/components/site/DataHandling';
+import SelectedWork from '@/components/site/SelectedWork';
+import About from '@/components/site/About';
+import CtaBand from '@/components/site/CtaBand';
+import Contact from '@/components/site/Contact';
+import { FLAGS } from '@/lib/flags';
+
+/** Homepage, in the block order of spec 7.3. */
+export default function Home() {
+  return (
+    <>
+      <Hero />
+      {FLAGS.SHOW_PARTNERS && <Partners />}
+      <WhatWeDo />
+      <AIPractice />
+      <ProjectSteps />
+      {FLAGS.SHOW_DATA_HANDLING && <DataHandling />}
+      <SelectedWork />
+      <About />
+      <CtaBand />
+      <Contact />
+    </>
+  );
+}

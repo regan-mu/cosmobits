@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
-import FloatingContact from "@/components/FloatingContact";
 import { Toaster } from "sonner";
 import { Providers } from "./providers";
 
@@ -80,7 +79,6 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <Providers>
           {children}
-          <FloatingContact />
           <Toaster 
             position="top-center" 
             richColors 
