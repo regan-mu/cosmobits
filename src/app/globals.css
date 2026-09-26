@@ -606,6 +606,7 @@ select.cb-field {
 }
 
 .cb-step {
+  cursor: pointer;
   border-color: var(--color-cb-border);
   background: var(--color-cb-bg);
   transition: background-color 200ms ease, border-color 200ms ease;
