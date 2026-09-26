@@ -8,12 +8,14 @@ import SelectedWork from '@/components/site/SelectedWork';
 import About from '@/components/site/About';
 import CtaBand from '@/components/site/CtaBand';
 import Contact from '@/components/site/Contact';
+import StructuredData from '@/components/site/StructuredData';
 import { FLAGS } from '@/lib/flags';
 
 /** Homepage, in the block order of spec 7.3. */
 export default function Home() {
   return (
     <>
+      <StructuredData />
       <Hero />
       {FLAGS.SHOW_PARTNERS && <Partners />}
       <WhatWeDo />

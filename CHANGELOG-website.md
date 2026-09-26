@@ -39,3 +39,12 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Logo served from `public/cosmobits-technologies-logo-web.png`, the cropped 900×284 copy used in the mockup, at its display size (the original PNG is unchanged, and was being requested at `w=3840`).
 - Removed old landing CSS (gradient text, glass, glows, stars, marquee, pill buttons, forced uppercase headings) and the old brand variables.
 - Removed the landing-page tests and `debug-cta.mjs`, which only tested the deleted components.
+
+### Metadata, share image, legal stubs (spec 3.5, 9.1, 9.3, 9.5)
+- Title is now "AI, Software & Cloud Solutions in Nairobi, Kenya | CosmoBits" and the description is the 144-character version from 9.1; `og:locale` is `en_KE`.
+- Removed `meta keywords` and the unconfirmed `twitter:creator` (@cosmobitstech).
+- `public/og-image.png` (1200×630, was a 404): the hero-bits artwork, logo, tagline and "AI, software, cloud and IT supply, Nairobi" on `#150F33`, rendered from the hero SVG in Schibsted Grotesk.
+- Removed icon references that 404'd (`favicon-16x16.png`, `apple-touch-icon.png`, `android-chrome-*.png` in the manifest); the manifest now points at `favicon.ico` and uses the brand background as its theme colour.
+- Organization + ProfessionalService JSON-LD on the homepage, with only confirmed values: no `sameAs` until real profiles exist, and `areaServed` is Kenya only.
+- `/privacy` and `/terms` drafted in plain language from what the site actually does (form fields, email delivery, reCAPTCHA, no analytics cookies). Marked "under legal review" and `noindex` until reviewed.
+- Fix: restored the old brand colours (`primary-dark`, `accent`, `ai-glow`, …) and `--font-display` as admin-only tokens. The admin dashboard still uses them, and the homepage commit had removed them.
