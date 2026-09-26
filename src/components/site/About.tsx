@@ -9,12 +9,14 @@ export default function About() {
 
   return (
     <section id="about" aria-labelledby="about-heading" className="cb-section cb-section--surface border-t border-cb-border">
-      <div className="cb-container grid gap-8 lg:grid-cols-12 lg:gap-6">
-        <h2 id="about-heading" className="cb-h2 lg:col-span-4">
-          About CosmoBits
-        </h2>
+      <div className="cb-container">
+        <header className="cb-section-header">
+          <h2 id="about-heading" className="cb-h2">
+            About CosmoBits
+          </h2>
+        </header>
 
-        <div className="cb-prose space-y-5 text-lg lg:col-span-7 lg:col-start-6">
+        <div className="cb-prose mx-auto space-y-5 text-lg">
           <p>
             CosmoBits Technologies is a technology company based at {CONTACT.address.line1.split(',')[0]} in{' '}
             {CONTACT.address.area}, {CONTACT.address.city}. {since} worked{clients} on AI projects, custom
@@ -28,7 +30,7 @@ export default function About() {
         </div>
 
         {FLAGS.SHOW_STATS && STATS.length > 0 && (
-          <dl className="grid grid-cols-2 gap-6 border-t border-cb-border pt-8 sm:grid-cols-4 lg:col-span-12">
+          <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-cb-border pt-8 text-center sm:grid-cols-4">
             {STATS.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
                 <dt className="cb-small text-cb-muted">{stat.label}</dt>

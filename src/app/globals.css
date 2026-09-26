@@ -223,6 +223,13 @@ body:has(.cb-site) {
 
 .cb-section-header {
   margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* Centred with its heading, as on the previous site (owner preference) */
+.cb-section-header .cb-lead {
+  max-width: 42rem;
+  margin-inline: auto;
 }
 
 .cb-section-header > * + * {

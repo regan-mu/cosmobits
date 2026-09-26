@@ -26,7 +26,7 @@ export default function AIPractice() {
           ))}
         </dl>
 
-        <div className="mt-10 flex flex-col items-start gap-3">
+        <div className="mt-10 flex flex-col items-center gap-3 text-center">
           <BookingLink className="cb-btn cb-btn--lg" />
           <p className="cb-small text-cb-muted">The first consultation is free.</p>
           {FLAGS.SHOW_DATA_HANDLING && (

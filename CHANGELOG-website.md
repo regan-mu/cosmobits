@@ -55,3 +55,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - About and the data-residency line now say "cloud infrastructure" instead of "hosting".
 - Spec updated to match (revision note at the top): Block 1, Block 3 table, an infrastructure wording rule with a "what the cloud offer covers" list, 7.7 labels, `/services/cloud` in 9.4, cloud keywords in 9.6, owner item 7, Appendix A.
 - Service block bullets use the check-circle icon from the previous site instead of dash markers (owner request), in the neutral muted colour per 7.2.
+- Section headers (H2 + intro) are centred, with the intro capped at 42rem, as on the previous site (owner preference; spec 5.4 and 7.2 updated). Closing CTA lines in What we do and AI in practice are centred to match, and About now has a centred header above its prose instead of a heading beside it.

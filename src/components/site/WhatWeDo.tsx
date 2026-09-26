@@ -68,7 +68,7 @@ export default function WhatWeDo() {
           </ul>
         </div>
 
-        <p className="mt-12 text-cb-muted">
+        <p className="mt-12 text-center text-cb-muted">
           Not sure where to start?{' '}
           <a href={BOOKING.href} className="cb-link">
             Book a consultation

@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 26 Sep 2026 (owner):** section headers are centred with their intro, as on the previous site (5.4, 7.2).
 
 ---
 
@@ -361,7 +362,7 @@ Use a 1.25 ratio (major third) on a 17px body. Sizes are in rem at 16px root.
 Rules:
 - Sentence case for all headings, buttons and navigation. The tagline keeps its own capitalisation because it's locked.
 - Paragraph measure is capped at `max-width: 65ch`, and hero and section intros at `40ch`.
-- Left-align body text and section headings. Centre alignment is reserved for the final CTA band, if anything.
+- Section headers (H2 plus the optional intro) are centred, with the intro capped at 42rem (owner preference, 26 Sep 2026, carried over from the previous site). A section's closing CTA line is centred to match. Body text, lists, cards and the hero stay left-aligned.
 - Use no more than three weights: 400, 600 and 700.
 - Don't accent a single word in a headline with colour, gradient or italic.
 - Don't use all caps anywhere except acronyms (AI, API, AWS).
@@ -635,6 +636,7 @@ With the tightened structure below, every section header is just the H2, plus an
 - Remove the icon badge component from all section headers. If it's shared, delete it rather than hiding it with CSS.
 - Remove eyebrow labels (S1).
 - Spacing: `margin-bottom` between H2 and intro is 0.75rem, and between the header and section content is 2.5rem (mobile) / 3.5rem (desktop).
+- Alignment: the header block is centred (see 5.4 rules).
 
 Icons that remain elsewhere must carry meaning:
 - **Keep:** icons in the four service blocks, provided they're consistent line icons from a single set at one stroke weight, drawn in the neutral text colour, not brand-coloured and not inside a tinted rounded square.
