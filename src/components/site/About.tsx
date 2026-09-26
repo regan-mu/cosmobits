@@ -12,6 +12,17 @@ const ICONS: Record<string, LucideIcon> = {
   collaboration: Users,
 };
 
+// Border that shows along the middle of each side and fades out toward the
+// corners (owner preference). One mask per axis, added together, so only the
+// corners fade on both.
+const EDGE_FADE = 'transparent 8%, #000 50%, transparent 92%';
+const FADE_MASK: React.CSSProperties = {
+  maskImage: `linear-gradient(to right, ${EDGE_FADE}), linear-gradient(to bottom, ${EDGE_FADE})`,
+  maskComposite: 'add',
+  WebkitMaskImage: `linear-gradient(to right, ${EDGE_FADE}), linear-gradient(to bottom, ${EDGE_FADE})`,
+  WebkitMaskComposite: 'source-over',
+};
+
 /**
  * Block 8 (spec 7.3): who we are on the left, the principles that guide us on
  * the right (owner preference). Photo and stats band only once real material exists.
@@ -56,11 +67,12 @@ export default function About() {
           <div className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:col-span-7 lg:p-8">
             <h3 className="cb-h3">The Principles That Guide Us</h3>
             {/* Two columns wherever the card is wide enough; one while it shares a narrow row (1024–1279px) */}
-            <ul className="mt-6 grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {PRINCIPLES.map((p) => {
                 const Icon = ICONS[p.id];
                 return (
-                  <li key={p.id} className="flex flex-col gap-3">
+                  <li key={p.id} className="relative flex flex-col gap-3 rounded-xl p-5">
+                    <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-[inherit] border border-cb-border-strong" style={FADE_MASK} />
                     <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="shrink-0 text-cb-muted" />
                     <div>
                       <h4 className="font-semibold">{p.title}</h4>
