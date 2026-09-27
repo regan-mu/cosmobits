@@ -1,0 +1,37 @@
+import { TAGLINE } from '@/lib/contact';
+import BookingLink from './BookingLink';
+import HeroBits from './HeroBits';
+import { Arc, Halo, HeroMesh } from './decor';
+
+/** Block 1 (spec 7.3), matching .agents/hero-mockup.html at 1440×820. */
+export default function Hero() {
+  return (
+    <section className="cb-hero" aria-labelledby="hero-heading">
+      <HeroMesh />
+      <Arc className="cb-hero-arc" />
+      <Halo className="cb-hero-halo" />
+
+      <div className="cb-container cb-hero__inner">
+        <div className="cb-hero__text">
+          <p className="cb-brandline">{TAGLINE}</p>
+          <h1 id="hero-heading" className="cb-display">
+            AI, software and cloud for businesses in Kenya and across Africa.
+          </h1>
+          <p className="cb-lead">
+            Our Nairobi team builds chatbots, forecasting models and custom software, designs and manages the
+            cloud infrastructure it runs on, and sources the servers, laptops and licences your staff use.
+          </p>
+          <div className="cb-hero__ctas">
+            <BookingLink className="cb-btn cb-btn--lg" />
+            {/* Invisible 12px extension above and below makes it a 44px+ touch target */}
+            <a href="#services" className="cb-link relative after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']">
+              See our services
+            </a>
+          </div>
+        </div>
+
+        <HeroBits />
+      </div>
+    </section>
+  );
+}

@@ -29,7 +29,13 @@ async function verifyRecaptcha(token: string): Promise<{ success: boolean; score
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, phone, service, message, recaptchaToken } = body;
+    const { name, email, company, phone, service, message, recaptchaToken, website } = body;
+
+    // Honeypot: the "website" field is hidden from people, so only bots fill it.
+    // Answer as if it worked, and save nothing.
+    if (website) {
+      return NextResponse.json({ success: true, emailSent: true }, { status: 200 });
+    }
 
     // Validate reCAPTCHA token
     if (!recaptchaToken) {
