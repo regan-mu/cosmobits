@@ -16,6 +16,13 @@ import {
 import { AI_SERVICE, SERVICES } from '@/content/site';
 import { CONTACT, TAGLINE, whatsappUrl } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
+import IconTile from './IconTile';
+
+// Footer text that isn't a title is muted, as on the previous site (white at 60%)
+const MUTED = 'text-white/60';
+const ITEM = 'flex items-center gap-3 sm:gap-4';
+const TITLE = 'text-base font-semibold leading-snug text-cb-text';
+const DETAIL = `mt-0.5 text-sm leading-5 ${MUTED} transition-colors`;
 
 const SOCIAL: { key: keyof typeof CONTACT.social; label: string; icon: LucideIcon }[] = [
   { key: 'linkedin', label: 'LinkedIn', icon: Linkedin },
@@ -72,40 +79,50 @@ export default function Footer() {
               className="h-14 w-auto"
             />
           </Link>
-          <p className="cb-brandline mt-6">{TAGLINE}</p>
-          <p className="mt-3 max-w-md text-cb-muted">
+          <p className={`mt-6 font-semibold ${MUTED}`}>{TAGLINE}</p>
+          <p className={`mt-2 max-w-md ${MUTED}`}>
             AI, custom software, cloud infrastructure and IT supply for businesses in Kenya and across Africa.
           </p>
 
-          <ul className="mt-6 space-y-3 text-cb-muted">
-            <li>
-              <a href={`mailto:${CONTACT.email}`} className="inline-flex items-center gap-3 transition-colors hover:text-cb-brand">
-                <Mail size={18} strokeWidth={1.75} aria-hidden="true" className="text-cb-brand" />
-                {CONTACT.email}
-              </a>
+          {/* Same pattern as the contact card: each item as tall as its icon tile */}
+          <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <li className={ITEM}>
+              <IconTile icon={Mail} />
+              <div className="min-w-0">
+                <p className={TITLE}>Email Us</p>
+                <a href={`mailto:${CONTACT.email}`} className={`${DETAIL} block hover:text-cb-brand`}>
+                  {CONTACT.email}
+                </a>
+              </div>
             </li>
-            <li>
-              <a href={`tel:${CONTACT.phoneE164}`} className="inline-flex items-center gap-3 transition-colors hover:text-cb-brand">
-                <Phone size={18} strokeWidth={1.75} aria-hidden="true" className="text-cb-brand" />
-                {CONTACT.phoneDisplay}
-              </a>
+            <li className={ITEM}>
+              <IconTile icon={Phone} />
+              <div className="min-w-0">
+                <p className={TITLE}>Call Us</p>
+                <a href={`tel:${CONTACT.phoneE164}`} className={`${DETAIL} block hover:text-cb-brand`}>
+                  {CONTACT.phoneDisplay}
+                </a>
+              </div>
             </li>
             {CONTACT.whatsappE164 && (
-              <li>
-                <a
-                  href={whatsappUrl(CONTACT.whatsappE164)}
-                  className="inline-flex items-center gap-3 transition-colors hover:text-cb-brand"
-                >
-                  <MessageCircle size={18} strokeWidth={1.75} aria-hidden="true" className="text-cb-brand" />
-                  WhatsApp
-                </a>
+              <li className={ITEM}>
+                <IconTile icon={MessageCircle} />
+                <div className="min-w-0">
+                  <p className={TITLE}>WhatsApp</p>
+                  <a href={whatsappUrl(CONTACT.whatsappE164)} className={`${DETAIL} block hover:text-cb-brand`}>
+                    Message us
+                  </a>
+                </div>
               </li>
             )}
-            <li className="flex items-center gap-3">
-              <MapPin size={18} strokeWidth={1.75} aria-hidden="true" className="shrink-0 text-cb-brand" />
-              <address className="not-italic">
-                {CONTACT.address.area}, {CONTACT.address.city}, {CONTACT.address.country}
-              </address>
+            <li className={ITEM}>
+              <IconTile icon={MapPin} />
+              <div className="min-w-0">
+                <p className={TITLE}>Visit Us</p>
+                <address className={`${DETAIL} not-italic`}>
+                  {CONTACT.address.area}, {CONTACT.address.city}
+                </address>
+              </div>
             </li>
           </ul>
 
@@ -118,7 +135,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener"
                     aria-label={`CosmoBits on ${label} (opens in a new tab)`}
-                    className="flex h-11 w-11 items-center justify-center rounded-lg border border-cb-border text-cb-muted transition-colors hover:border-cb-brand/40 hover:text-cb-brand"
+                    className={`flex h-11 w-11 items-center justify-center rounded-lg border border-cb-border ${MUTED} transition-colors hover:border-cb-brand/40 hover:text-cb-brand`}
                   >
                     <Icon size={18} strokeWidth={1.75} aria-hidden="true" />
                   </a>
@@ -138,7 +155,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group inline-flex items-center gap-1 text-cb-muted transition-colors hover:text-cb-brand"
+                    className={`group inline-flex items-center gap-1 ${MUTED} transition-colors hover:text-cb-brand`}
                   >
                     {link.name}
                     <ArrowUpRight
@@ -154,7 +171,7 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="cb-container cb-small flex flex-col items-center justify-between gap-3 py-6 text-center text-cb-muted md:flex-row md:text-left">
+      <div className={`cb-container cb-small flex flex-col items-center justify-between gap-3 py-6 text-center ${MUTED} md:flex-row md:text-left`}>
         <span>© {year} CosmoBits Technologies. All rights reserved.</span>
         <span className="inline-flex items-center gap-1.5">
           Made with
