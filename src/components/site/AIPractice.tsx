@@ -3,6 +3,7 @@ import { AI_CAPABILITIES } from '@/content/site';
 import { FLAGS } from '@/lib/flags';
 import BookingLink from './BookingLink';
 import Reveal from './Reveal';
+import { Arc } from './decor';
 
 // Same icon set, stroke and brand colour as the service cards (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
@@ -20,7 +21,8 @@ const ICONS: Record<string, LucideIcon> = {
  */
 export default function AIPractice() {
   return (
-    <section id="ai" aria-labelledby="ai-heading" className="cb-section">
+    <section id="ai" aria-labelledby="ai-heading" className="cb-section relative isolate overflow-hidden">
+      <Arc className="-bottom-[420px] -left-[420px] h-[640px] w-[640px] lg:-bottom-[620px] lg:-left-[600px] lg:h-[1000px] lg:w-[1000px]" />
       <div className="cb-container">
         <Reveal as="header" className="cb-section-header">
           <h2 id="ai-heading" className="cb-h2">

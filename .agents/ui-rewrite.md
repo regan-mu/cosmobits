@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 27 Sep 2026 (owner):** four more arcs (What We Do, AI in Practice, Who We Are, Get in Touch), and the hero fills the screen height from 1024px, capped at 1000px (6.5, Block 1).
 **Revision, 27 Sep 2026 (owner):** the hero graphic is hidden below 768px (7.6).
 **Revision, 27 Sep 2026 (owner):** scroll-in animations return, the nav gets an active-section dot, and the navbar is 104px as on the previous site (7.4, 7.5, 6.5).
 **Revision, 27 Sep 2026 (owner):** Contact and the footer return to the previous site's layouts, rebranded (Blocks 10, 11, 7.2).
@@ -565,7 +566,7 @@ After building, check the hole's position against the real rendered graphic at 1
 Snippets use Tailwind classes; translate them if Phase 0 shows the project styles components another way.
 
 - **Look:** a single very large circle drawn as a 1px outline in `#C496C4` at **14% opacity**, with no fill. It's positioned mostly off-screen, so only one sweeping arc shows.
-- **Budget:** exactly one on the homepage, paired with the halo on the opposite side (the CTA-band arc went with the band, 27 Sep 2026):
+- **Budget (owner revision, 27 Sep 2026):** the hero arc plus one arc each in What We Do (top right), AI in Practice (bottom left), Who We Are (top right) and Get in Touch (bottom left): five on the homepage, alternating sides. Same 1px `#C496C4` at 14% outline, mostly off-screen so only a sweeping curve shows, behind the content (each section is `relative isolate overflow-hidden`). 640px circles below 1024px, 1000px above. Earlier budget, kept for reference: exactly one on the homepage, paired with the halo on the opposite side:
   1. **Hero:** centred off-screen at the top left. The arc sweeps from the top edge (about 370px in from the left) down to the left edge (about 350px down), passing behind the nav and headline.
   2. ~~**Final CTA band:** mirrored, centred off-screen at the top right of the band.~~ (removed by the owner, 27 Sep 2026)
 - **Elsewhere:** service-page heroes may use the hero arc. Other sections get none.
@@ -609,7 +610,7 @@ The logo is built from squares with one rounded corner, so circles are used as a
 
 **Acceptance:**
 - The mesh appears only in heroes.
-- There is exactly one arc on the homepage.
+- There are exactly five arcs on the homepage (hero + four sections, owner revision 27 Sep 2026).
 - The mesh is invisible inside the hero graphic's area at 1280/1440/1920px.
 - No circles appear outside the allowed list.
 - Text contrast over the mesh and arc still meets 6.1. Both sit at under 15% opacity, so this should hold, but check it.
@@ -708,7 +709,7 @@ An approved mockup of this block exists on the design canvas ("Concept B: built 
   - "See Our Work" (until Work exists),
   - the scroll hint,
   - the current hero image.
-- **Height:** don't force `100vh`. Let content set the height so block 2 peeks above the fold on a 1366×768 laptop. The mockup is 1440×820 including the nav.
+- **Height (owner revision, 27 Sep 2026):** from 1024px up, at least the viewport height (`min(100svh, 1000px)`), content centred vertically, capped at 1000px so it doesn't overstretch on tall screens. Content still sets the height when it's taller (e.g. 1366×768). Below 1024px, natural height. *(Original: don't force `100vh`; let block 2 peek above the fold on a 1366×768 laptop.)* The mockup is 1440×820 including the nav.
 
 #### Block 2: Partners
 

@@ -120,7 +120,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] No section-header icons or eyebrow labels
 - [~] Exactly one halo on the homepage (CTA band removed), one per service page; no other glows *(homepage done; service pages are PR 4)*
 - [x] Glassmorphism only in the services-stack AI layer
-- [x] Mesh only in heroes, never visible through the hero graphic; exactly one arc on the homepage; no circles outside the 6.5 list
+- [x] Mesh only in heroes, never visible through the hero graphic; five arcs on the homepage (owner revision); no circles outside the 6.5 list
 - [x] Homepage hero matches `hero-mockup.html` at 1440×820
 - [x] Hero-bits animates once, skipped under reduced motion, hero text visible at first paint
 - [x] Scroll-in animations only through `Reveal`, none in the hero (owner reinstated them)

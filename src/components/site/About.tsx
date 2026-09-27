@@ -3,6 +3,7 @@ import { ABOUT, PRINCIPLES, STATS } from '@/content/site';
 import { CONTACT } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import Reveal from './Reveal';
+import { Arc } from './decor';
 
 // Same icon set, stroke and brand colour as the other cards (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
@@ -109,8 +110,9 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="cb-section cb-section--surface border-t border-cb-border"
+      className="cb-section cb-section--surface relative isolate overflow-hidden border-t border-cb-border"
     >
+      <Arc className="-right-[440px] -top-[400px] h-[640px] w-[640px] lg:-right-[620px] lg:-top-[560px] lg:h-[1000px] lg:w-[1000px]" />
       <div className="cb-container">
         <Reveal as="header" className="cb-section-header">
           <h2 id="about-heading" className="cb-h2">
