@@ -44,16 +44,16 @@ export default function WhatWeDo() {
                   className="flex flex-col rounded-xl border border-cb-border bg-cb-bg p-6 lg:p-7"
                 >
                   <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5" />
-                  <h3 className="cb-h3">{service.name}</h3>
+                  <h3 className="cb-h3 text-cb-text">{service.name}</h3>
                   <p className="mt-3 text-cb-muted">{service.summary}</p>
-                  <ul className="mt-5 space-y-2 border-t border-cb-border pt-5 text-[0.9375rem]">
+                  <ul className="mt-5 space-y-2 border-t border-cb-border pt-5 text-[0.9375rem] text-cb-muted">
                     {service.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-2.5">
                         <CheckCircle2
                           size={18}
-                          strokeWidth={1.5}
+                          strokeWidth={2}
                           aria-hidden="true"
-                          className="mt-[0.2em] shrink-0 text-cb-muted"
+                          className="mt-[0.2em] shrink-0 text-cb-brand"
                         />
                         {bullet}
                       </li>

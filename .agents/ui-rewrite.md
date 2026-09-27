@@ -418,7 +418,7 @@ A professional site shows the brand colour in a few deliberate places on a mostl
 | `#363150` on `#150F33` | 1.5:1 | Decorative dividers only; never the only boundary of a control |
 
 **Usage budget:**
-- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, the check icons on the AI capability cards, and the step number circles in "How We Run Our Projects".
+- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, the check icons on the AI capability and service cards, and the step number circles in "How We Run Our Projects".
 - `--color-brand-deep` and `--color-brand-mauve` appear only inside the two graphics (7.6, 7.7) and the halos (6.3), plus `--color-brand-deep` as the fill of the highlighted step card in Block 5 (owner preference).
 - Headings, body text, icons, borders and card backgrounds stay neutral.
 
