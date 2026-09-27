@@ -27,6 +27,13 @@ export default function HeroBits() {
     const place = () => {
       const a = art.getBoundingClientRect();
       const h = hero.getBoundingClientRect();
+      // Hidden on mobile (owner preference): no hole in the mesh, halo back to its CSS default spot
+      if (a.width === 0) {
+        hero.style.removeProperty('--hole-x');
+        hero.style.removeProperty('--hole-y');
+        hero.style.setProperty('--hole-r', '0px');
+        return;
+      }
       hero.style.setProperty('--hole-x', `${a.left - h.left + a.width / 2}px`);
       hero.style.setProperty('--hole-y', `${a.top - h.top + a.height / 2}px`);
       // 360px for the 600px graphic in the mockup
@@ -40,7 +47,8 @@ export default function HeroBits() {
   }, []);
 
   return (
-    <div ref={ref} className="cb-hero__art">
+    // Not shown below 768px (owner preference): the hero is text and buttons only on mobile
+    <div ref={ref} className="cb-hero__art max-md:hidden">
       <svg
         width="600"
         height="600"

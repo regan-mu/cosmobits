@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 27 Sep 2026 (owner):** the hero graphic is hidden below 768px (7.6).
 **Revision, 27 Sep 2026 (owner):** scroll-in animations return, the nav gets an active-section dot, and the navbar is 104px as on the previous site (7.4, 7.5, 6.5).
 **Revision, 27 Sep 2026 (owner):** Contact and the footer return to the previous site's layouts, rebranded (Blocks 10, 11, 7.2).
 **Revision, 27 Sep 2026 (owner):** the final CTA band ("Tell Us What You're Working On.") is removed; the homepage keeps one halo and one arc, both in the hero, and the procurement line moves to Contact (Block 9, 6.3, 6.5).
@@ -944,7 +945,8 @@ The total runtime is under one second. It must not trigger again on client-side 
 **Responsive:**
 - **≥1024px:** two columns, as in the mockup.
 - **768–1023px:** the graphic stays on the right at `width: 38vw`.
-- **Below 768px:** the graphic moves below the CTAs, centred, at `width: min(360px, 80vw)`.
+- **Below 768px:** *(owner revision, 27 Sep 2026)* the graphic is not shown; the mobile hero is the brandline, H1, lead and CTAs only, over the mesh (no hole) and the halo. The notes below described the earlier plan.
+- ~~**Below 768px:** the graphic moves below the CTAs, centred, at `width: min(360px, 80vw)`.~~
   - Hide `.cb-far` bits (`display: none`) so the grid doesn't crowd the text.
   - The mesh hole and the arc switch to their mobile values (6.5).
   - Reduce the halo size by about 40%.

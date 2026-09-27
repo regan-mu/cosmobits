@@ -54,7 +54,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 
 - [x] Block 1 Hero matches `hero-mockup.html` at 1440×820
 - [x] 7.6 `HeroBits` inline SVG, load animation plays once, skipped under reduced motion, not replayed on client navigation
-- [x] 7.6 Responsive: 38vw at 768–1023, below CTAs at <768 with `.cb-far` hidden, nothing overlaps at 360px
+- [x] 7.6 Responsive: 38vw at 768–1023; hidden below 768px (owner, 27 Sep 2026); nothing overlaps at 360px
 - [~] Block 2 Partners *(built; behind `SHOW_PARTNERS`: needs label and logos with permission)*
 - [x] Block 3 What we do + `ServicesStack` graphic, 4 service blocks
 - [ ] Block 3 "About {service}" links *(behind `SHOW_SERVICE_PAGES` until PR 4)*

@@ -81,3 +81,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Project step cards: highlight selectors now match the list item, since each card sits inside its scroll-in wrapper.
 - Contact subtitle widened to 52rem (other section intros stay at 42rem) and no longer balance-wrapped, so it reads on one line from 1024px up (owner request).
 - Footer description now 14px at white 50% (about 5:1 contrast), so it sits below the tagline (17px, white 60%) (owner request).
+- Hero: the hero-bits graphic is hidden below 768px, so the mobile hero is text and buttons only; without the graphic the mesh has no hole and the halo sits at its default spot (owner request; spec 7.6 updated).
