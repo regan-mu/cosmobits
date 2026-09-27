@@ -69,9 +69,9 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [ ] Block 8 photo *(not built yet: `SHOW_ABOUT_PHOTO` is reserved, add the image layout when a real photo exists)*
 - [x] Block 9 CTA band: built, then removed by the owner (27 Sep 2026)
 - [ ] Company profile PDF line, now in Block 10 Contact *(behind `SHOW_COMPANY_PROFILE`)*
-- [x] Block 10 Contact: details + form, form first on mobile, Quick Connect removed
+- [x] Block 10 Contact: previous site's layout rebranded (owner, 27 Sep 2026): Contact Information + Quick Connect cards, form card with icon header and full-width button; form first on mobile
 - [x] Block 10 Form: visible labels, optional phone with +254 hint, honeypot, inline errors and success, consent note, "Send message"
-- [x] Block 11 Footer simplified (brandline, Services/Company/Contact columns, legal row, "Made in Nairobi")
+- [x] Block 11 Footer: previous site's layout rebranded (owner, 27 Sep 2026): brand column with contacts, Services/Company/Resources columns, "Made with ♥ in Nairobi"; no newsletter
 - [x] 7.4 Nav: sticky, transparent → solid after 16px, sentence-case items, "Book a consultation" button, no "Home"
 - [x] 7.4 Mobile menu: full-height sheet, 48px targets, phone at the bottom, focus trapped, Escape closes
 - [ ] 7.4 Services dropdown *(needs service pages, PR 4)*

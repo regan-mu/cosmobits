@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 27 Sep 2026 (owner):** Contact and the footer return to the previous site's layouts, rebranded (Blocks 10, 11, 7.2).
 **Revision, 27 Sep 2026 (owner):** the final CTA band ("Tell Us What You're Working On.") is removed; the homepage keeps one halo and one arc, both in the hero, and the procurement line moves to Contact (Block 9, 6.3, 6.5).
 **Revision, 26 Sep 2026 (owner):** About becomes two columns, prose beside "The Principles That Guide Us" (Block 8, S3, 7.2).
 **Revision, 26 Sep 2026 (owner):** section titles use title case (5.4), and Block 5 is renamed "How We Run Our Projects" with numbered step cards on a colour band and a highlighted card (7.3, 6.1, 6.5).
@@ -644,7 +645,7 @@ With the tightened structure below, every section header is just the H2, plus an
 
 Icons that remain elsewhere must carry meaning:
 - **Keep:** icons in the four service blocks, the AI capability cards and the About principles, as consistent line icons from a single set at one stroke weight, drawn in `--color-brand` (owner preference, 27 Sep 2026; the spec originally said neutral), and not inside a tinted rounded square.
-- **Keep:** functional icons (menu, external link, phone and mail in Contact, social logos in the footer).
+- **Keep:** functional icons (menu, external link, phone and mail in Contact, social logos in the footer). In Contact, detail icons sit in flat brand-tinted tiles, as on the previous site (owner preference, 27 Sep 2026).
 - **Keep:** one brand-colour line icon per AI capability card (owner preference, 26 Sep 2026), same set and stroke as the service blocks.
 - **Keep:** one brand-colour line icon per principle in Block 8 (owner preference).
 - **Remove:** icons on process steps. The numbers carry those.
@@ -847,6 +848,8 @@ The first case study is in progress. The agent builds the template and data mode
 
 #### Block 10: Contact
 
+**Owner revision, 27 Sep 2026:** the previous site's contact layout returns, in the current branding. H2 "Get in Touch" with the intro "Tell us about your project or ask us a question. We'll reply {reply time}." Five-column grid: left (2/5) a "Contact Information" card (Visit Us with directions link, Call Us, Email Us, Working Hours, each with its icon in a flat brand-tinted tile) and a "Quick Connect" card with pill links (Email Us, Call Now, WhatsApp when set; the old self-referencing "Website" link stays out); right (3/5) the form card with an icon-tile header ("Send Us a Message", "We'll respond {reply time}."), a full-width "Send message" button with a send icon, and a centred success state with a check. The flagged procurement line sits at the bottom of the Quick Connect card. No gradients or glows. The notes below still apply where they don't conflict.
+
 - **H2:** "Contact". Two columns: details on the left, form on the right. On mobile they stack with the form first.
 - **Details:**
   - address with a "Get directions" link to Google Maps,
@@ -866,6 +869,8 @@ The first case study is in progress. The agent builds the template and data mode
   - Button label: "Send message".
 
 #### Block 11: Footer
+
+**Owner revision, 27 Sep 2026:** the previous site's footer layout returns, in the current branding. Five columns: brand column (2/5) with the logo, brandline, a one-line description ("AI, custom software, cloud infrastructure and IT supply for businesses in Kenya and across Africa."), email / phone / location with brand-colour icons, and social icons for real profiles only; then Services, Company (About Us, Contact) and Resources (Privacy Policy, Terms of Service) columns, whose links show an arrow on hover. Bottom bar: "© {year} CosmoBits Technologies. All rights reserved." and "Made with ♥ in Nairobi". The old blurb (banned phrases) and the newsletter (no list, 3.7) stay out.
 
 - **Row 1:**
   - logo and brandline,

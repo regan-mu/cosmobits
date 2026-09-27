@@ -5,9 +5,10 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { AlertCircle, Loader2 } from 'lucide-react';
+import { AlertCircle, Building2, CheckCircle2, Loader2, Send } from 'lucide-react';
 import { ENQUIRY_TOPICS } from '@/content/site';
 import { CONTACT } from '@/lib/contact';
+import IconTile from './IconTile';
 
 const schema = z.object({
   name: z.string().trim().min(2, 'Enter your name.'),
@@ -79,12 +80,18 @@ export default function ContactForm() {
 
   if (status.kind === 'sent') {
     return (
-      <div role="status" className="rounded-xl border border-cb-border bg-cb-surface p-6 lg:p-8">
-        <h3 className="cb-h4">Message sent</h3>
-        <p className="mt-2 text-cb-muted">
+      <div
+        role="status"
+        className="flex flex-col items-center rounded-xl border border-cb-border bg-cb-surface px-6 py-14 text-center lg:px-10"
+      >
+        <span className="flex h-20 w-20 items-center justify-center rounded-full bg-cb-brand/10">
+          <CheckCircle2 size={40} strokeWidth={1.75} aria-hidden="true" className="text-cb-brand" />
+        </span>
+        <h3 className="cb-h4 mt-6 text-cb-text">Message Sent</h3>
+        <p className="mt-2 max-w-[40ch] text-cb-muted">
           Thanks, we&apos;ve got your message and will reply {CONTACT.replyTime}.
         </p>
-        <button type="button" onClick={() => setStatus({ kind: 'idle' })} className="cb-link mt-4">
+        <button type="button" onClick={() => setStatus({ kind: 'idle' })} className="cb-link mt-5">
           Send another message
         </button>
       </div>
@@ -104,10 +111,18 @@ export default function ContactForm() {
       aria-labelledby="contact-form-heading"
       className="rounded-xl border border-cb-border bg-cb-surface p-6 lg:p-8"
     >
-      <h3 id="contact-form-heading" className="cb-h4">
-        Send us a message
-      </h3>
-      <p className="cb-small mt-1 text-cb-muted">For quotes and general enquiries. All fields are required unless marked optional.</p>
+      <div className="flex items-center gap-4">
+        <IconTile icon={Building2} />
+        <div>
+          <h3 id="contact-form-heading" className="cb-h4 text-cb-text">
+            Send Us a Message
+          </h3>
+          <p className="cb-small mt-0.5 text-cb-muted">We&apos;ll respond {CONTACT.replyTime}.</p>
+        </div>
+      </div>
+      <p className="cb-small mt-6 text-cb-muted">
+        For quotes and general enquiries. All fields are required unless marked optional.
+      </p>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2">
         <div>
@@ -187,18 +202,20 @@ export default function ContactForm() {
         </p>
       )}
 
-      <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="cb-small text-cb-muted">
-          We&apos;ll only use these details to reply to you.{' '}
-          <a href="/privacy" className="cb-link">
-            Privacy policy
-          </a>
-        </p>
-        <button type="submit" disabled={isSubmitting} className="cb-btn cb-btn--lg shrink-0">
-          {isSubmitting && <Loader2 size={18} aria-hidden="true" className="animate-spin" />}
-          {isSubmitting ? 'Sending…' : 'Send message'}
-        </button>
-      </div>
+      <button type="submit" disabled={isSubmitting} className="cb-btn cb-btn--lg mt-6 w-full">
+        {isSubmitting ? (
+          <Loader2 size={18} aria-hidden="true" className="animate-spin" />
+        ) : (
+          <Send size={18} aria-hidden="true" />
+        )}
+        {isSubmitting ? 'Sending…' : 'Send message'}
+      </button>
+      <p className="cb-small mt-4 text-center text-cb-muted">
+        We&apos;ll only use these details to reply to you.{' '}
+        <a href="/privacy" className="cb-link">
+          Privacy policy
+        </a>
+      </p>
     </form>
   );
 }
