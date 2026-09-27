@@ -152,7 +152,7 @@ export default function About() {
                     <PrincipleDividers index={i} count={PRINCIPLES.length} />
                     <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="shrink-0 text-cb-muted" />
                     <div>
-                      <h4 className="font-semibold">{p.title}</h4>
+                      <h4 className="font-semibold text-cb-text">{p.title}</h4>
                       <p className="mt-1 text-cb-muted">{p.text}</p>
                     </div>
                   </li>

@@ -418,7 +418,7 @@ A professional site shows the brand colour in a few deliberate places on a mostl
 | `#363150` on `#150F33` | 1.5:1 | Decorative dividers only; never the only boundary of a control |
 
 **Usage budget:**
-- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, and the step number circles in "How We Run Our Projects".
+- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, the check icons on the AI capability cards, and the step number circles in "How We Run Our Projects".
 - `--color-brand-deep` and `--color-brand-mauve` appear only inside the two graphics (7.6, 7.7) and the halos (6.3), plus `--color-brand-deep` as the fill of the highlighted step card in Block 5 (owner preference).
 - Headings, body text, icons, borders and card backgrounds stay neutral.
 
@@ -753,7 +753,7 @@ AI gets its own block (4), so it isn't one of the four here.
 
 - **H2:** "AI in Practice"
 - **Lead:** "Most of our AI work starts with a problem a team already has: too many repetitive customer questions, documents typed up by hand, stock that runs out without warning."
-- **Capabilities:** a card grid (three columns on desktop, two on tablet, one on mobile), as on the previous site (owner preference, 26 Sep 2026), restyled in the new language: flat 12px-radius cards with a 1px `--color-border` on `--color-surface`, one neutral line icon, the name (h4), one line, and three checked points using the same check icon as the service blocks. No gradient icon tiles, glows, hover lifts or tags.
+- **Capabilities:** a card grid (three columns on desktop, two on tablet, one on mobile), as on the previous site (owner preference, 26 Sep 2026), restyled in the new language: flat 12px-radius cards with a 1px `--color-border` on `--color-surface`, one neutral line icon, the name (h4), one line, and three checked points: muted text with check icons in `--color-brand`, as on the previous site (owner preference, 27 Sep 2026). Titles white, everything else muted. No gradient icon tiles, glows, hover lifts or tags.
   - **Chatbots and assistants:** answer customer questions on your website or WhatsApp, in English and Swahili `{{OWNER: confirm languages}}`, handing over to staff when needed.
   - **Forecasting:** predict sales, demand or risk from the data you already keep.
   - **Document processing:** read invoices, forms and contracts, and pull the fields into your systems.
