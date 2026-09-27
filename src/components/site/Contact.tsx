@@ -3,6 +3,7 @@ import { CONTACT, whatsappUrl } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import ContactForm from './ContactForm';
 import IconTile from './IconTile';
+import Reveal from './Reveal';
 
 const ITEM = 'flex items-center gap-3 sm:gap-4';
 const TITLE = 'text-base font-semibold leading-snug text-cb-text';
@@ -33,21 +34,21 @@ export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="cb-section">
       <div className="cb-container">
-        <header className="cb-section-header">
+        <Reveal as="header" className="cb-section-header">
           <h2 id="contact-heading" className="cb-h2">
             Get in Touch
           </h2>
           <p className="cb-lead text-balance">
             Tell us about your project or ask us a question. We&apos;ll reply {CONTACT.replyTime}.
           </p>
-        </header>
+        </Reveal>
 
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:order-2 lg:col-span-7">
+          <Reveal from="right" delay={200} className="lg:order-2 lg:col-span-7">
             <ContactForm />
-          </div>
+          </Reveal>
 
-          <div className="space-y-6 lg:order-1 lg:col-span-5">
+          <Reveal from="left" delay={100} className="space-y-6 lg:order-1 lg:col-span-5">
             <div className="rounded-xl border border-cb-border bg-cb-surface p-5 sm:p-6 lg:p-8">
               <h3 className="cb-h4 text-cb-text">Contact Information</h3>
               {/* Each item is as tall as its 48px icon tile: a title and one smaller line, as on the previous site */}
@@ -125,7 +126,7 @@ export default function Contact() {
                 </p>
               )}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import { DATA_COMMITMENTS } from '@/content/site';
+import Reveal from './Reveal';
 
 /**
  * Block 6 (spec 7.3): plain statements, no icons, badges or seals.
@@ -8,14 +9,14 @@ export default function DataHandling() {
   return (
     <section id="data" aria-labelledby="data-heading" className="cb-section">
       <div className="cb-container">
-        <header className="cb-section-header">
+        <Reveal as="header" className="cb-section-header">
           <h2 id="data-heading" className="cb-h2">
             How We Handle Your Data
           </h2>
           <p className="cb-lead">
             AI and software projects mean giving a vendor access to your data. Here&apos;s what we do with it.
           </p>
-        </header>
+        </Reveal>
 
         <dl className="grid gap-x-12 md:grid-cols-2">
           {DATA_COMMITMENTS.map((item) => (

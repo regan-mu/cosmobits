@@ -2,6 +2,7 @@ import { Bot, CheckCircle2, Cpu, Eye, FileText, LineChart, Workflow, type Lucide
 import { AI_CAPABILITIES } from '@/content/site';
 import { FLAGS } from '@/lib/flags';
 import BookingLink from './BookingLink';
+import Reveal from './Reveal';
 
 // Same icon set, stroke and brand colour as the service cards (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
@@ -21,7 +22,7 @@ export default function AIPractice() {
   return (
     <section id="ai" aria-labelledby="ai-heading" className="cb-section">
       <div className="cb-container">
-        <header className="cb-section-header">
+        <Reveal as="header" className="cb-section-header">
           <h2 id="ai-heading" className="cb-h2">
             AI in Practice
           </h2>
@@ -29,14 +30,16 @@ export default function AIPractice() {
             Most of our AI work starts with a problem a team already has: too many repetitive customer
             questions, documents typed up by hand, stock that runs out without warning.
           </p>
-        </header>
+        </Reveal>
 
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {AI_CAPABILITIES.map((item) => {
+          {AI_CAPABILITIES.map((item, i) => {
             const Icon = ICONS[item.id];
             return (
-              <li
+              <Reveal
+                as="li"
                 key={item.id}
+                delay={(i % 3) * 100}
                 className="flex flex-col rounded-xl border border-cb-border bg-cb-surface p-6 lg:p-7"
               >
                 <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5 text-cb-brand" />
@@ -55,12 +58,12 @@ export default function AIPractice() {
                     </li>
                   ))}
                 </ul>
-              </li>
+              </Reveal>
             );
           })}
         </ul>
 
-        <div className="mt-12 flex flex-col items-center gap-3 text-center">
+        <Reveal className="mt-12 flex flex-col items-center gap-3 text-center">
           <BookingLink className="cb-btn cb-btn--lg" />
           <p className="cb-small text-cb-muted">The first consultation is free.</p>
           {FLAGS.SHOW_DATA_HANDLING && (
@@ -68,7 +71,7 @@ export default function AIPractice() {
               How we handle your data
             </a>
           )}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

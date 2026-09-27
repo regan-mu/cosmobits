@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 27 Sep 2026 (owner):** scroll-in animations return, the nav gets an active-section dot, and the navbar is 104px as on the previous site (7.4, 7.5, 6.5).
 **Revision, 27 Sep 2026 (owner):** Contact and the footer return to the previous site's layouts, rebranded (Blocks 10, 11, 7.2).
 **Revision, 27 Sep 2026 (owner):** the final CTA band ("Tell Us What You're Working On.") is removed; the homepage keeps one halo and one arc, both in the hero, and the procurement line moves to Contact (Block 9, 6.3, 6.5).
 **Revision, 26 Sep 2026 (owner):** About becomes two columns, prose beside "The Principles That Guide Us" (Block 8, S3, 7.2).
@@ -602,6 +603,7 @@ The logo is built from squares with one rounded corner, so circles are used as a
   - step numbers, except the numbered circles in Block 5 (owner preference, 26 Sep 2026);
   - badges;
   - avatar placeholders for people who don't have a real photo (show no avatar instead).
+- **Also allowed (owner preference, 27 Sep 2026):** the 4px active-section dot under the nav links (7.4).
 - **No other decorative circles, rings, orbits, dots or blobs.**
 
 **Acceptance:**
@@ -882,14 +884,16 @@ The first case study is in progress. The agent builds the template and data mode
 
 ### 7.4 Navigation
 
-- Sticky header, 64px desktop / 56px mobile. Transparent over the hero, becoming solid (`--color-bg` + 1px border) after 16px of scroll.
+- Sticky header, 104px at every width, as on the previous site (owner preference, 27 Sep 2026; was 64px / 56px). It keeps its height when scrolled. Transparent over the hero, becoming solid (`--color-bg` + 1px border) after 16px of scroll. The height lives in `--cb-header-h`, set by the site layout; the hero padding and anchor offsets follow it.
 - Menu: Services (dropdown) · AI · About · Work (when live) · Contact, plus a primary button "Book a consultation". Remove "Home", since the logo does that.
 - Mobile: full-height sheet with large tap targets (min 48px), the phone number and WhatsApp at the bottom, and focus trapped while open.
 - Mark the active page with `aria-current="page"`.
+- **Active-section dot (owner preference, 27 Sep 2026, as on the previous site):** on the homepage, the nav link for the section in view turns `--color-brand` and a 4px brand dot sits under it, sliding between links as you scroll. A section counts as in view once its top passes 150px from the top of the viewport; sections without a nav link keep the previous one active. The active link gets `aria-current="location"`; the mobile menu highlights it too.
 
 ### 7.5 Motion (whole site)
 
-- **Remove** all scroll-triggered section entrances, card hover lifts, and anything that bounces or pulses.
+- **Scroll-in animations are back (owner preference, 27 Sep 2026, as on the previous site; this reverses the original rule).** Section headers, cards and columns fade in and move 30px up (the contact columns 50px in from the sides) over 600ms, once, when they come 100px into view; cards in a grid stagger by 100ms. The hero doesn't animate, so its headline paints at once. Content stays in the server HTML, `prefers-reduced-motion: reduce` shows it without motion, and a `<noscript>` style shows it without JavaScript. Implemented once, in `components/site/Reveal.tsx`.
+- **Remove** card hover lifts and anything that bounces or pulses.
 - **The one orchestrated moment** is the hero-bits assembly (7.6).
   - Hero text doesn't animate; it renders immediately, so the largest contentful paint (LCP) isn't delayed.
 - **Also allowed:**
@@ -1370,7 +1374,7 @@ Content behind a disabled flag should live in a data file the guard can skip, or
 - [ ] Mesh only in heroes, never visible through the hero graphic; exactly one arc on the homepage; no circles outside the 6.5 list.
 - [ ] The homepage hero matches `reference/hero-mockup.html` at 1440×820.
 - [ ] The hero-bits graphic matches the mockup, animates once, is skipped under reduced motion, and hero text is visible at first paint.
-- [ ] No scroll-triggered section animations.
+- [ ] Scroll-in animations only through `Reveal` (owner reinstated them, 27 Sep 2026): once per element, none in the hero, reduced motion and no-JS handled.
 - [ ] One primary CTA label ("Book a consultation") site-wide, pointing at a working booking page.
 - [ ] The data-handling block contains only owner-confirmed statements, with no badges or seals.
 - [ ] No copy says CosmoBits owns servers or a data centre.

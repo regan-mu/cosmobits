@@ -173,7 +173,7 @@ body:has(.cb-site) {
 
 .cb-site {
   --cb-pad: clamp(1rem, 5.56vw, 5rem);
-  --cb-header-h: 56px;
+  /* --cb-header-h (navbar height) is set on this element by app/(site)/layout.tsx */
 
   min-height: 100vh;
   background: var(--color-cb-bg);
@@ -184,11 +184,6 @@ body:has(.cb-site) {
   overflow-x: clip;
 }
 
-@media (min-width: 1024px) {
-  .cb-site {
-    --cb-header-h: 100px;
-  }
-}
 
 .cb-site ::selection {
   background: var(--color-cb-brand);
@@ -201,7 +196,7 @@ body:has(.cb-site) {
 }
 
 .cb-site [id] {
-  scroll-margin-top: 80px;
+  scroll-margin-top: calc(var(--cb-header-h) + 8px);
 }
 
 /* Layout ------------------------------------------------------------------ */
@@ -617,15 +612,16 @@ select.cb-field {
   transition: color 200ms ease;
 }
 
-/* Highlighted card: the first one by default, then the one under the pointer */
-.cb-steps:not(:hover) .cb-step:first-child,
-.cb-step:hover {
+/* Highlighted card: the first one by default, then the one under the pointer.
+   Each card sits inside a list item (the scroll-in wrapper), so match on the item. */
+.cb-steps:not(:hover) > li:first-child .cb-step,
+.cb-steps > li:hover .cb-step {
   border-color: var(--color-cb-brand-deep);
   background: var(--color-cb-brand-deep);
 }
 
-.cb-steps:not(:hover) .cb-step:first-child .cb-step__text,
-.cb-step:hover .cb-step__text {
+.cb-steps:not(:hover) > li:first-child .cb-step__text,
+.cb-steps > li:hover .cb-step__text {
   color: var(--color-cb-text);
 }
 

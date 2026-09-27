@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, Phone, X } from 'lucide-react';
@@ -8,25 +8,55 @@ import { CONTACT, whatsappUrl } from '@/lib/contact';
 import BookingLink from './BookingLink';
 
 const NAV = [
-  { label: 'Services', href: '/#services' },
-  { label: 'AI', href: '/#ai' },
-  { label: 'About', href: '/#about' },
-  { label: 'Contact', href: '/#contact' },
+  { label: 'Services', href: '/#services', id: 'services' },
+  { label: 'AI', href: '/#ai', id: 'ai' },
+  { label: 'About', href: '/#about', id: 'about' },
+  { label: 'Contact', href: '/#contact', id: 'contact' },
 ];
 
-/** Sticky header (spec 7.4): transparent over the hero, solid after 16px of scroll. */
+/** A section counts as in view once its top passes this far down the viewport (just under the navbar). */
+const ACTIVE_OFFSET = 150;
+
+/**
+ * Sticky header (spec 7.4): transparent over the hero, solid after 16px of
+ * scroll, 104px tall like the previous site. A dot under the nav links marks
+ * the section in view and slides between links, as on the previous site.
+ */
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
+  const [dot, setDot] = useState<{ left: number; top: number } | null>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
+  const linkRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 16);
+      // The last nav section (in page order) whose top has passed the line under the navbar
+      let current: string | null = null;
+      for (const { id } of NAV) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= ACTIVE_OFFSET) current = id;
+      }
+      setActive(current);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  // Put the dot under the active link, and keep it there when the layout changes size
+  useLayoutEffect(() => {
+    const place = () => {
+      const link = active ? linkRefs.current[active] : null;
+      setDot(link ? { left: link.offsetLeft + link.offsetWidth / 2 - 2, top: link.offsetTop + link.offsetHeight + 6 } : null);
+    };
+    place();
+    window.addEventListener('resize', place);
+    return () => window.removeEventListener('resize', place);
+  }, [active]);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -80,11 +110,7 @@ export default function Header() {
           : 'border-transparent bg-transparent'
       }`}
     >
-      <div
-        className={`cb-container flex items-center justify-between transition-[height] duration-200 ${
-          scrolled ? 'h-14 lg:h-16' : 'h-14 lg:h-25'
-        }`}
-      >
+      <div className="cb-container flex h-26 items-center justify-between">
         <Link href="/" aria-label="CosmoBits Technologies home" className="flex shrink-0 rounded-sm">
           <Image
             src="/cosmobits-technologies-logo-web.png"
@@ -97,13 +123,30 @@ export default function Header() {
           />
         </Link>
 
-        <nav aria-label="Main" className="hidden items-center gap-9 text-[15px] lg:flex">
+        <nav aria-label="Main" className="relative hidden items-center gap-9 text-[15px] lg:flex">
           {NAV.map((item) => (
-            <a key={item.href} href={item.href} className="text-white/80 transition-colors hover:text-white">
+            <a
+              key={item.href}
+              ref={(el) => {
+                linkRefs.current[item.id] = el;
+              }}
+              href={item.href}
+              aria-current={active === item.id ? 'location' : undefined}
+              className={`transition-colors ${
+                active === item.id ? 'text-cb-brand' : 'text-white/80 hover:text-white'
+              }`}
+            >
               {item.label}
             </a>
           ))}
           <BookingLink className="cb-btn" />
+          <span
+            aria-hidden="true"
+            className={`pointer-events-none absolute h-1 w-1 rounded-full bg-cb-brand transition-[left,opacity] duration-300 ease-out ${
+              dot ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={dot ?? undefined}
+          />
         </nav>
 
         <button
@@ -126,7 +169,7 @@ export default function Header() {
           role="dialog"
           aria-modal="true"
           aria-label="Menu"
-          className="fixed inset-x-0 bottom-0 top-14 flex flex-col overflow-y-auto border-t border-cb-border bg-cb-bg lg:hidden"
+          className="fixed inset-x-0 bottom-0 top-26 flex flex-col overflow-y-auto border-t border-cb-border bg-cb-bg lg:hidden"
         >
           <nav aria-label="Main" className="cb-container flex flex-col py-4">
             {NAV.map((item) => (
@@ -134,7 +177,10 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="flex min-h-14 items-center border-b border-cb-border text-xl font-semibold"
+                aria-current={active === item.id ? 'location' : undefined}
+                className={`flex min-h-14 items-center border-b border-cb-border text-xl font-semibold ${
+                  active === item.id ? 'text-cb-brand' : ''
+                }`}
               >
                 {item.label}
               </a>

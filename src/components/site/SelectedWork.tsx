@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { publishedWork } from '@/content/work';
+import Reveal from './Reveal';
 
 /**
  * Block 7 (spec 7.3): Challenge / Solution / Outcome cards.
@@ -12,11 +13,11 @@ export default function SelectedWork() {
   return (
     <section id="work" aria-labelledby="work-heading" className="cb-section">
       <div className="cb-container">
-        <header className="cb-section-header">
+        <Reveal as="header" className="cb-section-header">
           <h2 id="work-heading" className="cb-h2">
             Selected Work
           </h2>
-        </header>
+        </Reveal>
 
         <ul className="grid gap-6 lg:grid-cols-3">
           {work.map((c) => (

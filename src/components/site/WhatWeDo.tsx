@@ -3,6 +3,7 @@ import { SERVICES } from '@/content/site';
 import { BOOKING } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import ServicesStack, { ServicesStackTall } from './ServicesStack';
+import Reveal from './Reveal';
 
 // One line-icon set, one stroke weight, brand colour (spec 7.2, owner preference)
 const ICONS: Record<string, LucideIcon> = {
@@ -17,7 +18,7 @@ export default function WhatWeDo() {
   return (
     <section id="services" aria-labelledby="services-heading" className="cb-section cb-section--surface">
       <div className="cb-container">
-        <header className="cb-section-header">
+        <Reveal as="header" className="cb-section-header">
           <h2 id="services-heading" className="cb-h2">
             What We Do
           </h2>
@@ -25,22 +26,24 @@ export default function WhatWeDo() {
             We can cover a project end to end: the devices and licences, the cloud infrastructure it runs on, the software
             your team uses, and the AI on top.
           </p>
-        </header>
+        </Reveal>
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-6">
           {/* Short graphic above the cards below 1024px; tall one beside them, filling their height, above */}
-          <div className="lg:relative lg:col-span-5">
+          <Reveal className="lg:relative lg:col-span-5">
             <ServicesStack className="mx-auto block h-auto w-full max-w-[480px] lg:hidden" />
             <ServicesStackTall className="absolute inset-0 hidden h-full w-full lg:block" />
-          </div>
+          </Reveal>
 
           <ul className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
-            {SERVICES.map((service) => {
+            {SERVICES.map((service, i) => {
               const Icon = ICONS[service.id];
               return (
-                <li
+                <Reveal
+                  as="li"
                   key={service.id}
                   id={service.id}
+                  delay={i * 100}
                   className="flex flex-col rounded-xl border border-cb-border bg-cb-bg p-6 lg:p-7"
                 >
                   <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5 text-cb-brand" />
@@ -64,19 +67,19 @@ export default function WhatWeDo() {
                       About {service.shortName}
                     </a>
                   )}
-                </li>
+                </Reveal>
               );
             })}
           </ul>
         </div>
 
-        <p className="mt-12 text-center text-cb-muted">
+        <Reveal className="mt-12 text-center text-cb-muted">
           Not sure where to start?{' '}
           <a href={BOOKING.href} className="cb-link">
             Book a consultation
           </a>{' '}
           and we&apos;ll point you the right way.
-        </p>
+        </Reveal>
       </div>
     </section>
   );

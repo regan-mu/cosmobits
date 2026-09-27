@@ -46,7 +46,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] 6.5 `Arc`: exactly 1 on the homepage (CTA band removed)
 - [x] 6.5 Mesh hole checked against the rendered graphic at 1280 / 1440 / 1920 *(the hole follows the graphic's measured centre at every width)*
 - [x] 7.2 Section-header icons and eyebrows removed
-- [x] 7.5 Scroll-triggered entrances, hover lifts, pulses removed; reduced motion honoured
+- [x] 7.5 Hover lifts and pulses removed; reduced motion honoured. Scroll-in animations reinstated by the owner (27 Sep 2026) via `Reveal`
 - [x] 7.3 Radius hierarchy (6px controls, 10–12px cards) and no default shadows
 - [x] Remove unused CSS (old gradients, glass, stars, marquee, btn styles)
 
@@ -72,7 +72,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] Block 10 Contact: previous site's layout rebranded (owner, 27 Sep 2026): Contact Information + Quick Connect cards, form card with icon header and full-width button; form first on mobile
 - [x] Block 10 Form: visible labels, optional phone with +254 hint, honeypot, inline errors and success, consent note, "Send message"
 - [x] Block 11 Footer: previous site's layout rebranded (owner, 27 Sep 2026): brand column with contacts, Services/Company/Resources columns, "Made with ♥ in Nairobi"; no newsletter
-- [x] 7.4 Nav: sticky, transparent → solid after 16px, sentence-case items, "Book a consultation" button, no "Home"
+- [x] 7.4 Nav: sticky, 104px (owner), transparent → solid after 16px, sentence-case items, active-section dot (owner), "Book a consultation" button, no "Home"
 - [x] 7.4 Mobile menu: full-height sheet, 48px targets, phone at the bottom, focus trapped, Escape closes
 - [ ] 7.4 Services dropdown *(needs service pages, PR 4)*
 - [~] 8.3 One primary CTA label, "Book a consultation" *(points to `#contact` until the booking URL exists)*
@@ -122,7 +122,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] Mesh only in heroes, never visible through the hero graphic; exactly one arc on the homepage; no circles outside the 6.5 list
 - [x] Homepage hero matches `hero-mockup.html` at 1440×820
 - [x] Hero-bits animates once, skipped under reduced motion, hero text visible at first paint
-- [x] No scroll-triggered section animations
+- [x] Scroll-in animations only through `Reveal`, none in the hero (owner reinstated them)
 - [~] One primary CTA label site-wide, pointing at a working booking page *(label done; points to `#contact` until the booking URL exists)*
 - [ ] Data-handling block contains only owner-confirmed statements, no badges or seals
 - [x] No copy says CosmoBits owns servers or a data centre

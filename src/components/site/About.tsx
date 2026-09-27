@@ -2,6 +2,7 @@ import { BadgeCheck, Handshake, Lightbulb, Sprout, type LucideIcon } from 'lucid
 import { ABOUT, PRINCIPLES, STATS } from '@/content/site';
 import { CONTACT } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
+import Reveal from './Reveal';
 
 // Same icon set, stroke and brand colour as the other cards (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
@@ -111,14 +112,14 @@ export default function About() {
       className="cb-section cb-section--surface border-t border-cb-border"
     >
       <div className="cb-container">
-        <header className="cb-section-header">
+        <Reveal as="header" className="cb-section-header">
           <h2 id="about-heading" className="cb-h2">
             About CosmoBits
           </h2>
-        </header>
+        </Reveal>
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
-          <div className="cb-prose space-y-5 text-lg lg:col-span-5 lg:self-center">
+          <Reveal from="left" className="cb-prose space-y-5 text-lg lg:col-span-5 lg:self-center">
             <p>
               CosmoBits Technologies is a technology company based in {CONTACT.address.city}. We design, build
               and run the systems organisations depend on: AI tools, custom software and the cloud
@@ -134,9 +135,9 @@ export default function About() {
               reliable, secure and straightforward to maintain. One team covers the whole stack, so you deal
               with the same people from the laptops to the AI.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:col-span-7 lg:p-8">
+          <Reveal from="right" delay={150} className="rounded-xl border border-cb-border bg-cb-bg p-6 lg:col-span-7 lg:p-8">
             <h3 className="cb-h3">The Principles That Guide Us</h3>
             {/* Two columns wherever the card is wide enough; one while it shares a narrow row (1024–1279px) */}
             <ul className="mt-8 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
@@ -158,7 +159,7 @@ export default function About() {
                 );
               })}
             </ul>
-          </div>
+          </Reveal>
         </div>
 
         {FLAGS.SHOW_STATS && STATS.length > 0 && (
