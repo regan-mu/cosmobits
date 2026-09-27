@@ -103,3 +103,5 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Legal pages: the header is now a card in the same style as the closing contact card (owner request): brand icon tile (file for Privacy, scroll for Terms), title, "Under legal review · Last updated" line and summary. Axe: zero violations.
 - Legal pages: header card content centred (icon on top, then title, status line and summary) at every width (owner request).
 - Privacy: removed the sentence about complaining to the Office of the Data Protection Commissioner (owner request). Flag for the legal review: Kenya's DPA may expect the notice to mention that right.
+- Subtle arcs added to What We Do, AI in Practice, Who We Are and Get in Touch, alternating sides, same style as the hero arc (owner request).
+- Hero: at least the screen height from 1024px up, content centred, capped at 1000px on tall screens (1440×900 → 900px, 1920×1080 → 1000px, 1366×768 keeps its natural 798px); phones and tablets unchanged (owner request).

@@ -5,6 +5,7 @@ import ContactForm from './ContactForm';
 import RecaptchaProvider from './RecaptchaProvider';
 import IconTile from './IconTile';
 import Reveal from './Reveal';
+import { Arc } from './decor';
 
 const ITEM = 'flex items-center gap-3 sm:gap-4';
 const TITLE = 'text-base font-semibold leading-snug text-cb-text';
@@ -37,7 +38,8 @@ export default function Contact() {
   const { address } = CONTACT;
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="cb-section">
+    <section id="contact" aria-labelledby="contact-heading" className="cb-section relative isolate overflow-hidden">
+      <Arc className="-bottom-[440px] -left-[440px] h-[640px] w-[640px] lg:-bottom-[640px] lg:-left-[620px] lg:h-[1000px] lg:w-[1000px]" />
       <div className="cb-container">
         <Reveal as="header" className="cb-section-header">
           <h2 id="contact-heading" className="cb-h2">

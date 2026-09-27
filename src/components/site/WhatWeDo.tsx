@@ -4,6 +4,7 @@ import { BOOKING } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import ServicesStack, { ServicesStackTall } from './ServicesStack';
 import Reveal from './Reveal';
+import { Arc } from './decor';
 
 // One line-icon set, one stroke weight, brand colour (spec 7.2, owner preference)
 const ICONS: Record<string, LucideIcon> = {
@@ -16,7 +17,12 @@ const ICONS: Record<string, LucideIcon> = {
 /** Block 3 (spec 7.3) */
 export default function WhatWeDo() {
   return (
-    <section id="services" aria-labelledby="services-heading" className="cb-section cb-section--surface">
+    <section
+      id="services"
+      aria-labelledby="services-heading"
+      className="cb-section cb-section--surface relative isolate overflow-hidden"
+    >
+      <Arc className="-right-[420px] -top-[380px] h-[640px] w-[640px] lg:-right-[560px] lg:-top-[520px] lg:h-[1000px] lg:w-[1000px]" />
       <div className="cb-container">
         <Reveal as="header" className="cb-section-header">
           <h2 id="services-heading" className="cb-h2">

@@ -6,7 +6,11 @@ import { Arc, Halo, HeroMesh } from './decor';
 /** Block 1 (spec 7.3), matching .agents/hero-mockup.html at 1440×820. */
 export default function Hero() {
   return (
-    <section className="cb-hero" aria-labelledby="hero-heading">
+    // From 1024px: at least the screen height (content centred), capped at 1000px on very tall screens
+    <section
+      className="cb-hero lg:flex lg:min-h-[min(100svh,1000px)] lg:flex-col lg:justify-center"
+      aria-labelledby="hero-heading"
+    >
       <HeroMesh />
       <Arc className="cb-hero-arc" />
       <Halo className="cb-hero-halo" />
