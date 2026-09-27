@@ -159,7 +159,7 @@ Each item says where the value goes once you have it. Filling a value in and fli
 - [ ] 17. Booking link (Google Calendar appointment schedule or Calendly) → `CONTACT.bookingUrl`
 - [ ] 18. British or US spelling *(built with British: "licences", "enquiry")*
 - [ ] 19. Approve rewritten Mission and Vision *(for `/about`, PR 4)*
-- [ ] 20. Legal review of `/privacy` and `/terms`; ODPC registration status
+- [ ] 20. Legal review of `/privacy` and `/terms`; ODPC registration status *(ask the reviewer whether the privacy notice must mention the right to complain to the ODPC; that sentence was removed at the owner's request, 27 Sep 2026)*
 - [ ] 21. FAQ answers per service *(PR 4)*
 - [ ] 22. Uni Sans licence decision. The demo font files in `public/FONTS/` are publicly downloadable from the site; consider removing them.
 - [ ] 23. Confirm the block mark is the current logo; replace the old mark in `favicon.ico` and the missing `android-chrome-*.png` icons referenced by `site.webmanifest`

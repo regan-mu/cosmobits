@@ -1193,6 +1193,7 @@ Aim for 500–900 words of genuinely useful content per service page. Thin 150-w
   - Kenya's Data Protection Act, 2019 applies to personal data collected through the site.
   - `{{OWNER: check with a lawyer whether CosmoBits must register with the Office of the Data Protection Commissioner, and have the final text reviewed}}`.
   - The agent should draft a plain-language structure with placeholders, not final legal wording.
+- **Page design (owner, 27 Sep 2026), shared by `/privacy` and `/terms` via `LegalPage`:** a header card in the same style as the closing contact card, content centred (owner, 27 Sep 2026): `--color-surface` card with a brand icon tile (file icon for Privacy, scroll for Terms), the H1, an "Under legal review · Last updated …" line and a one-paragraph summary; an "On This Page" contents list, sticky on desktop and highlighting the section being read; numbered sections with title-case H2s; muted body text with brand bullets and underlined brand links; a closing "Questions about …?" contact card. No halo, mesh or arc (6.3).
 - **`/terms`:** a short website terms page, also for legal review.
 
 ### 9.6 Keyword opportunities (directional)
