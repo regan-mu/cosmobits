@@ -1,4 +1,4 @@
-import { BadgeCheck, Handshake, Lightbulb, Sprout, Users, type LucideIcon } from 'lucide-react';
+import { BadgeCheck, Handshake, Lightbulb, Sprout, type LucideIcon } from 'lucide-react';
 import { ABOUT, PRINCIPLES, STATS } from '@/content/site';
 import { CONTACT } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
@@ -9,7 +9,6 @@ const ICONS: Record<string, LucideIcon> = {
   quality: BadgeCheck,
   partnership: Handshake,
   impact: Sprout,
-  collaboration: Users,
 };
 
 /*

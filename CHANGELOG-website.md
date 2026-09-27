@@ -66,3 +66,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - About: principle icons sit above each title instead of beside it, with more space between rows (owner request).
 - About: each principle is its own card with a fading border: brightest at the middle of each side, fading out before the corners so no line runs end to end (owner request). Done with a CSS mask in the component rather than a global class.
 - About: principles lose their individual fading borders; instead, following the owner's sketch, a vertical and horizontal divider cross between them like a plus sign and fade out at their outer ends. The fifth principle spans both columns; single-column layouts get horizontal fading dividers only.
+- About: "Collaboration" removed from the guiding principles (owner request); the four that remain sit in a 2×2 grid with the fading cross between them.

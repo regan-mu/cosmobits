@@ -193,11 +193,6 @@ export const PRINCIPLES = [
     title: 'Lasting impact',
     text: 'Systems your team can understand, run and extend for years, not ones only we can keep alive.',
   },
-  {
-    id: 'collaboration',
-    title: 'Collaboration',
-    text: 'Your people are involved at every stage, from the first call to training at handover.',
-  },
 ];
 
 /** Block 8 stats band, shown only with FLAGS.SHOW_STATS. Owner-supplied numbers only. */
