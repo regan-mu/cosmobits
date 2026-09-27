@@ -114,7 +114,7 @@ export default function About() {
       <div className="cb-container">
         <Reveal as="header" className="cb-section-header">
           <h2 id="about-heading" className="cb-h2">
-            About CosmoBits
+            Who We Are
           </h2>
         </Reveal>
 
