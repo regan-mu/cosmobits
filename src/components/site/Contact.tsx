@@ -38,7 +38,8 @@ export default function Contact() {
           <h2 id="contact-heading" className="cb-h2">
             Get in Touch
           </h2>
-          <p className="cb-lead text-balance">
+          {/* Wider than other section intros (owner): fits on one line on desktop */}
+          <p className="cb-lead" style={{ maxWidth: '52rem' }}>
             Tell us about your project or ask us a question. We&apos;ll reply {CONTACT.replyTime}.
           </p>
         </Reveal>
