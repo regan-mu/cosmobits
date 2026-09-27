@@ -90,3 +90,9 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Touch targets on mobile brought to 44px+: logo link, "See our services", "Get directions", phone/email links in Contact and the footer, footer column links (spacing raised to 18px), and the inline "Book a consultation" link (kept on one line). Done with an invisible hit-area extension, so the layout doesn't change.
 - What We Do: the tall graphic beside the cards now starts at 1280px instead of 1024px; at 1024 it squeezed each card to ~190px. Between 1024 and 1279 the short graphic sits above a full-width two-column grid (cards ~435px).
 - Contact subtitle balanced again, so it no longer leaves "hours." alone on a line at tablet widths (it stays on one line on desktop).
+
+### Accessibility audit (27 Sep 2026)
+- axe-core 4.10 against WCAG 2.0/2.1/2.2 A and AA plus best practice: zero violations on `/`, `/privacy` and `/terms` at 390 and 1440px, with the mobile menu open, and with the contact form showing errors.
+- Contrast axe couldn't compute (text over the hero mesh, arc and halo; the process colour band; SVG labels; form controls) measured from rendered pixels: everything passes, lowest 5.34:1 ("See our services" over the halo on mobile).
+- Keyboard pass: skip link, focus rings on every stop, nothing obscured by the sticky header, menu focus trap and Escape, form errors focused and announced. Reduced motion and WCAG 1.4.12 text spacing also pass.
+- Fixed: contact focus order. The form came before the contact details in the source while sitting to their right on screen, so keyboard users jumped to the form first. The details now come first in the source, and on mobile they sit above the form, as on the previous site.

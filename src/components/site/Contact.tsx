@@ -29,7 +29,9 @@ const PILL =
 /**
  * Block 10 (spec 7.3): the previous site's layout (owner preference), in the
  * current branding. Contact details and quick links on the left, the form on
- * the right; the form comes first on mobile.
+ * the right. The details come first in the source, so keyboard and
+ * screen-reader order match the visual order at every width (as on the old
+ * site, the details sit above the form on mobile).
  */
 export default function Contact() {
   const { address } = CONTACT;
@@ -48,13 +50,8 @@ export default function Contact() {
         </Reveal>
 
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
-          <Reveal from="right" delay={200} className="lg:order-2 lg:col-span-7">
-            <RecaptchaProvider>
-              <ContactForm />
-            </RecaptchaProvider>
-          </Reveal>
 
-          <Reveal from="left" delay={100} className="space-y-6 lg:order-1 lg:col-span-5">
+          <Reveal from="left" delay={100} className="space-y-6 lg:col-span-5">
             <div className="rounded-xl border border-cb-border bg-cb-surface p-5 sm:p-6 lg:p-8">
               <h3 className="cb-h4 text-cb-text">Contact Information</h3>
               {/* Each item is as tall as its 48px icon tile: a title and one smaller line, as on the previous site */}
@@ -137,6 +134,12 @@ export default function Contact() {
                 </p>
               )}
             </div>
+          </Reveal>
+
+          <Reveal from="right" delay={200} className="lg:col-span-7">
+            <RecaptchaProvider>
+              <ContactForm />
+            </RecaptchaProvider>
           </Reveal>
         </div>
       </div>

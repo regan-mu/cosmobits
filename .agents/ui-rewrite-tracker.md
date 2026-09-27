@@ -100,11 +100,11 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 ## PR 5: Quality pass (spec 10), later round
 
 - [x] Playwright responsive audit, 27 Sep 2026: `/`, `/privacy`, `/terms` at 320, 360, 390, 414, 768, 1024, 1280, 1440, 1920 on a production build. No horizontal scroll or overflow, all scroll-in content shows, touch targets ≥44px on mobile (inline text links excepted), one H1, no heading skips, no duplicate IDs or broken anchors, no console errors
-- [ ] axe DevTools: zero serious/critical issues
-- [ ] Full keyboard pass
+- [x] axe-core 4.10 (WCAG 2.0/2.1/2.2 A+AA and best practice), 27 Sep 2026: zero violations on `/`, `/privacy`, `/terms` at 390 and 1440, with the mobile menu open, and with contact form errors showing. Contrast axe couldn't compute (text over the mesh/halo/band, SVG labels, form controls) measured from rendered pixels: all pass (lowest 5.34:1). reCAPTCHA iframe is third-party and untestable
+- [x] Full keyboard pass, 27 Sep 2026: skip link first and working, visible focus ring on all 36 stops, nothing hidden under the sticky header, mobile menu traps focus and closes on Escape, form submit moves focus to the first error with errors wired via `aria-describedby`. Fixed the contact focus order (details now precede the form). Reduced motion and WCAG 1.4.12 text spacing also pass
 - [ ] PSI re-run vs the PR 0 baseline (LCP < 2.5s, INP < 200ms, CLS < 0.1 on mobile)
 - [ ] Homepage JS < 170KB gzipped
-- [ ] Contrast check of muted text over the halos
+- [x] Contrast check of muted text over the halos (measured from rendered pixels: hero tagline 6.08:1, lead 6.48:1, link 5.34:1 at worst)
 
 ## Final acceptance checklist (spec 12)
 
