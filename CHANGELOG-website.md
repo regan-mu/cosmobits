@@ -101,3 +101,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Fix: the legal pages' body styling (muted text, bullets, link colour) had been deleted from `globals.css` by mistake in the "Remove the final CTA band" commit, which removed a range that also held the legal rules. It now lives in `LegalPage` as Tailwind classes, and the orphaned `.cb-legal` references are gone.
 - Legal pages: removed the lighter header band (owner didn't like it); the header now sits on the page background with a thin divider below. The status pill stacks cleanly on phones.
 - Legal pages: the header is now a card in the same style as the closing contact card (owner request): brand icon tile (file for Privacy, scroll for Terms), title, "Under legal review · Last updated" line and summary. Axe: zero violations.
+- Legal pages: header card content centred (icon on top, then title, status line and summary) at every width (owner request).

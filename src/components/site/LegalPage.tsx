@@ -36,7 +36,7 @@ export default function LegalPage({ icon, title, updated, intro, sections, conta
   return (
     <article>
       <header className="cb-container pb-12 pt-[calc(var(--cb-header-h)+3rem)] lg:pb-16">
-        <div className="flex flex-col gap-5 rounded-xl border border-cb-border bg-cb-surface p-6 sm:flex-row sm:items-center sm:gap-6 lg:p-10">
+        <div className="flex flex-col items-center gap-5 rounded-xl border border-cb-border bg-cb-surface px-6 py-8 text-center lg:px-10 lg:py-12">
           <IconTile icon={icon} />
           <div className="min-w-0">
             <h1 className="cb-h2 text-cb-text">{title}</h1>
@@ -45,7 +45,7 @@ export default function LegalPage({ icon, title, updated, intro, sections, conta
               <span aria-hidden="true" className="hidden sm:inline"> · </span>
               <span className="block sm:inline">Last updated {updated}</span>
             </p>
-            <div className="mt-4 max-w-[62ch] text-lg text-cb-muted">{intro}</div>
+            <div className="mx-auto mt-4 max-w-[62ch] text-lg text-pretty text-cb-muted">{intro}</div>
           </div>
         </div>
       </header>
