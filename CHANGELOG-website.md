@@ -80,3 +80,4 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Nav: active-section dot like the previous site (brand link colour plus a 4px dot that slides under the link for the section in view; `aria-current="location"`), and the navbar is 104px at every width like the old `h-26`, no longer shrinking on scroll. The height moved to `--cb-header-h` on the site layout, and anchor jumps now offset by it.
 - Project step cards: highlight selectors now match the list item, since each card sits inside its scroll-in wrapper.
 - Contact subtitle widened to 52rem (other section intros stay at 42rem) and no longer balance-wrapped, so it reads on one line from 1024px up (owner request).
+- Footer description now 14px at white 50% (about 5:1 contrast), so it sits below the tagline (17px, white 60%) (owner request).

@@ -80,7 +80,7 @@ export default function Footer() {
             />
           </Link>
           <p className={`mt-6 font-semibold ${MUTED}`}>{TAGLINE}</p>
-          <p className={`mt-2 max-w-md ${MUTED}`}>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-white/50">
             AI, custom software, cloud infrastructure and IT supply for businesses in Kenya and across Africa.
           </p>
 
