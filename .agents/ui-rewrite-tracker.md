@@ -40,10 +40,10 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] 5.4 Type scale and rules (title case for section titles per owner, sentence case elsewhere, 65ch/40ch measures, weights 400/600/700, no all caps, underlined body links)
 - [x] 6.1 Colour tokens; off-palette colours removed from the public site *(the admin dashboard keeps the old brand colours as admin-only tokens)*
 - [x] 6.1 No gradient text or gradient buttons
-- [x] 6.3/6.4 `Halo` component; exactly 2 on the homepage
+- [x] 6.3/6.4 `Halo` component; exactly 1 on the homepage (CTA band removed)
 - [x] 6.4 No `blur-3xl` / `blur-2xl` / glow shadows on the public site
 - [x] 6.5 `HeroMesh` (hero only) with the hole around the graphic
-- [x] 6.5 `Arc`: exactly 2 on the homepage
+- [x] 6.5 `Arc`: exactly 1 on the homepage (CTA band removed)
 - [x] 6.5 Mesh hole checked against the rendered graphic at 1280 / 1440 / 1920 *(the hole follows the graphic's measured centre at every width)*
 - [x] 7.2 Section-header icons and eyebrows removed
 - [x] 7.5 Scroll-triggered entrances, hover lifts, pulses removed; reduced motion honoured
@@ -67,8 +67,8 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] Block 8 About: prose beside "The Principles That Guide Us" card (owner preference)
 - [ ] Block 8 stats band *(built; behind `SHOW_STATS`, needs real numbers in `STATS`)*
 - [ ] Block 8 photo *(not built yet: `SHOW_ABOUT_PHOTO` is reserved, add the image layout when a real photo exists)*
-- [x] Block 9 CTA band, Halo #2 + mirrored arc
-- [ ] Block 9 Company profile PDF line *(behind `SHOW_COMPANY_PROFILE`)*
+- [x] Block 9 CTA band: built, then removed by the owner (27 Sep 2026)
+- [ ] Company profile PDF line, now in Block 10 Contact *(behind `SHOW_COMPANY_PROFILE`)*
 - [x] Block 10 Contact: details + form, form first on mobile, Quick Connect removed
 - [x] Block 10 Form: visible labels, optional phone with +254 hint, honeypot, inline errors and success, consent note, "Send message"
 - [x] Block 11 Footer simplified (brandline, Services/Company/Contact columns, legal row, "Made in Nairobi")
@@ -117,9 +117,9 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [~] Every colour is a 6.1 token; all text pairs meet the contrast table *(public site uses tokens only; contrast over halos still to be measured in PR 5)*
 - [x] One font family loads; type scale matches 5.4
 - [x] No section-header icons or eyebrow labels
-- [~] Exactly two halos on the homepage, one per service page; no other glows *(homepage done; service pages are PR 4)*
+- [~] Exactly one halo on the homepage (CTA band removed), one per service page; no other glows *(homepage done; service pages are PR 4)*
 - [x] Glassmorphism only in the services-stack AI layer
-- [x] Mesh only in heroes, never visible through the hero graphic; exactly two arcs on the homepage; no circles outside the 6.5 list
+- [x] Mesh only in heroes, never visible through the hero graphic; exactly one arc on the homepage; no circles outside the 6.5 list
 - [x] Homepage hero matches `hero-mockup.html` at 1440×820
 - [x] Hero-bits animates once, skipped under reduced motion, hero text visible at first paint
 - [x] No scroll-triggered section animations

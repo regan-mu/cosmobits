@@ -17,6 +17,6 @@ export const FLAGS = {
   SHOW_ABOUT_PHOTO: false,
   /** Block 8 stats band: needs real numbers */
   SHOW_STATS: false,
-  /** Block 9 procurement line: needs public/cosmobits-company-profile.pdf */
+  /** Procurement line in Contact: needs public/cosmobits-company-profile.pdf */
   SHOW_COMPANY_PROFILE: false,
 } as const;

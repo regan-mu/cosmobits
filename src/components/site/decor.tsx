@@ -1,9 +1,10 @@
 /**
- * Decoration for the hero and the final CTA band (spec 6.4, 6.5).
+ * Decoration for the hero (spec 6.4, 6.5).
  *
- * Budget on the homepage: two <Halo>, two <Arc>, one <HeroMesh>.
+ * Budget on the homepage: one <Halo>, one <Arc>, one <HeroMesh>, all in the hero
+ * (the final CTA band that held the second halo and arc was removed by the owner).
  * The parent must be `position: relative; isolation: isolate; overflow: hidden`
- * (the `.cb-hero` and `.cb-cta-band` classes do this).
+ * (the `.cb-hero` class does this).
  */
 
 type HaloProps = {

@@ -6,7 +6,6 @@ import ProjectSteps from '@/components/site/ProjectSteps';
 import DataHandling from '@/components/site/DataHandling';
 import SelectedWork from '@/components/site/SelectedWork';
 import About from '@/components/site/About';
-import CtaBand from '@/components/site/CtaBand';
 import Contact from '@/components/site/Contact';
 import StructuredData from '@/components/site/StructuredData';
 import { FLAGS } from '@/lib/flags';
@@ -24,7 +23,6 @@ export default function Home() {
       {FLAGS.SHOW_DATA_HANDLING && <DataHandling />}
       <SelectedWork />
       <About />
-      <CtaBand />
       <Contact />
     </>
   );

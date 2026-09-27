@@ -1,5 +1,6 @@
 import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { CONTACT, whatsappUrl } from '@/lib/contact';
+import { FLAGS } from '@/lib/flags';
 import BookingLink from './BookingLink';
 import ContactForm from './ContactForm';
 
@@ -82,6 +83,15 @@ export default function Contact() {
                 </div>
               </li>
             </ul>
+
+            {FLAGS.SHOW_COMPANY_PROFILE && (
+              <p className="cb-small mt-10 border-t border-cb-border pt-8 text-cb-muted">
+                Buying through a tender or procurement process?{' '}
+                <a href="/cosmobits-company-profile.pdf" className="cb-link">
+                  Download our company profile (PDF)
+                </a>
+              </p>
+            )}
 
             {/* Until the booking page exists, "Book a consultation" points here, so skip it */}
             {CONTACT.bookingUrl && (

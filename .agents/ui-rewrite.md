@@ -11,6 +11,7 @@
 - `reference/hero-mockup.html`: the owner-approved hero at 1440×820, including the mesh, arc and halo. Open it in a browser and match it. It's a visual reference only; don't copy its markup into the app.
 **Competitor reference:** Glitex Solutions, reviewed 26 Sep 2026 (Appendix A)
 **Revision, 26 Sep 2026 (owner):** the cloud offer is positioned as cloud infrastructure (design, migration, infrastructure as code, operations, cost optimisation) rather than hosting and upkeep. Blocks 1, 3, 5, 6, 8, sections 7.7, 9.4, 9.6, 11 and Appendix A are updated to match.
+**Revision, 27 Sep 2026 (owner):** the final CTA band ("Tell Us What You're Working On.") is removed; the homepage keeps one halo and one arc, both in the hero, and the procurement line moves to Contact (Block 9, 6.3, 6.5).
 **Revision, 26 Sep 2026 (owner):** About becomes two columns, prose beside "The Principles That Guide Us" (Block 8, S3, 7.2).
 **Revision, 26 Sep 2026 (owner):** section titles use title case (5.4), and Block 5 is renamed "How We Run Our Projects" with numbered step cards on a colour band and a highlighted card (7.3, 6.1, 6.5).
 **Revision, 26 Sep 2026 (owner):** AI capabilities return to the previous site's card grid, restyled (Block 4, 7.2).
@@ -437,7 +438,7 @@ Halos use the brand gradient from the guidelines, which runs from purple to soft
 
 | Page | Allowed halos | Where | Purpose |
 |---|---|---|---|
-| Homepage | **2** | 1) Hero: behind the hero graphic on the right, partly cropped by the viewport edge. 2) Final CTA band: low and wide behind the band. | The first sets the brand mood on arrival; the second marks the conversion point. |
+| Homepage | **1** | Hero: behind the hero graphic on the right, partly cropped by the viewport edge. (A second halo behind the final CTA band was dropped with the band, 27 Sep 2026.) | Sets the brand mood on arrival. |
 | Service pages | 1 | Page hero only | Continuity with the homepage. |
 | About, Security, Contact, legal pages | 0 | None | These pages should feel calm and factual. |
 
@@ -487,7 +488,7 @@ Implementation rules:
 - Below 640px wide, reduce `size` by about 40% so the glow doesn't wash over the headline.
 
 **Acceptance:**
-- `rg "<Halo" app components` returns exactly two uses on the homepage and one per service page.
+- `rg "<Halo" app components` returns exactly one use on the homepage and one per service page.
 - `rg "blur-3xl|blur-2xl|shadow-\[0_0"` returns no decorative matches.
 - Nothing glows except the halos.
 
@@ -561,9 +562,9 @@ After building, check the hole's position against the real rendered graphic at 1
 Snippets use Tailwind classes; translate them if Phase 0 shows the project styles components another way.
 
 - **Look:** a single very large circle drawn as a 1px outline in `#C496C4` at **14% opacity**, with no fill. It's positioned mostly off-screen, so only one sweeping arc shows.
-- **Budget:** exactly two on the homepage, each paired with a halo on the opposite side:
+- **Budget:** exactly one on the homepage, paired with the halo on the opposite side (the CTA-band arc went with the band, 27 Sep 2026):
   1. **Hero:** centred off-screen at the top left. The arc sweeps from the top edge (about 370px in from the left) down to the left edge (about 350px down), passing behind the nav and headline.
-  2. **Final CTA band:** mirrored, centred off-screen at the top right of the band.
+  2. ~~**Final CTA band:** mirrored, centred off-screen at the top right of the band.~~ (removed by the owner, 27 Sep 2026)
 - **Elsewhere:** service-page heroes may use the hero arc. Other sections get none.
 
 ```tsx
@@ -581,7 +582,6 @@ export function Arc({ className = "", size = 1400 }: ArcProps) {
 
 // Hero (desktop): <Arc className="-left-[960px] -top-[1000px]" />
 // Hero (<768px):  <Arc size={900} className="-left-[640px] -top-[660px]" />
-// CTA band:       <Arc size={1000} className="-right-[620px] -top-[780px]" />
 ```
 
 - **Stacking order inside the hero:** mesh (`-z-[3]`), then arc (`-z-[2]`), then halo (`-z-[1]`), then content. The parent keeps `position: relative; isolation: isolate; overflow: hidden` (6.4).
@@ -591,7 +591,7 @@ export function Arc({ className = "", size = 1400 }: ArcProps) {
 The logo is built from squares with one rounded corner, so circles are used as a quiet contrast and never as a second visual language.
 
 - **Use circles for:**
-  - the two arcs above;
+  - the hero arc above;
   - the small node dots already in `services-stack.svg`;
   - round crops for team or client photos next to quotes or case studies (48–64px).
 - **Keep circles off:**
@@ -605,7 +605,7 @@ The logo is built from squares with one rounded corner, so circles are used as a
 
 **Acceptance:**
 - The mesh appears only in heroes.
-- There are exactly two arcs on the homepage.
+- There is exactly one arc on the homepage.
 - The mesh is invisible inside the hero graphic's area at 1280/1440/1920px.
 - No circles appear outside the allowed list.
 - Text contrast over the mesh and arc still meets 6.1. Both sit at under 15% opacity, so this should hold, but check it.
@@ -668,8 +668,8 @@ Nav: [logo]  Services ▾  AI  About  Work*  Contact        [Book a consultation
 6  HOW WE HANDLE YOUR DATA   4 plain-text commitments + link to /security
 7  SELECTED WORK*  case studies, Challenge / Solution / Outcome (hidden until ready)
 8  ABOUT           short prose + real photo* + stats band* (real numbers only)
-9  CTA BAND        one line + primary CTA + company profile link*                [Halo #2]
-10 CONTACT         details (left) + form (right)
+9  (CTA BAND removed by the owner, 27 Sep 2026; the company profile link* moved to CONTACT)
+10 CONTACT         details (left) + form (right) + company profile link*
 11 FOOTER          simplified
 * = behind a content flag until the owner supplies material
 ```
@@ -831,7 +831,10 @@ The first case study is in progress. The agent builds the template and data mode
 - **Stats band:** owner-supplied numbers only (3.1). Glitex shows how this looks done well: four specific numbers, present in the server HTML, shown once.
 - **Link:** "More about us" → `/about`, which holds Mission, Vision and Values (edited per Section 8) for procurement and tender readers.
 
-#### Block 9: Final CTA band
+#### Block 9: Final CTA band (removed)
+
+**Removed by the owner, 27 Sep 2026.** The homepage goes from About straight to Contact, and the band's halo and arc went with it. The procurement line below now sits in Contact, under the contact details, behind the same flag. The original brief is kept for reference.
+
 
 - **Heading:** "Tell Us What You're Working On."
 - **Line:** "We reply to every enquiry within one working day." `{{OWNER: confirm; current site says 24 hours}}`
@@ -1030,7 +1033,7 @@ we are passionate about, one-stop shop
 
 | Role | Label | Destination | Where |
 |---|---|---|---|
-| Primary (the one action) | **Book a consultation** | Booking page: a Google Calendar appointment schedule or Calendly link `{{OWNER: booking URL}}`, opening in a new tab; fallback `/contact` | Nav button, hero, AI block, final CTA band, end of every service page |
+| Primary (the one action) | **Book a consultation** | Booking page: a Google Calendar appointment schedule or Calendly link `{{OWNER: booking URL}}`, opening in a new tab; fallback `/contact` | Nav button, hero, AI block, end of every service page |
 | Secondary | See our services | `#services` | Hero only |
 | Contextual | About {service} | Service page | Service blocks |
 | Form submit | Send message | none | Contact form |
@@ -1273,8 +1276,8 @@ The agent can't finish these without the team. Each maps to a `{{OWNER: …}}` p
 | 12 | Founding year, client types, team/founder sentence | Block 8 |
 | 13 | Photos per the brief | 7.8 |
 | 14 | Real stats: years, projects, clients, countries | 3.1, Block 8 |
-| 15 | Confirmed reply time (24 hours vs one working day) | Block 9 |
-| 16 | Company profile PDF for tenders (registration, KRA PIN, tax compliance, directors, references) | Block 9 |
+| 15 | Confirmed reply time (24 hours vs one working day) | Block 10 (form success message) |
+| 16 | Company profile PDF for tenders (registration, KRA PIN, tax compliance, directors, references) | Block 10 |
 | 17 | Booking link (Google Calendar appointment schedule or Calendly) | 8.3 |
 | 18 | British vs US spelling | 8.1 |
 | 19 | Approval of rewritten Mission and Vision | 8.4 |
@@ -1357,9 +1360,9 @@ Content behind a disabled flag should live in a data file the guard can skip, or
 - [ ] Every colour in the codebase is one of the 6.1 tokens; all text pairs meet the contrast table.
 - [ ] One font family loads, and the type scale matches 5.4.
 - [ ] No section-header icons or eyebrow labels.
-- [ ] Exactly two halos on the homepage and one per service page; no other glows.
+- [ ] Exactly one halo on the homepage (owner removed the CTA band) and one per service page; no other glows.
 - [ ] Glassmorphism appears only in the services-stack AI layer.
-- [ ] Mesh only in heroes, never visible through the hero graphic; exactly two arcs on the homepage; no circles outside the 6.5 list.
+- [ ] Mesh only in heroes, never visible through the hero graphic; exactly one arc on the homepage; no circles outside the 6.5 list.
 - [ ] The homepage hero matches `reference/hero-mockup.html` at 1440×820.
 - [ ] The hero-bits graphic matches the mockup, animates once, is skipped under reduced motion, and hero text is visible at first paint.
 - [ ] No scroll-triggered section animations.
@@ -1386,7 +1389,7 @@ Reviewed on 26 September 2026: https://www.glitexsolutions.co.ke/. Glitex is a N
 | Named case studies in Challenge / Solution / Outcome format, tagged by sector and country | Same structure, with outcomes that name their measure | Block 7 |
 | Security and compliance written as specific commitments (Kenya DPA, data processing agreements, access control, residency, logging) | "How we handle your data", with owner-confirmed statements only, plus `/security` | Block 6 |
 | Delivery phases listing concrete deliverables (workshops, assessments, architecture recommendation, SLA-backed support) | Four steps with deliverables and typical durations | Block 5 |
-| Closing section addressed to procurement and institutional buyers | Procurement line and company profile PDF | Block 9 |
+| Closing section addressed to procurement and institutional buyers | Procurement line and company profile PDF | Block 10 (Block 9 removed) |
 | One stats band with specific numbers present in the HTML | Same, with owner-supplied numbers only | 3.1, Block 8 |
 | Calendly booking plus a separate quote form | Booking link plus the contact form as the quote route | 8.3, Block 10 |
 | Skip-to-content link, real social profile URLs, separate portfolio, process and blog pages | Already in the spec | 10, 3.4, 9.4 |
