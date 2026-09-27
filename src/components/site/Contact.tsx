@@ -2,12 +2,15 @@ import { Clock, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { CONTACT, whatsappUrl } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import ContactForm from './ContactForm';
+import RecaptchaProvider from './RecaptchaProvider';
 import IconTile from './IconTile';
 import Reveal from './Reveal';
 
 const ITEM = 'flex items-center gap-3 sm:gap-4';
 const TITLE = 'text-base font-semibold leading-snug text-cb-text';
 const DETAIL = 'mt-0.5 text-sm leading-5 text-cb-muted';
+// Invisible extension around small text links, so they're 44px+ touch targets without changing the layout
+const HIT = "relative after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']";
 
 /** "8:00–18:00" → "8am–6pm", so the hours fit on one line beside their icon */
 const shortHours = (range: string) =>
@@ -39,14 +42,16 @@ export default function Contact() {
             Get in Touch
           </h2>
           {/* Wider than other section intros (owner): fits on one line on desktop */}
-          <p className="cb-lead" style={{ maxWidth: '52rem' }}>
+          <p className="cb-lead text-balance" style={{ maxWidth: '52rem' }}>
             Tell us about your project or ask us a question. We&apos;ll reply {CONTACT.replyTime}.
           </p>
         </Reveal>
 
         <div className="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <Reveal from="right" delay={200} className="lg:order-2 lg:col-span-7">
-            <ContactForm />
+            <RecaptchaProvider>
+              <ContactForm />
+            </RecaptchaProvider>
           </Reveal>
 
           <Reveal from="left" delay={100} className="space-y-6 lg:order-1 lg:col-span-5">
@@ -59,7 +64,12 @@ export default function Contact() {
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-baseline gap-x-3">
                       <h4 className={TITLE}>Visit Us</h4>
-                      <a href={CONTACT.mapsUrl} target="_blank" rel="noopener" className="cb-link text-xs">
+                      <a
+                        href={CONTACT.mapsUrl}
+                        target="_blank"
+                        rel="noopener"
+                        className="cb-link relative text-xs after:absolute after:-inset-x-2 after:-inset-y-3.5 after:content-['']"
+                      >
                         Get directions
                         <span className="cb-sr-only"> (opens Google Maps in a new tab)</span>
                       </a>
@@ -73,7 +83,7 @@ export default function Contact() {
                   <IconTile icon={Phone} />
                   <div className="min-w-0">
                     <h4 className={TITLE}>Call Us</h4>
-                    <a href={`tel:${CONTACT.phoneE164}`} className={`${DETAIL} block hover:text-cb-text`}>
+                    <a href={`tel:${CONTACT.phoneE164}`} className={`${DETAIL} ${HIT} block hover:text-cb-text`}>
                       {CONTACT.phoneDisplay}
                     </a>
                   </div>
@@ -82,7 +92,7 @@ export default function Contact() {
                   <IconTile icon={Mail} />
                   <div className="min-w-0">
                     <h4 className={TITLE}>Email Us</h4>
-                    <a href={`mailto:${CONTACT.email}`} className={`${DETAIL} block hover:text-cb-text`}>
+                    <a href={`mailto:${CONTACT.email}`} className={`${DETAIL} ${HIT} block hover:text-cb-text`}>
                       {CONTACT.email}
                     </a>
                   </div>

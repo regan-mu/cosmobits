@@ -28,14 +28,15 @@ export default function WhatWeDo() {
           </p>
         </Reveal>
 
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-6">
-          {/* Short graphic above the cards below 1024px; tall one beside them, filling their height, above */}
-          <Reveal className="lg:relative lg:col-span-5">
-            <ServicesStack className="mx-auto block h-auto w-full max-w-[480px] lg:hidden" />
-            <ServicesStackTall className="absolute inset-0 hidden h-full w-full lg:block" />
+        <div className="grid gap-12 xl:grid-cols-12 xl:gap-6">
+          {/* Short graphic above the cards below 1280px; tall one beside them, filling their height, above.
+              (Side by side at 1024px squeezed the cards to ~190px each.) */}
+          <Reveal className="xl:relative xl:col-span-5">
+            <ServicesStack className="mx-auto block h-auto w-full max-w-[480px] xl:hidden" />
+            <ServicesStackTall className="absolute inset-0 hidden h-full w-full xl:block" />
           </Reveal>
 
-          <ul className="grid gap-6 sm:grid-cols-2 lg:col-span-7">
+          <ul className="grid gap-6 sm:grid-cols-2 xl:col-span-7">
             {SERVICES.map((service, i) => {
               const Icon = ICONS[service.id];
               return (
@@ -75,7 +76,10 @@ export default function WhatWeDo() {
 
         <Reveal className="mt-12 text-center text-cb-muted">
           Not sure where to start?{' '}
-          <a href={BOOKING.href} className="cb-link">
+          <a
+            href={BOOKING.href}
+            className="cb-link relative whitespace-nowrap after:absolute after:-inset-x-1 after:-inset-y-3 after:content-['']"
+          >
             Book a consultation
           </a>{' '}
           and we&apos;ll point you the right way.

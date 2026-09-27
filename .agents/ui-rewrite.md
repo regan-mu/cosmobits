@@ -978,7 +978,7 @@ A white bit echoes the logo.
 - Inline it as `components/ServicesStack.tsx`.
 - Keep its `<title>` so screen readers get the summary. It's informative, not decorative.
 - Place it per Block 3.
-- **Two variants (owner request, 26 Sep 2026):** from 1024px up, a tall variant (`public/services-stack-tall.svg`, 620×1040, exported as `ServicesStackTall`) fills the full height of the four service cards beside it. It has the same parts with taller layers and a little more detail (extra interface lines, three rows of instances, five rack rows). Below 1024px the original short graphic sits above the cards.
+- **Two variants (owner request, 26 Sep 2026):** from 1280px up (was 1024px; at 1024 it squeezed the cards to ~190px), a tall variant (`public/services-stack-tall.svg`, 620×1040, exported as `ServicesStackTall`) fills the full height of the four service cards beside it. It has the same parts with taller layers and a little more detail (extra interface lines, three rows of instances, five rack rows). Below 1280px the original short graphic sits above a full-width two-column card grid.
 - No halo sits behind it, and no animation.
 
 **Glassmorphism:** the brand guidelines list glassmorphism as a brand style. The AI layer in this graphic is **the only glass element on the site**. It uses the same rule as the halos: one deliberate use, not a style applied to every card.

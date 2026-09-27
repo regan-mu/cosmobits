@@ -99,6 +99,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 
 ## PR 5: Quality pass (spec 10), later round
 
+- [x] Playwright responsive audit, 27 Sep 2026: `/`, `/privacy`, `/terms` at 320, 360, 390, 414, 768, 1024, 1280, 1440, 1920 on a production build. No horizontal scroll or overflow, all scroll-in content shows, touch targets ≥44px on mobile (inline text links excepted), one H1, no heading skips, no duplicate IDs or broken anchors, no console errors
 - [ ] axe DevTools: zero serious/critical issues
 - [ ] Full keyboard pass
 - [ ] PSI re-run vs the PR 0 baseline (LCP < 2.5s, INP < 200ms, CLS < 0.1 on mobile)

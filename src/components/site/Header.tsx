@@ -111,7 +111,7 @@ export default function Header() {
       }`}
     >
       <div className="cb-container flex h-26 items-center justify-between">
-        <Link href="/" aria-label="CosmoBits Technologies home" className="flex shrink-0 rounded-sm">
+        <Link href="/" aria-label="CosmoBits Technologies home" className="flex min-h-11 shrink-0 items-center rounded-sm">
           <Image
             src="/cosmobits-technologies-logo-web.png"
             alt="CosmoBits Technologies"

@@ -23,7 +23,8 @@ export default function Hero() {
           </p>
           <div className="cb-hero__ctas">
             <BookingLink className="cb-btn cb-btn--lg" />
-            <a href="#services" className="cb-link">
+            {/* Invisible 12px extension above and below makes it a 44px+ touch target */}
+            <a href="#services" className="cb-link relative after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']">
               See our services
             </a>
           </div>

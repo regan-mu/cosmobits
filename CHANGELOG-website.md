@@ -82,3 +82,11 @@ One line per change, so the team can review what moved and why. Spec: `.agents/u
 - Contact subtitle widened to 52rem (other section intros stay at 42rem) and no longer balance-wrapped, so it reads on one line from 1024px up (owner request).
 - Footer description now 14px at white 50% (about 5:1 contrast), so it sits below the tagline (17px, white 60%) (owner request).
 - Hero: the hero-bits graphic is hidden below 768px, so the mobile hero is text and buttons only; without the graphic the mesh has no hole and the halo sits at its default spot (owner request; spec 7.6 updated).
+
+### Responsive audit and fixes (27 Sep 2026)
+- Ran a Playwright audit of `/`, `/privacy` and `/terms` at nine widths (320–1920) on a production build: overflow, clipping, touch targets, tiny text, scroll-in visibility, heading order, duplicate IDs, anchors, console errors.
+- Public pages no longer load next-auth or call `/api/auth/session` on every view: `SessionProvider` moved from the root layout to a new `app/admin/layout.tsx`. Removed `app/providers.tsx`.
+- reCAPTCHA now wraps only the contact form (`RecaptchaProvider`), so Google's script loads on the homepage, not on the legal pages or the admin.
+- Touch targets on mobile brought to 44px+: logo link, "See our services", "Get directions", phone/email links in Contact and the footer, footer column links (spacing raised to 18px), and the inline "Book a consultation" link (kept on one line). Done with an invisible hit-area extension, so the layout doesn't change.
+- What We Do: the tall graphic beside the cards now starts at 1280px instead of 1024px; at 1024 it squeezed each card to ~190px. Between 1024 and 1279 the short graphic sits above a full-width two-column grid (cards ~435px).
+- Contact subtitle balanced again, so it no longer leaves "hours." alone on a line at tablet widths (it stays on one line on desktop).

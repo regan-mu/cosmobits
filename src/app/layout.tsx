@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-import { Providers } from "./providers";
 
 const sans = Schibsted_Grotesk({
   subsets: ["latin"],
@@ -77,18 +76,16 @@ export default function RootLayout({
   return (
     <html lang="en-KE" className={sans.variable}>
       <body className="font-sans antialiased">
-        <Providers>
-          {children}
-          <Toaster 
-            position="top-center" 
-            richColors 
-            toastOptions={{
-              style: {
-                fontFamily: 'inherit',
-              },
-            }}
-          />
-        </Providers>
+        {children}
+        <Toaster
+          position="top-center"
+          richColors
+          toastOptions={{
+            style: {
+              fontFamily: 'inherit',
+            },
+          }}
+        />
       </body>
     </html>
   );

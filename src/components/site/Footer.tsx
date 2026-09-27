@@ -23,6 +23,8 @@ const MUTED = 'text-white/60';
 const ITEM = 'flex items-center gap-3 sm:gap-4';
 const TITLE = 'text-base font-semibold leading-snug text-cb-text';
 const DETAIL = `mt-0.5 text-sm leading-5 ${MUTED} transition-colors`;
+// Invisible extension around small text links, so they're 44px+ touch targets without changing the layout
+const HIT = "relative after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']";
 
 const SOCIAL: { key: keyof typeof CONTACT.social; label: string; icon: LucideIcon }[] = [
   { key: 'linkedin', label: 'LinkedIn', icon: Linkedin },
@@ -90,7 +92,7 @@ export default function Footer() {
               <IconTile icon={Mail} />
               <div className="min-w-0">
                 <p className={TITLE}>Email Us</p>
-                <a href={`mailto:${CONTACT.email}`} className={`${DETAIL} block hover:text-cb-brand`}>
+                <a href={`mailto:${CONTACT.email}`} className={`${DETAIL} ${HIT} block hover:text-cb-brand`}>
                   {CONTACT.email}
                 </a>
               </div>
@@ -99,7 +101,7 @@ export default function Footer() {
               <IconTile icon={Phone} />
               <div className="min-w-0">
                 <p className={TITLE}>Call Us</p>
-                <a href={`tel:${CONTACT.phoneE164}`} className={`${DETAIL} block hover:text-cb-brand`}>
+                <a href={`tel:${CONTACT.phoneE164}`} className={`${DETAIL} ${HIT} block hover:text-cb-brand`}>
                   {CONTACT.phoneDisplay}
                 </a>
               </div>
@@ -109,7 +111,7 @@ export default function Footer() {
                 <IconTile icon={MessageCircle} />
                 <div className="min-w-0">
                   <p className={TITLE}>WhatsApp</p>
-                  <a href={whatsappUrl(CONTACT.whatsappE164)} className={`${DETAIL} block hover:text-cb-brand`}>
+                  <a href={whatsappUrl(CONTACT.whatsappE164)} className={`${DETAIL} ${HIT} block hover:text-cb-brand`}>
                     Message us
                   </a>
                 </div>
@@ -150,12 +152,12 @@ export default function Footer() {
             <h2 id={`footer-${col.title.toLowerCase()}`} className="font-semibold text-cb-text">
               {col.title}
             </h2>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-4.5">
               {col.links.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className={`group inline-flex items-center gap-1 ${MUTED} transition-colors hover:text-cb-brand`}
+                    className={`group inline-flex items-center gap-1 ${MUTED} ${HIT} transition-colors hover:text-cb-brand`}
                   >
                     {link.name}
                     <ArrowUpRight
