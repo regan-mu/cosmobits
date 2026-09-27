@@ -120,10 +120,9 @@ export default function About() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
           <div className="cb-prose space-y-5 text-lg lg:col-span-5 lg:self-center">
             <p>
-              CosmoBits Technologies is a technology company based at {CONTACT.address.line1.split(',')[0]} in{' '}
-              {CONTACT.address.area}, {CONTACT.address.city}. We design, build and run the systems organisations
-              depend on: AI tools, custom software and the cloud infrastructure beneath them, plus the hardware
-              and licences to run it all.
+              CosmoBits Technologies is a technology company based in {CONTACT.address.city}. We design, build
+              and run the systems organisations depend on: AI tools, custom software and the cloud
+              infrastructure beneath them, plus the hardware and licences to run it all.
             </p>
             <p className="text-cb-muted">
               {since} worked with {clients} to cut manual work, make better use of the data they already have,
