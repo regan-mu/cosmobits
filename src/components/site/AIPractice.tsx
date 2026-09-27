@@ -3,7 +3,7 @@ import { AI_CAPABILITIES } from '@/content/site';
 import { FLAGS } from '@/lib/flags';
 import BookingLink from './BookingLink';
 
-// Same icon set, stroke and neutral colour as the service cards (spec 7.2)
+// Same icon set, stroke and brand colour as the service cards (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
   chatbots: Bot,
   forecasting: LineChart,
@@ -39,7 +39,7 @@ export default function AIPractice() {
                 key={item.id}
                 className="flex flex-col rounded-xl border border-cb-border bg-cb-surface p-6 lg:p-7"
               >
-                <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5" />
+                <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5 text-cb-brand" />
                 <h3 className="cb-h4 text-cb-text">{item.name}</h3>
                 <p className="mt-2 text-cb-muted">{item.text}</p>
                 <ul className="mt-5 space-y-2 border-t border-cb-border pt-5 text-[0.9375rem] text-cb-muted">

@@ -3,7 +3,7 @@ import { ABOUT, PRINCIPLES, STATS } from '@/content/site';
 import { CONTACT } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 
-// Same icon set, stroke and neutral colour as the other cards (spec 7.2)
+// Same icon set, stroke and brand colour as the other cards (spec 7.2)
 const ICONS: Record<string, LucideIcon> = {
   practical: Lightbulb,
   quality: BadgeCheck,
@@ -150,7 +150,7 @@ export default function About() {
                     className={`relative flex flex-col gap-3 ${spansBoth ? 'sm:col-span-2 lg:col-span-1 xl:col-span-2' : ''}`}
                   >
                     <PrincipleDividers index={i} count={PRINCIPLES.length} />
-                    <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="shrink-0 text-cb-muted" />
+                    <Icon size={22} strokeWidth={1.5} aria-hidden="true" className="shrink-0 text-cb-brand" />
                     <div>
                       <h4 className="font-semibold text-cb-text">{p.title}</h4>
                       <p className="mt-1 text-cb-muted">{p.text}</p>

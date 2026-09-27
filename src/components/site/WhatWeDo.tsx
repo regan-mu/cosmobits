@@ -4,7 +4,7 @@ import { BOOKING } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import ServicesStack, { ServicesStackTall } from './ServicesStack';
 
-// One line-icon set, one stroke weight, neutral colour (spec 7.2)
+// One line-icon set, one stroke weight, brand colour (spec 7.2, owner preference)
 const ICONS: Record<string, LucideIcon> = {
   'software-development': Code2,
   cloud: Cloud,
@@ -43,7 +43,7 @@ export default function WhatWeDo() {
                   id={service.id}
                   className="flex flex-col rounded-xl border border-cb-border bg-cb-bg p-6 lg:p-7"
                 >
-                  <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5" />
+                  <Icon size={24} strokeWidth={1.5} aria-hidden="true" className="mb-5 text-cb-brand" />
                   <h3 className="cb-h3 text-cb-text">{service.name}</h3>
                   <p className="mt-3 text-cb-muted">{service.summary}</p>
                   <ul className="mt-5 space-y-2 border-t border-cb-border pt-5 text-[0.9375rem] text-cb-muted">

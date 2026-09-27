@@ -418,7 +418,7 @@ A professional site shows the brand colour in a few deliberate places on a mostl
 | `#363150` on `#150F33` | 1.5:1 | Decorative dividers only; never the only boundary of a control |
 
 **Usage budget:**
-- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, the check icons on the AI capability and service cards, and the step number circles in "How We Run Our Projects".
+- `--color-brand` (`#C496C4`) goes on primary buttons, inline links, focus rings, the brandline, the icons and check icons on the service, AI capability and principle cards, and the step number circles in "How We Run Our Projects".
 - `--color-brand-deep` and `--color-brand-mauve` appear only inside the two graphics (7.6, 7.7) and the halos (6.3), plus `--color-brand-deep` as the fill of the highlighted step card in Block 5 (owner preference).
 - Headings, body text, icons, borders and card backgrounds stay neutral.
 
@@ -643,10 +643,10 @@ With the tightened structure below, every section header is just the H2, plus an
 - Alignment: the header block is centred (see 5.4 rules).
 
 Icons that remain elsewhere must carry meaning:
-- **Keep:** icons in the four service blocks, provided they're consistent line icons from a single set at one stroke weight, drawn in the neutral text colour, not brand-coloured and not inside a tinted rounded square.
+- **Keep:** icons in the four service blocks, the AI capability cards and the About principles, as consistent line icons from a single set at one stroke weight, drawn in `--color-brand` (owner preference, 27 Sep 2026; the spec originally said neutral), and not inside a tinted rounded square.
 - **Keep:** functional icons (menu, external link, phone and mail in Contact, social logos in the footer).
-- **Keep:** one neutral line icon per AI capability card (owner preference, 26 Sep 2026), same set and stroke as the service blocks.
-- **Keep:** one neutral line icon per principle in Block 8 (owner preference).
+- **Keep:** one brand-colour line icon per AI capability card (owner preference, 26 Sep 2026), same set and stroke as the service blocks.
+- **Keep:** one brand-colour line icon per principle in Block 8 (owner preference).
 - **Remove:** icons on process steps. The numbers carry those.
 
 ### 7.3 Proposed homepage
@@ -753,7 +753,7 @@ AI gets its own block (4), so it isn't one of the four here.
 
 - **H2:** "AI in Practice"
 - **Lead:** "Most of our AI work starts with a problem a team already has: too many repetitive customer questions, documents typed up by hand, stock that runs out without warning."
-- **Capabilities:** a card grid (three columns on desktop, two on tablet, one on mobile), as on the previous site (owner preference, 26 Sep 2026), restyled in the new language: flat 12px-radius cards with a 1px `--color-border` on `--color-surface`, one neutral line icon, the name (h4), one line, and three checked points: muted text with check icons in `--color-brand`, as on the previous site (owner preference, 27 Sep 2026). Titles white, everything else muted. No gradient icon tiles, glows, hover lifts or tags.
+- **Capabilities:** a card grid (three columns on desktop, two on tablet, one on mobile), as on the previous site (owner preference, 26 Sep 2026), restyled in the new language: flat 12px-radius cards with a 1px `--color-border` on `--color-surface`, one brand-colour line icon, the name (h4), one line, and three checked points: muted text with check icons in `--color-brand`, as on the previous site (owner preference, 27 Sep 2026). Titles white, everything else muted. No gradient icon tiles, glows, hover lifts or tags.
   - **Chatbots and assistants:** answer customer questions on your website or WhatsApp, in English and Swahili `{{OWNER: confirm languages}}`, handing over to staff when needed.
   - **Forecasting:** predict sales, demand or risk from the data you already keep.
   - **Document processing:** read invoices, forms and contracts, and pull the fields into your systems.
@@ -821,7 +821,7 @@ The first case study is in progress. The agent builds the template and data mode
 #### Block 8: About
 
 - **H2:** "About CosmoBits"
-- **Layout (owner preference, 26 Sep 2026):** two columns from 1024px (prose 5/12, principles card 7/12). Left: the About prose, vertically centred. Right: "The Principles That Guide Us" in a bordered card with five principles, each a neutral line icon above a bold title and one plain sentence, with no box around it. Dividers follow the owner's sketch: a vertical line between the two columns and horizontal lines between the rows, crossing like a plus sign and fading out at their outer ends. With four principles this is a single plus sign between a 2×2 grid; if the count is ever odd, the last one spans both columns. In one-column layouts, only horizontal lines between items, faded at both ends. Inside the card the principles sit in two columns (tablet, and 1280px up) and one column at 1024–1279px, where the card is too narrow. Stacked on mobile, prose first.
+- **Layout (owner preference, 26 Sep 2026):** two columns from 1024px (prose 5/12, principles card 7/12). Left: the About prose, vertically centred. Right: "The Principles That Guide Us" in a bordered card with four principles, each a brand-colour line icon above a bold title and one plain sentence, with no box around it. Dividers follow the owner's sketch: a vertical line between the two columns and horizontal lines between the rows, crossing like a plus sign and fading out at their outer ends. With four principles this is a single plus sign between a 2×2 grid; if the count is ever odd, the last one spans both columns. In one-column layouts, only horizontal lines between items, faded at both ends. Inside the card the principles sit in two columns (tablet, and 1280px up) and one column at 1024–1279px, where the card is too narrow. Stacked on mobile, prose first.
 - **Prose (draft):** three short paragraphs following the outline of the owner's reference text (who we are, what we build, who for, what we're good at), written in CosmoBits' own words. The reference was a competitor's About copy; never reuse a competitor's wording (Appendix A).
   1. "CosmoBits Technologies is a technology company based at APA Arcade in Hurlingham, Nairobi. We design, build and run the systems organisations depend on: AI tools, custom software and the cloud infrastructure beneath them, plus the hardware and licences to run it all."
   2. "Since `{{OWNER: year founded}}`, we've worked with `{{OWNER: kinds of clients, e.g. SMEs, NGOs, law firms, fintechs}}` to cut manual work, make better use of the data they already have, and replace fragile tools with systems that hold up as they grow. `{{OWNER: one sentence about the founders or team}}`" Until supplied, the year is dropped and the clients read "businesses and organisations".
