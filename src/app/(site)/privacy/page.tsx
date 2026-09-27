@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { FileText } from 'lucide-react';
 import LegalPage, { type LegalSection } from '@/components/site/LegalPage';
 import { CONTACT } from '@/lib/contact';
 
@@ -106,6 +107,7 @@ const SECTIONS: LegalSection[] = [
 export default function PrivacyPage() {
   return (
     <LegalPage
+      icon={FileText}
       title="Privacy Policy"
       updated="26 September 2026"
       intro={

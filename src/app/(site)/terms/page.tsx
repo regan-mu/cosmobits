@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ScrollText } from 'lucide-react';
 import LegalPage, { type LegalSection } from '@/components/site/LegalPage';
 
 // Draft (spec 9.5): short website terms, pending legal review. Kept out of
@@ -63,6 +64,7 @@ const SECTIONS: LegalSection[] = [
 export default function TermsPage() {
   return (
     <LegalPage
+      icon={ScrollText}
       title="Terms of Service"
       updated="26 September 2026"
       intro={

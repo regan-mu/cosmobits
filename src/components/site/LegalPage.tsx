@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, type LucideIcon } from 'lucide-react';
 import { CONTACT } from '@/lib/contact';
 import IconTile from './IconTile';
 import LegalToc from './LegalToc';
@@ -14,6 +14,8 @@ const PROSE = [
 ].join(' ');
 
 type Props = {
+  /** Icon on the header card */
+  icon: LucideIcon;
   title: string;
   updated: string;
   /** One-paragraph summary under the title */
@@ -25,23 +27,25 @@ type Props = {
 
 /**
  * Shared layout for /privacy and /terms (spec 6.3: calm, no halo, mesh or arc).
- * A centred header on the page background, an "On This Page" contents list (sticky on desktop,
- * highlights the section being read), numbered section headings, and a
- * closing contact card.
+ * A header card in the same style as the closing contact card (owner
+ * preference: icon tile, title, status line and summary), an "On This Page"
+ * contents list (sticky on desktop, highlights the section being read),
+ * numbered section headings, and the closing contact card.
  */
-export default function LegalPage({ title, updated, intro, sections, contactPrompt }: Props) {
+export default function LegalPage({ icon, title, updated, intro, sections, contactPrompt }: Props) {
   return (
     <article>
-      <header className="pb-12 pt-[calc(var(--cb-header-h)+3.5rem)] lg:pb-14">
-        <div className="cb-container border-b border-cb-border pb-12 text-center lg:pb-14">
-          <p className="cb-small inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-cb-border bg-cb-bg px-4 py-1.5 text-cb-muted">
-            <span className="text-cb-brand">Under legal review</span>
-            <span aria-hidden="true" className="hidden sm:inline">·</span>
-            <span>Last updated {updated}</span>
-          </p>
-          <h1 className="cb-h2 mt-6">{title}</h1>
-          <div className="cb-lead mx-auto mt-4 text-balance" style={{ maxWidth: '44rem' }}>
-            {intro}
+      <header className="cb-container pb-12 pt-[calc(var(--cb-header-h)+3rem)] lg:pb-16">
+        <div className="flex flex-col gap-5 rounded-xl border border-cb-border bg-cb-surface p-6 sm:flex-row sm:items-center sm:gap-6 lg:p-10">
+          <IconTile icon={icon} />
+          <div className="min-w-0">
+            <h1 className="cb-h2 text-cb-text">{title}</h1>
+            <p className="cb-small mt-2 text-cb-muted">
+              <span className="block text-cb-brand sm:inline">Under legal review</span>
+              <span aria-hidden="true" className="hidden sm:inline"> · </span>
+              <span className="block sm:inline">Last updated {updated}</span>
+            </p>
+            <div className="mt-4 max-w-[62ch] text-lg text-cb-muted">{intro}</div>
           </div>
         </div>
       </header>
