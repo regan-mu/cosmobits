@@ -92,8 +92,7 @@ const SECTIONS: LegalSection[] = [
     body: (
       <p>
         You can ask us to show you the personal data we hold about you, correct it, or delete it, and you can
-        object to how we use it. Email {email} and we&apos;ll respond. If you&apos;re not satisfied with our answer,
-        you can complain to the Office of the Data Protection Commissioner in Kenya.
+        object to how we use it. Email {email} and we&apos;ll respond.
       </p>
     ),
   },
