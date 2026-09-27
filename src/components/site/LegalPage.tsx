@@ -25,18 +25,18 @@ type Props = {
 
 /**
  * Shared layout for /privacy and /terms (spec 6.3: calm, no halo, mesh or arc).
- * A centred header band, an "On This Page" contents list (sticky on desktop,
+ * A centred header on the page background, an "On This Page" contents list (sticky on desktop,
  * highlights the section being read), numbered section headings, and a
  * closing contact card.
  */
 export default function LegalPage({ title, updated, intro, sections, contactPrompt }: Props) {
   return (
     <article>
-      <header className="border-b border-cb-border bg-cb-surface pb-14 pt-[calc(var(--cb-header-h)+3.5rem)] lg:pb-16">
-        <div className="cb-container text-center">
+      <header className="pb-12 pt-[calc(var(--cb-header-h)+3.5rem)] lg:pb-14">
+        <div className="cb-container border-b border-cb-border pb-12 text-center lg:pb-14">
           <p className="cb-small inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-cb-border bg-cb-bg px-4 py-1.5 text-cb-muted">
             <span className="text-cb-brand">Under legal review</span>
-            <span aria-hidden="true">·</span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
             <span>Last updated {updated}</span>
           </p>
           <h1 className="cb-h2 mt-6">{title}</h1>
@@ -46,7 +46,7 @@ export default function LegalPage({ title, updated, intro, sections, contactProm
         </div>
       </header>
 
-      <div className="cb-container grid gap-10 py-14 lg:grid-cols-12 lg:gap-12 lg:py-20">
+      <div className="cb-container grid gap-10 pb-14 lg:grid-cols-12 lg:gap-12 lg:pb-20">
         <div className="lg:col-span-3">
           <LegalToc items={sections.map(({ id, title }) => ({ id, title }))} />
         </div>
