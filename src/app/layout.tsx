@@ -11,7 +11,7 @@ const sans = Schibsted_Grotesk({
 
 const TITLE = "AI, Software & Cloud Solutions in Nairobi, Kenya | CosmoBits";
 const DESCRIPTION =
-  "AI, custom software, cloud and IT equipment for businesses in Kenya and across Africa. Nairobi team, free first consultation. Talk to CosmoBits.";
+  "AI, custom software, cloud and IT equipment for businesses in Kenya and across Africa, from a Nairobi team. Talk to CosmoBits about your project.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cosmobits.tech"),

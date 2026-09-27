@@ -117,7 +117,7 @@ export const AI_CAPABILITIES = [
 export const PROCESS_STEPS: { title: string; text: string; duration: string | null }[] = [
   {
     title: 'Consultation',
-    text: "A free call to understand the problem. We'll tell you if we're not the right fit.",
+    text: "A call to understand the problem. We'll tell you if we're not the right fit.",
     duration: null,
   },
   {

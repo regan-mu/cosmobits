@@ -251,7 +251,7 @@ Visitors in 2026 recognise generated sites quickly. The signals are mostly patte
 | S6 | Scroll-triggered fade/slide-up on every section | [INVENTORY] | Uniform entrance animation on every block is a generated-site signature and delays content. | Remove section entrance animations. Allow a single hero load sequence at most, disabled under reduced motion. Keep motion that responds to user action (menu open, accordion, form feedback). |
 | S7 | Halo/glow gradients everywhere | [owner-reported; INVENTORY to count] | Evenly scattered glows flatten hierarchy: when everything glows, nothing is emphasised. | Two halos on the homepage, each with a job (Section 6.3). |
 | S8 | "Discover AI Solutions" scroll hint under hero | [VERIFIED] | Template chrome. | Remove. |
-| S9 | Middle-dot meta strings | "Free consultation • No commitment • Expert guidance"; "Free Consultation / 24/7 Support / Custom Solutions" strip [VERIFIED] | A generic reassurance string with separators. | One plain sentence under the CTA: "The first consultation is free." |
+| S9 | Middle-dot meta strings | "Free consultation • No commitment • Expert guidance"; "Free Consultation / 24/7 Support / Custom Solutions" strip [VERIFIED] | A generic reassurance string with separators. | Remove. *(Owner, 27 Sep 2026: no "free" line under the CTA either.)* |
 
 ### 4.2 Copy
 
@@ -764,7 +764,7 @@ AI gets its own block (4), so it isn't one of the four here.
   - **Computer vision:** spot defects, count stock or check safety gear from camera feeds.
   - **Workflow automation:** take repetitive data entry and routing off your team's plate.
   - **Custom models:** trained on your data when an off-the-shelf tool won't do.
-- **CTA:** "Book a consultation", with a small line under it: "The first consultation is free."
+- **CTA:** "Book a consultation". *(The small "The first consultation is free." line under it was dropped by the owner, 27 Sep 2026: it read as cheap. Don't advertise "free" anywhere.)*
 - **Link:** "How we handle your data" → Block 6. Buyers' first question about AI is where their data goes.
 - **Remove:** the four ROI/percentage counters and the tag rows.
 
@@ -780,7 +780,7 @@ This replaces "Why Choose Us" and "Our Values". It's a genuine sequence, so numb
 
 | Step | Title | Description (draft; owner confirms every promise) | Typical duration |
 |---|---|---|---|
-| 1 | Consultation | A free call to understand the problem. We'll tell you if we're not the right fit. | `{{OWNER: e.g. 30–60 minutes}}` |
+| 1 | Consultation | A call to understand the problem. We'll tell you if we're not the right fit. | `{{OWNER: e.g. 30–60 minutes}}` |
 | 2 | Assessment & proposal | We talk to the people involved and review your current systems. You then get a written proposal with scope, recommended architecture, timeline and price `{{OWNER: fixed-price, time-and-materials, or both}}`. Nothing is built until you've approved it. | `{{OWNER: e.g. 1–2 weeks}}` |
 | 3 | Build | Work runs to agreed milestones, with a working demo every `{{OWNER: cadence}}`. Each milestone includes testing and security checks, and documentation is written as we go. | Depends on scope |
 | 4 | Handover & support | We deploy the system, train your staff, and hand over the documentation. Support follows on the agreed terms `{{OWNER: support hours / SLA, and whether it's contract-backed}}`, and we run the infrastructure under the data-residency terms in the contract. | Ongoing |
@@ -1082,7 +1082,7 @@ No SEO tool (Ahrefs, Semrush, Search Console) was connected for this audit, so s
 | Home | Single-page site: every service competes for one URL, and "Learn More" leads nowhere | Critical | Service pages (9.4). |
 | Home | `og:image` 404 (3.5) | High | Add the image. |
 | Home | Title "CosmoBits Technologies \| AI-Powered Digital Transformation" (58 chars) has no service or location terms | High | `AI, Software & Cloud Solutions in Nairobi, Kenya \| CosmoBits` (60 chars). |
-| Home | Meta description is 217 chars (gets truncated around 155) and leans on "cutting-edge" | Medium | "AI, custom software, cloud and IT equipment for businesses in Kenya and across Africa. Nairobi team, free first consultation. Talk to CosmoBits." (144 chars) |
+| Home | Meta description is 217 chars (gets truncated around 155) and leans on "cutting-edge" | Medium | "AI, custom software, cloud and IT equipment for businesses in Kenya and across Africa, from a Nairobi team. Talk to CosmoBits about your project." (145 chars; "free first consultation" dropped by the owner, 27 Sep 2026) |
 | Home | H1 is the keyword-free tagline | Medium | Concrete H1 (Block 1). |
 | Home | Title Case headings and duplicate eyebrow/H2 "Get In Touch / Get in Touch" | Low | Title case for section titles only (5.4); remove eyebrows. |
 | Home | `meta keywords` present (ignored by Google, and reveals targeting to competitors) | Low | Remove. |

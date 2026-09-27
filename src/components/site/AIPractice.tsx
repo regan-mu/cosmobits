@@ -65,7 +65,6 @@ export default function AIPractice() {
 
         <Reveal className="mt-12 flex flex-col items-center gap-3 text-center">
           <BookingLink className="cb-btn cb-btn--lg" />
-          <p className="cb-small text-cb-muted">The first consultation is free.</p>
           {FLAGS.SHOW_DATA_HANDLING && (
             <a href="#data" className="cb-link mt-2">
               How we handle your data
