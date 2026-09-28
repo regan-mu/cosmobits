@@ -4,6 +4,7 @@ import { FLAGS } from '@/lib/flags';
 import ContactForm from './ContactForm';
 import RecaptchaProvider from './RecaptchaProvider';
 import IconTile from './IconTile';
+import { SOCIALS } from './SocialIcons';
 import Reveal from './Reveal';
 import { Arc } from './decor';
 
@@ -136,6 +137,23 @@ export default function Contact() {
                 </p>
               )}
             </div>
+
+            {SOCIALS.length > 0 && (
+              <div className="rounded-xl border border-cb-border bg-cb-surface p-5 sm:p-6 lg:p-8">
+                <h3 className="cb-h4 text-cb-text">Follow Us</h3>
+                <ul className="mt-4 flex flex-wrap gap-3">
+                  {SOCIALS.map(({ key, label, href, Icon }) => (
+                    <li key={key}>
+                      <a href={href} target="_blank" rel="noopener" className={PILL}>
+                        <Icon size={15} />
+                        {label}
+                        <span className="cb-sr-only"> (opens in a new tab)</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </Reveal>
 
           <Reveal from="right" delay={200} className="lg:col-span-7">
