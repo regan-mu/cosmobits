@@ -121,7 +121,7 @@ export const PROCESS_STEPS: { title: string; text: string; duration: string | nu
     duration: null,
   },
   {
-    title: 'Assessment & proposal',
+    title: 'Assessment & Proposal',
     text: "We talk to the people involved and review your current systems. You then get a written proposal with scope, recommended architecture, timeline and price. Nothing is built until you've approved it.",
     duration: null,
   },
@@ -131,7 +131,7 @@ export const PROCESS_STEPS: { title: string; text: string; duration: string | nu
     duration: 'Depends on scope',
   },
   {
-    title: 'Handover & support',
+    title: 'Handover & Support',
     text: 'We deploy the system, train your staff, and hand over the documentation. Support follows on the terms we agree with you.',
     duration: 'Ongoing',
   },
