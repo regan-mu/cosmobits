@@ -20,11 +20,11 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     id: 'software-development',
-    name: 'Software development',
+    name: 'Software Development',
     shortName: 'software development',
     summary: 'Web apps, mobile apps and internal systems, built and maintained by our team.',
     bullets: [
-      'Web and mobile apps',
+      'Web and Mobile apps',
       'API integrations',
       'DevOps and CI/CD setup',
       'Engineering process reviews for small teams',
@@ -33,14 +33,14 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'cloud',
-    name: 'Cloud infrastructure',
+    name: 'Cloud Infrastructure',
     shortName: 'cloud infrastructure',
     // Infrastructure wording rule (7.3): CosmoBits designs and manages infrastructure on
     // cloud providers' platforms; it doesn't own servers or run a data centre.
     summary:
       'We design your cloud architecture, build it as code, run it day to day, and keep the monthly bill in line with what you actually use.',
     bullets: [
-      'Architecture and infrastructure design',
+      'Architecture and Infrastructure design',
       'Migration to the cloud or between providers',
       'Infrastructure as code, monitoring and backups',
       'Cost optimisation and right-sizing',
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'it-equipment',
-    name: 'IT equipment supply',
+    name: 'IT Equipment Supply',
     shortName: 'IT equipment',
     summary: 'Servers, networking and staff devices, installed and supported.',
     bullets: ['Servers and storage', 'Networking', 'Laptops and desktops', 'Installation and maintenance'],
@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 'software-licensing',
-    name: 'Software licensing',
+    name: 'Software Licensing',
     shortName: 'software licensing',
     summary: 'Operating systems, security suites and enterprise licences, bought right and tracked.',
     bullets: [
@@ -76,7 +76,7 @@ export const AI_SERVICE = { id: 'ai', name: 'AI', href: '/services/ai' };
 export const AI_CAPABILITIES = [
   {
     id: 'chatbots',
-    name: 'Chatbots and assistants',
+    name: 'Chatbots and Assistants',
     // Add the languages once confirmed, e.g. "…on your website or WhatsApp, in English and Swahili, …"
     text: 'Answer customer questions on your website or WhatsApp, handing over to staff when needed.',
     points: ['Website and WhatsApp chat', 'Answers drawn from your own documents', 'Hand-over to your team'],
@@ -89,25 +89,25 @@ export const AI_CAPABILITIES = [
   },
   {
     id: 'documents',
-    name: 'Document processing',
+    name: 'Document Processing',
     text: 'Read invoices, forms and contracts, and pull the fields into your systems.',
     points: ['Invoices, receipts and forms', 'Contract review', 'Extracted fields sent to your systems'],
   },
   {
     id: 'vision',
-    name: 'Computer vision',
+    name: 'Computer Vision',
     text: 'Spot defects, count stock or check safety gear from camera feeds.',
     points: ['Defect detection', 'Stock counts from camera feeds', 'Safety-gear checks'],
   },
   {
     id: 'automation',
-    name: 'Workflow automation',
+    name: 'Workflow Automation',
     text: "Take repetitive data entry and routing off your team's plate.",
     points: ['Data entry between systems', 'Routing and approvals', 'Scheduled reports'],
   },
   {
     id: 'custom',
-    name: 'Custom models',
+    name: 'Custom Models',
     text: "Trained on your data when an off-the-shelf tool won't do.",
     points: ['Trained on your own data', 'Tested on your real cases before launch', 'Handed over with documentation'],
   },
