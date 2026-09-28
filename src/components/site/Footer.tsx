@@ -1,22 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  ArrowUpRight,
-  Facebook,
-  Heart,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Twitter,
-  type LucideIcon,
-} from 'lucide-react';
+import { ArrowUpRight, Heart, Mail, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { AI_SERVICE, SERVICES } from '@/content/site';
 import { CONTACT, TAGLINE, whatsappUrl } from '@/lib/contact';
 import { FLAGS } from '@/lib/flags';
 import IconTile from './IconTile';
+import { SOCIALS } from './SocialIcons';
 
 // Footer text that isn't a title is muted, as on the previous site (white at 60%)
 const MUTED = 'text-white/60';
@@ -26,12 +15,6 @@ const DETAIL = `mt-0.5 text-sm leading-5 ${MUTED} transition-colors`;
 // Invisible extension around small text links, so they're 44px+ touch targets without changing the layout
 const HIT = "relative after:absolute after:-inset-x-2 after:-inset-y-3 after:content-['']";
 
-const SOCIAL: { key: keyof typeof CONTACT.social; label: string; icon: LucideIcon }[] = [
-  { key: 'linkedin', label: 'LinkedIn', icon: Linkedin },
-  { key: 'x', label: 'X', icon: Twitter },
-  { key: 'instagram', label: 'Instagram', icon: Instagram },
-  { key: 'facebook', label: 'Facebook', icon: Facebook },
-];
 
 // Until the service pages exist (PR 4), link to each service's block on the homepage.
 const COLUMNS: { title: string; links: { name: string; href: string }[] }[] = [
@@ -64,7 +47,6 @@ const COLUMNS: { title: string; links: { name: string; href: string }[] }[] = [
  * icons only for profiles set in CONTACT.social.
  */
 export default function Footer() {
-  const socials = SOCIAL.filter((s) => CONTACT.social[s.key]);
   const year = new Date().getFullYear();
 
   return (
@@ -128,18 +110,18 @@ export default function Footer() {
             </li>
           </ul>
 
-          {socials.length > 0 && (
+          {SOCIALS.length > 0 && (
             <ul className="mt-6 flex gap-3">
-              {socials.map(({ key, label, icon: Icon }) => (
+              {SOCIALS.map(({ key, label, href, Icon }) => (
                 <li key={key}>
                   <a
-                    href={CONTACT.social[key]!}
+                    href={href}
                     target="_blank"
                     rel="noopener"
                     aria-label={`CosmoBits on ${label} (opens in a new tab)`}
                     className={`flex h-11 w-11 items-center justify-center rounded-lg border border-cb-border ${MUTED} transition-colors hover:border-cb-brand/40 hover:text-cb-brand`}
                   >
-                    <Icon size={18} strokeWidth={1.75} aria-hidden="true" />
+                    <Icon size={17} />
                   </a>
                 </li>
               ))}

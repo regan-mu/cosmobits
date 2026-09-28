@@ -25,10 +25,9 @@ export const CONTACT = {
     { days: 'Sat', time: '9:00–13:00' },
   ],
   social: {
-    linkedin: null as string | null,
-    x: null as string | null,
-    instagram: null as string | null,
-    facebook: null as string | null,
+    linkedin: 'https://www.linkedin.com/company/cosmobits-technologies' as string | null,
+    x: 'https://x.com/cosmobits_tech' as string | null,
+    tiktok: 'https://www.tiktok.com/@cosmobits_tech' as string | null,
   },
 };
 

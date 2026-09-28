@@ -22,7 +22,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [x] 3.2 `src/lib/contact.ts` single source; every `tel:` is `+254119699617`; no `254700000000`
 - [ ] 3.2 WhatsApp link in Contact and footer *(needs owner number)*
 - [x] 3.3 Placeholder testimonials removed from repo and site
-- [x] 3.4 Social icons use real URLs only (hidden until owner supplies them)
+- [x] 3.4 Social icons use real URLs only (LinkedIn, X, TikTok, supplied 28 Sep 2026)
 - [x] 3.4 Privacy and Terms point to real pages
 - [x] 3.4 "See Our Work" removed; "Learn More" buttons removed; footer "Website" link removed; footer "AI Consultation" fixed
 - [ ] 3.4 linkinator crawl reports 0 broken links; no `href="#"` *(run against a deploy)*
@@ -140,7 +140,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 
 Each item says where the value goes once you have it. Filling a value in and flipping its flag is usually all that's needed.
 
-- [ ] 1. Real LinkedIn / X / Instagram / Facebook URLs, or drop some → `CONTACT.social` in `src/lib/contact.ts` (icons show automatically when set)
+- [x] 1. Social URLs (28 Sep 2026): LinkedIn, X and TikTok in `CONTACT.social`; Instagram and Facebook dropped. They show in the Contact "Follow Us" card, the footer and the JSON-LD `sameAs`
 - [ ] 2. WhatsApp Business number (E.164) → `CONTACT.whatsappE164`
 - [ ] 3. Is 24/7 support offered, and to whom? *(claim removed for now)*
 - [ ] 4. Is there a real newsletter list? *(form removed for now)*
