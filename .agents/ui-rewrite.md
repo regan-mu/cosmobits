@@ -1075,6 +1075,19 @@ Retire these labels: Get Started, Get in Touch (as a button), Start Your Project
 
 No SEO tool (Ahrefs, Semrush, Search Console) was connected for this audit, so search-volume and difficulty figures below are directional estimates. Validate them in Google Search Console and Keyword Planner once the service pages exist.
 
+### 9.0 SEO audit, November 2026 (agreed with the owner 26 Nov 2026)
+
+A second audit ([seo-audit-2026-11.md](seo-audit-2026-11.md)) was reviewed with the owner. It is folded into PR 4 here; owner-only tasks (Google Business Profile, directories, Search Console, Vercel redirect, reviews, press, GIZ correction) are O1–O14 in the tracker. Corrections to the audit: `lang`, homepage JSON-LD and a meta description CTA were already live. Case studies are deferred.
+
+Decisions:
+- **URLs:** service pages stay at `/services/<slug>` (9.4), not the audit's flat `/ai-solutions` style.
+- **Releases (branch `seo`):** (1) `robots.ts` + `sitemap.ts`; (2) the five service pages together, 700–1,000 words each, `Service` + `BreadcrumbList` + `FAQPage` schema, per-route generated OG images, nav "Services ▾ · About · Blog · Contact · [Book a consultation]", footer Services + Company columns, `SHOW_SERVICE_PAGES` on, LCP fix if the homepage fails it; (3) `/about` (with the owner's bio and "Interviewed for GIZ's *AI Made in Africa* report (2026)"), `/contact` (form reused, NAP, hours, Maps link, no embedded map; "Book a consultation" falls back to it), 404; (4) the blog.
+- **Copy:** unconfirmed facts are left out, never placeholders (`check:content`).
+- **Blog:** MDX files in the repo at `/blog/<slug>`, one `category` per post (Advisories / Guides / News) shown as a label, no category pages until ~10 posts. Byline Regan Muthomi with title and two-line bio; `BlogPosting` schema with a `Person` author. Generated OG image per post.
+- **Launch posts:** a PHP2Shell explainer; a November 2026 patch roundup (CVE table as HTML, every ID and version checked against NVD/vendors, "Status as of" date); a commentary on GIZ's *AI Made in Africa* report (CC BY 4.0, credited and linked), built around CosmoBits' quote on the open-source trade-off (p. 66). CosmoBits is framed as building AI broadly, with credit scoring as the project discussed.
+- **Series: "The AI Brief"**, weekly, URL `/blog/ai-brief-YYYY-MM-DD`: 3–5 items, each with what happened (primary source linked), what it enables, and what it means for a Kenyan business; one takeaway and the consultation CTA; 600–900 words. Claude drafts, the owner edits and approves. If weekly slips, drop to fortnightly. Security advisories only when something critical lands.
+- **Next pass:** AI sub-pages (chatbots/WhatsApp first), `/security`, `/industries`, case studies.
+
 ### 9.1 On-page issues
 
 | Page | Issue | Severity | Fix |
@@ -1099,8 +1112,8 @@ No SEO tool (Ahrefs, Semrush, Search Console) was connected for this audit, so s
 | HTTPS | Pass | Served over HTTPS; apex redirected to `www` during fetch. Confirm it's a 301 (not 302/307) with `curl -I https://cosmobits.tech`. |
 | Canonical | Pass (home) | `https://www.cosmobits.tech`. Each new page needs its own self-referencing canonical via `metadata.alternates.canonical`. |
 | Robots meta | Pass | `index, follow`. |
-| robots.txt | Unknown | Confirm or create `app/robots.ts` allowing all and pointing to the sitemap. |
-| XML sitemap | Unknown | Create `app/sitemap.ts` listing every route with `lastModified`. |
+| robots.txt | Done (26 Nov 2026) | `src/app/robots.ts`: allow all, disallow `/admin` and `/api`, point to the sitemap. |
+| XML sitemap | Done (26 Nov 2026) | `src/app/sitemap.ts`: one entry per rankable route with `lastModified`; `/privacy` and `/terms` stay out until legal review. Add each new route as it ships. |
 | Structured data | Not observed | Add Organization + ProfessionalService JSON-LD (9.3). |
 | Open Graph / Twitter | Fail | Image 404; confirm `@cosmobitstech` exists or remove `twitter:creator`. |
 | Server-rendered content | Fail | Counters render 0. Check any other client-only content in Phase 0. |

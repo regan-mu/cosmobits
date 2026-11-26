@@ -2,6 +2,12 @@
 
 One line per change, so the team can review what moved and why. Spec: `.agents/ui-rewrite.md`. Progress: `.agents/ui-rewrite-tracker.md`.
 
+## 2026-11-26: SEO round, release 1 (branch `seo`)
+
+- Added the Nov 2026 SEO audit as `.agents/seo-audit-2026-11.md` and folded its decisions into spec 9.0; owner tasks O1–O14 are in the tracker.
+- Added `src/app/robots.ts` (allow all, disallow `/admin` and `/api`, sitemap link) and `src/app/sitemap.ts` (homepage only for now; `/privacy` and `/terms` stay out until legal review). Replaces the hand-written `robots.txt` / `sitemap.xml` that sat in the repo root, where Next.js doesn't serve them.
+- Added `SITE_URL` in `src/lib/seo.ts`; the JSON-LD uses it.
+
 ## 2026-09-26: UI rewrite, round 1 (branch `ui-rewrite`)
 
 ### Setup

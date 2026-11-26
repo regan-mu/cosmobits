@@ -1,6 +1,5 @@
 import { CONTACT, TAGLINE } from '@/lib/contact';
-
-const URL = 'https://www.cosmobits.tech';
+import { SITE_URL as URL } from '@/lib/seo';
 
 /**
  * Organization + ProfessionalService JSON-LD (spec 9.3). `sameAs` lists only

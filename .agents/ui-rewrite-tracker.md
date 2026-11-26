@@ -5,6 +5,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 
 **Round 1 scope (agreed 26 Sep 2026):** homepage + design foundations (spec PR 1–3). PR 0, PR 4 and PR 5 are for a later round.
 **Status (end of round 1, 26 Sep 2026):** PR 1–3 done except the items below that need owner content or a deploy. Next round: PR 0 baseline, PR 4 pages and SEO, PR 5 quality pass.
+**SEO round (agreed 26 Nov 2026):** PR 4 plus the Nov 2026 audit, in four releases on branch `seo` (spec 9.0).
 **Branch:** `ui-rewrite`, one commit per phase. Every change is also logged in [CHANGELOG-website.md](../CHANGELOG-website.md).
 
 **How owner content works:** unconfirmed values are `null` in `src/lib/contact.ts` / `src/content/*.ts`, and anything that depends on them is hidden with a flag in `src/lib/flags.ts`. No `{{OWNER:` placeholder is written into code; `npm run check:content` (run by `prebuild`) fails the build if one appears. The "Owner content" list below records what's needed and where it goes.
@@ -14,7 +15,7 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 ## PR 0: Inventory (spec 2)
 
 - [ ] `AUDIT-INVENTORY.md` with typefaces, colours, gradients/halos, section-header icons, motion. *Skipped in round 1 because the old components were replaced outright. The before-state is in git at commit `a578e7f`.*
-- [ ] PageSpeed Insights baseline (mobile + desktop) of the live site, recorded before the rebuild ships.
+- [ ] PageSpeed Insights baseline (mobile + desktop) of the live site, recorded before the rebuild ships. *(26 Nov 2026: the anonymous PSI API quota was exhausted and a local Lighthouse run wasn't permitted; run it at pagespeed.web.dev before release 2.)*
 
 ## PR 1: Critical fixes (spec 3)
 
@@ -90,12 +91,48 @@ Progress against [ui-rewrite.md](ui-rewrite.md). Tick an item only when its acce
 - [ ] `/contact` (with map)
 - [ ] `/work` and `/work/[slug]` templates (hidden until content)
 - [ ] Per-route metadata, canonical, `Service` + `BreadcrumbList` schema
-- [ ] `robots.ts`, `sitemap.ts`
+- [~] `robots.ts`, `sitemap.ts` *(built 26 Nov 2026, release 1; live once deployed)*
+- [ ] Release 4: `/blog` (MDX), launch posts (PHP2Shell, Nov 2026 patch roundup, GIZ *AI Made in Africa*), The AI Brief template (spec 9.0)
+- [ ] Byline title for Regan Muthomi *(owner)*
 - [x] Organization + ProfessionalService JSON-LD on the homepage
 - [ ] 404 page with the "missing bit" grid (7.6)
 - [ ] Per-service OG image variants
 - [ ] Redirects for any old anchors linked externally
 - [ ] Turn on `SHOW_SERVICE_PAGES` (service block links + nav dropdown + footer links to pages)
+
+## SEO audit: owner tasks (off-site, from the Nov 2026 audit)
+
+These items come from [`seo-audit-2026-11.md`](seo-audit-2026-11.md) and can't be done in the repo. The owner works on them while PR 4 is built. Use the same name, address and phone (NAP) everywhere, exactly as on the site:
+
+> **CosmoBits Technologies** · APA Arcade, Level 1, Hurlingham, Nairobi, Kenya · +254 119 699 617 · hello@cosmobits.tech · https://www.cosmobits.tech · Mon–Fri 8:00–18:00, Sat 9:00–13:00
+
+**Now (no code needed)**
+- [ ] O1. **Vercel apex redirect.** Vercel → project → Settings → Domains → `cosmobits.tech` → Edit → "Redirect to `www.cosmobits.tech`", status **308 Permanent** (Vercel's permanent redirect; Google treats it like a 301). Today it is a 307 (temporary). Check with `curl -sI https://cosmobits.tech`: the response should be 308 with `location: https://www.cosmobits.tech/`.
+- [ ] O2. **Search Console domain property.** Add `cosmobits.tech` as a *Domain* property (DNS TXT record) so it covers apex, www, http and https. The existing URL-prefix verification tag can stay.
+- [x] O3. **Google Business Profile.** *(added 26 Nov 2026)* Claim/create it at the address above. Primary category "Software company", secondary "Computer consultant" / "IT services" (whichever GBP offers), hours as above, website `https://www.cosmobits.tech`, a services list matching the five services, office and team photos. Verification is usually by video or postcard to the office.
+- [ ] O4. **Directory profiles.** Clutch, GoodFirms, DesignRush: free profiles with the exact NAP, the five services, and a link to the homepage. Link to the service pages once they're live.
+- [ ] O5. **Bing Webmaster Tools.** Sign in and import the site from Search Console (one click).
+
+- [ ] O14. **GIZ correction + backlink.** The *AI Made in Africa* report (GIZ & Briter, Oct 2026, CC BY 4.0) quotes Cosmobits on p. 66 and lists the interview in Annex A (p. 60 of the PDF) as "Regan **Muthoni**". Email `aimadeinafrica@giz.de`:
+  > Subject: Correction and link request: AI Made in Africa report
+  >
+  > Dear AI Made in Africa team, thank you for including CosmoBits in *AI Made in Africa: Voices from AI businesses across Africa*. Two small requests: Annex A lists me as "Regan Muthoni"; the correct spelling is **Regan Muthomi**. And if possible, could the report page link "Cosmobits" to https://www.cosmobits.tech? Many thanks, Regan Muthomi, CosmoBits Technologies
+
+**After the robots/sitemap PR is deployed**
+- [ ] O6. Search Console → Sitemaps → submit `https://www.cosmobits.tech/sitemap.xml`. URL Inspection → request indexing of the homepage.
+- [ ] O7. Repeat URL Inspection → request indexing for each service page, `/about`, `/contact` and the blog as each one goes live.
+
+**After GBP is verified**
+- [ ] O8. Ask 3 past clients for Google reviews (send them the GBP review link). Reply to every review.
+
+**Content and inputs for the code work** (blocking PR 4 pages)
+- [ ] O9. Send the three existing pieces (PHP2Shell, Patch Week, AI Made in Africa) for the blog.
+- [ ] O10. Answer the open facts the service pages need: items 7, 8, 9, 12, 17, 19 and 21 in "Owner content" below. Anything unanswered is left off the page, not guessed.
+- [ ] O11. Photos per the brief (item 13): images with real alt text are the audit's "image search" finding.
+
+**After the blog and service pages are live**
+- [ ] O12. Pitch the AI Made in Africa piece to TechCabal, Techweez and Business Daily; join Kenya ICT associations that publish member directories.
+- [ ] O13. Connect Ahrefs or Semrush; re-run the audit with real ranking data around **24 Feb 2027** (90 days after 26 Nov 2026).
 
 ## PR 5: Quality pass (spec 10), later round
 
