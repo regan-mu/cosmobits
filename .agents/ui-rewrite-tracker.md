@@ -109,7 +109,7 @@ These items come from [`seo-audit-2026-11.md`](seo-audit-2026-11.md) and can't b
 **Now (no code needed)**
 - [ ] O1. **Vercel apex redirect.** Vercel → project → Settings → Domains → `cosmobits.tech` → Edit → "Redirect to `www.cosmobits.tech`", status **308 Permanent** (Vercel's permanent redirect; Google treats it like a 301). Today it is a 307 (temporary). Check with `curl -sI https://cosmobits.tech`: the response should be 308 with `location: https://www.cosmobits.tech/`.
 - [ ] O2. **Search Console domain property.** Add `cosmobits.tech` as a *Domain* property (DNS TXT record) so it covers apex, www, http and https. The existing URL-prefix verification tag can stay.
-- [ ] O3. **Google Business Profile.** Claim/create it at the address above. Primary category "Software company", secondary "Computer consultant" / "IT services" (whichever GBP offers), hours as above, website `https://www.cosmobits.tech`, a services list matching the five services, office and team photos. Verification is usually by video or postcard to the office.
+- [x] O3. **Google Business Profile.** *(added 26 Nov 2026)* Claim/create it at the address above. Primary category "Software company", secondary "Computer consultant" / "IT services" (whichever GBP offers), hours as above, website `https://www.cosmobits.tech`, a services list matching the five services, office and team photos. Verification is usually by video or postcard to the office.
 - [ ] O4. **Directory profiles.** Clutch, GoodFirms, DesignRush: free profiles with the exact NAP, the five services, and a link to the homepage. Link to the service pages once they're live.
 - [ ] O5. **Bing Webmaster Tools.** Sign in and import the site from Search Console (one click).
 
